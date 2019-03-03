@@ -2,7 +2,7 @@
     <string name="app_name">Betex Sports</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_balance_title">Balance:</string>
+    <string name="nav_balance_title">Disponible:</string>
     <string name="nav_balance_value">10.5 ETH</string>
     <string name="nav_userName_value">Diego Betex</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -11,4 +11,8 @@
     <string name="title_my_bets">Mis apuestas</string>
     <string name="title_help">Ayuda</string>
     <string name="title_challenges">Retos</string>
+    <string name="title_nav_events">Deportes y mercados</string>
+    <string name="title_nav_settings">Configuración</string>
+    <string name="title_nav_rules">Reglas</string>
+    <string name="title_nav_share">Compartir</string>
 </resources>

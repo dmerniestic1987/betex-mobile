@@ -5,34 +5,37 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_events"
+            android:icon="@drawable/ic_soccer_ball"
+            android:title="@string/title_nav_events" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_myBets"
+            android:icon="@drawable/ic_my_bets"
+            android:title="@string/title_my_bets" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+            android:id="@+id/nav_challeges"
+            android:icon="@drawable/ic_challenges"
+            android:title="@string/title_challenges"/>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+        <item
+            android:id="@+id/nav_rules"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="@string/title_nav_rules" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_icon_config"
+            android:title="@string/title_nav_settings" />
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/title_nav_share" />
+
+        <item
+            android:id="@+id/help"
+            android:icon="@drawable/ic_help_black_24dp"
+            android:title="@string/title_help" />
+    </group>
 
 </menu>
