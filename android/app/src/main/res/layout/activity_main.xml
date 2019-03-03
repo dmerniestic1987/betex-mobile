@@ -20,23 +20,19 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
             <include
                 layout="@layout/app_bar_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
             <android.support.design.widget.BottomNavigationView
+                style="@style/AppTheme.BottomNavigationView"
                 android:id="@+id/navigation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="@color/colorPrimary"
-                app:itemTextColor="@color/colorDarkGreyNavigation"
-                app:itemIconTint="@color/colorDarkGreyNavigation"
+                app:itemTextColor="@color/colorNavigationBarItems"
+                app:itemIconTint="@color/colorNavigationBarItems"
                 app:menu="@menu/navigation"
-                app:labelVisibilityMode="labeled"/>
+                app:labelVisibilityMode="labeled" />
         </RelativeLayout>
 
 </android.support.v4.widget.DrawerLayout>
