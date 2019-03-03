@@ -19,7 +19,7 @@
 
     <style name="AppTheme.Content" parent="AppTheme">
         <item name="android:background">@color/colorContentPrimary</item>
-        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColor">@color/iconTextColor</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

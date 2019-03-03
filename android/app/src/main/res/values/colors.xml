@@ -8,10 +8,8 @@
     <color name="colorSecondaryDark">#c8b900</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorDarkGreyNavigation">#343a40</color>
-    <color name="colorNavigationBarItems">#fff</color>
-
     <color name="colorContentPrimary">#212121</color>
     <color name="colorContentPrimaryLight">#484848</color>
     <color name="colorContentPrimaryDark">#000000</color>
-    <color name="textColor">#fff</color>
+    <color name="iconTextColor">#fff</color>
 </resources>

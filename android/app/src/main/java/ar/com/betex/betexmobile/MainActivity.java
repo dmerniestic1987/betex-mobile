@@ -1,9 +1,8 @@
 package ar.com.betex.betexmobile;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,9 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
+
+    private TextView contentText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +30,14 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView);
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this.onNavigationItemSelectedListener);
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottonNavigation);
+        navigation.setOnNavigationItemSelectedListener(this.onButtonNavigationViewItemSelectedListener);
+
+        contentText = (TextView) findViewById(R.id.contentText);
     }
 
     @Override
@@ -52,32 +59,70 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.toolbar_help) {
+            contentText.setText("Ayuda TOOLBAR");
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+    //Esto es el mensaje para el Button Navigation Item
+    private BottomNavigationView.OnNavigationItemSelectedListener onButtonNavigationViewItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-        if (id == R.id.nav_events) {
-            // Handle the camera action
-        } else if (id == R.id.nav_myBets) {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        } else if (id == R.id.nav_challeges) {
-
-        } else if (id == R.id.nav_rules) {
-
-        } else if (id == R.id.nav_share) {
-
+            switch (item.getItemId()) {
+                case R.id.nav_bottom_events:
+                    contentText.setText(R.string.title_events);
+                    return true;
+                case R.id.nav_bottom_challeges:
+                    contentText.setText(R.string.title_challenges);
+                    return true;
+                case R.id.nav_bottom_myBets:
+                    contentText.setText(R.string.title_my_bets);
+                    return true;
+            }
+            return false;
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
+    };
+
+    private NavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener
+            = new  NavigationView.OnNavigationItemSelectedListener(){
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            // Handle navigation view item clicks here.
+            int id = item.getItemId();
+
+            if (id == R.id.nav_events) {
+                contentText.setText("Deportes y mercados");
+
+            } else if (id == R.id.nav_myBets) {
+                contentText.setText("Mis apuestas");
+
+            } else if (id == R.id.nav_challeges) {
+                contentText.setText("Retos");
+
+            } else if (id == R.id.nav_rules) {
+                contentText.setText("Reglas");
+
+            } else if (id == R.id.nav_share) {
+                contentText.setText("Compartir");
+
+            } else if (id == R.id.nav_help) {
+                contentText.setText("Ayuda");
+
+            } else if (id == R.id.nav_settings) {
+                contentText.setText("Configuración");
+            } else if (id == R.id.nav_wallet) {
+                contentText.setText("Mi Billetera");
+            }
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
+        }
+    };
 }

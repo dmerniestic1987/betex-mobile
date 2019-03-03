@@ -9,7 +9,7 @@
     tools:openDrawer="start">
 
     <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
@@ -17,8 +17,8 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
         android:background="@color/colorContentPrimary"
-        app:itemTextColor="@color/textColor"
-        app:itemIconTint="@color/textColor"
+        app:itemTextColor="@color/iconTextColor"
+        app:itemIconTint="@color/iconTextColor"
         />
 
         <RelativeLayout
@@ -32,9 +32,9 @@
 
             <android.support.design.widget.BottomNavigationView
                 style="@style/AppTheme.BottomNavigationView"
-                android:id="@+id/navigation"
-                app:itemTextColor="@color/colorNavigationBarItems"
-                app:itemIconTint="@color/colorNavigationBarItems"
+                android:id="@+id/bottonNavigation"
+                app:itemTextColor="@color/iconTextColor"
+                app:itemIconTint="@color/iconTextColor"
                 app:menu="@menu/navigation"
                 app:labelVisibilityMode="labeled" />
         </RelativeLayout>

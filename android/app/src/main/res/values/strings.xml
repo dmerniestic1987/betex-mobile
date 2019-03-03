@@ -15,4 +15,5 @@
     <string name="title_nav_settings">Configuración</string>
     <string name="title_nav_rules">Reglas</string>
     <string name="title_nav_share">Compartir</string>
+    <string name="title_nav_wallet">Mi billetera</string>
 </resources>
