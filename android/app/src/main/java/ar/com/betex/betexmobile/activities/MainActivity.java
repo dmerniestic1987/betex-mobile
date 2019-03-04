@@ -19,8 +19,6 @@ import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
 
 public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener {
-
-    private TextView contentText;
     private MarketFragment marketFragment;
 
     @Override
@@ -43,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottonNavigation);
         navigation.setOnNavigationItemSelectedListener(this.onButtonNavigationViewItemSelectedListener);
 
-        contentText = (TextView) findViewById(R.id.contentText);
         marketFragment = MarketFragment.newInstance("", "");
     }
 
@@ -67,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.toolbar_help) {
-            contentText.setText("Ayuda TOOLBAR");
             return true;
         }
 
@@ -83,13 +79,10 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
 
             switch (item.getItemId()) {
                 case R.id.nav_bottom_events:
-                    contentText.setText(R.string.title_events);
                     return true;
                 case R.id.nav_bottom_challeges:
-                    contentText.setText(R.string.title_challenges);
                     return true;
                 case R.id.nav_bottom_myBets:
-                    contentText.setText(R.string.title_my_bets);
                     return true;
             }
             return false;
@@ -105,27 +98,21 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
             int id = item.getItemId();
 
             if (id == R.id.nav_events) {
-                contentText.setText("Deportes y mercados");
 
             } else if (id == R.id.nav_myBets) {
-                contentText.setText("Mis apuestas");
 
             } else if (id == R.id.nav_challeges) {
-                contentText.setText("Retos");
 
             } else if (id == R.id.nav_rules) {
-                contentText.setText("Reglas");
 
             } else if (id == R.id.nav_share) {
-                contentText.setText("Compartir");
 
             } else if (id == R.id.nav_help) {
-                contentText.setText("Ayuda");
 
             } else if (id == R.id.nav_settings) {
-                contentText.setText("Configuración");
+
             } else if (id == R.id.nav_wallet) {
-                contentText.setText("Mi Billetera");
+
             }
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
