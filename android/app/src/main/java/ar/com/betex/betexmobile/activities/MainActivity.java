@@ -9,15 +9,19 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
+import ar.com.betex.betexmobile.fragments.MarketFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener {
 
     private TextView contentText;
+    private MarketFragment marketFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(this.onButtonNavigationViewItemSelectedListener);
 
         contentText = (TextView) findViewById(R.id.contentText);
+        marketFragment = MarketFragment.newInstance("", "");
     }
 
     @Override
@@ -127,4 +132,9 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     };
+
+    @Override
+    public void onEventTypeClicked(String eventType){
+        Log.d("hola","Se apretó: " + eventType);
+    }
 }

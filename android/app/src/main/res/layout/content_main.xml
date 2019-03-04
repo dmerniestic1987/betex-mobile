@@ -17,4 +17,9 @@
         android:text="Hello World!"
         android:textColor="@color/colorSecondary" />
 
+    <fragment
+        android:id="@+id/marketFragment"
+        android:name="ar.com.betex.betexmobile.fragments.MarketFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

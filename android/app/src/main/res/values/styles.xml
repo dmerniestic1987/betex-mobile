@@ -10,6 +10,17 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.ButttonBar">
+        <item name="android:background">@color/colorSecondary</item>
+    </style>
+
+    <style name="AppTheme.ButttonBar.Button" parent="AppTheme.ButttonBar">
+        <item name="android:padding">@dimen/button_bar_padding</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
     <style name="AppTheme.BottomNavigationView" parent="AppTheme">
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:background">@color/colorPrimary</item>

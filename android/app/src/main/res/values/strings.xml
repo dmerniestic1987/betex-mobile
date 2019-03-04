@@ -17,6 +17,10 @@
     <string name="title_nav_share">Compartir</string>
     <string name="title_nav_wallet">Mi billetera</string>
 
+    <string name="title_event_type_soccer">Fútbol</string>
+    <string name="title_event_type_boxing">Boxeo</string>
+    <string name="title_event_type_mma">MMA</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

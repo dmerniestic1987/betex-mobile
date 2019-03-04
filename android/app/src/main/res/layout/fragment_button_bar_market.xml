@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/soccerEventTypeButton"
+        android:drawableTop="@drawable/ic_soccer_ball"
+        style="@style/AppTheme.ButttonBar.Button"
+        android:text="@string/title_event_type_soccer"/>
+
+    <Button
+        android:id="@+id/boxingEventTypeButton"
+        android:drawableTop="@drawable/ic_boxing"
+        style="@style/AppTheme.ButttonBar.Button"
+        android:text="@string/title_event_type_boxing" />
+
+    <Button
+        android:id="@+id/mmaEventTypeButton"
+        android:drawableTop="@drawable/ic_mma"
+        style="@style/AppTheme.ButttonBar.Button"
+        android:text="@string/title_event_type_mma" />
+</LinearLayout>
