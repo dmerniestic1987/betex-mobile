@@ -15,6 +15,6 @@
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="ar.com.betex.betexmobile.fragments.MarketEventFragment"
+        android:name="ar.com.betex.betexmobile.fragments.EventsMarketFragments"
         android:id="@+id/marketEventFragments"/>
 </LinearLayout>

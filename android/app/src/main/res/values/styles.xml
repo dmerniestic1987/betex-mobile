@@ -11,9 +11,7 @@
     </style>
 
     <style name="AppTheme.ButttonBar">
-        <item name="android:background">@color/colorSecondary</item>
-        <item name="android:layout_marginTop">6dp</item>
-        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:layout_margin">@dimen/button_bar_margin </item>
     </style>
 
     <style name="AppTheme.ButttonBar.Button" parent="AppTheme.ButttonBar">
@@ -21,6 +19,8 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
+
+        <item name="android:background">@color/colorSecondary</item>
     </style>
 
     <style name="AppTheme.BottomNavigationView" parent="AppTheme">

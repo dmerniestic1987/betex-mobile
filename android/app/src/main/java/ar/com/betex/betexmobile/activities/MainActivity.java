@@ -12,13 +12,14 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.fragments.EventsMarketFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
+import ar.com.betex.betexmobile.fragments.dummy.DummyContent;
 
-public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener {
+public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener, EventsMarketFragments.OnEventMarketInteractionListener {
     private MarketFragment marketFragment;
 
     @Override
@@ -123,5 +124,10 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     @Override
     public void onEventTypeClicked(String eventType){
         Log.d("hola","Se apretó: " + eventType);
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
     }
 }

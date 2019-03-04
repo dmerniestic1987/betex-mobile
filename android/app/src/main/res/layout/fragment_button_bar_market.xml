@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/soccerEventTypeButton"
-        android:drawableTop="@drawable/ic_soccer_ball"
+        android:drawableTop="@drawable/ic_futbol2"
         style="@style/AppTheme.ButttonBar.Button"
         android:text="@string/title_event_type_soccer"/>
 
