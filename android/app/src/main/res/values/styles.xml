@@ -31,7 +31,7 @@
     </style>
 
     <style name="AppTheme.Content" parent="AppTheme">
-        <item name="android:background">@color/colorContentPrimary</item>
+        <item name="android:background">@color/colorContentPrimaryDark</item>
         <item name="android:textColor">@color/iconTextColor</item>
     </style>
 

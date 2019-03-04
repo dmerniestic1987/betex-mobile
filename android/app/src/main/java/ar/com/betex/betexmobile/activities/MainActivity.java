@@ -14,12 +14,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.fragments.EventsMarketFragments;
+import ar.com.betex.betexmobile.fragments.MarketEventeListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
 import ar.com.betex.betexmobile.fragments.dummy.DummyContent;
 
-public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener, EventsMarketFragments.OnEventMarketInteractionListener {
+public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener, MarketEventeListFragments.OnEventMarketInteractionListener {
     private MarketFragment marketFragment;
 
     @Override

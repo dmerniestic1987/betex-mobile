@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.adapters.ItemMarketEventWithDrawRecyclerViewAdapter;
 import ar.com.betex.betexmobile.fragments.dummy.DummyContent;
 import ar.com.betex.betexmobile.fragments.dummy.DummyContent.DummyItem;
 
@@ -20,7 +21,7 @@ import ar.com.betex.betexmobile.fragments.dummy.DummyContent.DummyItem;
  * Activities containing this fragment MUST implement the {@link OnEventMarketInteractionListener}
  * interface.
  */
-public class EventsMarketFragments extends Fragment {
+public class MarketEventeListFragments extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -32,13 +33,13 @@ public class EventsMarketFragments extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public EventsMarketFragments() {
+    public MarketEventeListFragments() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static EventsMarketFragments newInstance(int columnCount) {
-        EventsMarketFragments fragment = new EventsMarketFragments();
+    public static MarketEventeListFragments newInstance(int columnCount) {
+        MarketEventeListFragments fragment = new MarketEventeListFragments();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -68,7 +69,7 @@ public class EventsMarketFragments extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyMarketRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new ItemMarketEventWithDrawRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         return view;
     }

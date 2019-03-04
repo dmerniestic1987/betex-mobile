@@ -9,6 +9,6 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".fragments.EventsMarketFragments"
-    tools:listitem="@layout/item_market_event"
+    tools:context=".fragments.MarketEventeListFragments"
+    tools:listitem="@layout/item_market_event_with_draw"
     />
