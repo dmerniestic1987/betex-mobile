@@ -12,4 +12,6 @@
     <color name="colorContentPrimaryLight">#484848</color>
     <color name="colorContentPrimaryDark">#000000</color>
     <color name="iconTextColor">#fff</color>
+    <color name="backBets">#81d4fa</color>
+    <color name="layBets">#f8bbd0</color>
 </resources>
