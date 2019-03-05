@@ -19,6 +19,7 @@ import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.ItemMarketEventWithDrawRecyclerViewAdapter;
 import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.beans.Runner;
+import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
 
 /**
  * A fragment representing a list of Items.
@@ -38,6 +39,8 @@ public class MarketEventeListFragments extends Fragment {
      * fragment (e.g. upon screen orientation changes).
      */
     public MarketEventeListFragments() {
+        super();
+        this.marketList = new ArrayList<>();
     }
 
     @Override
@@ -48,47 +51,7 @@ public class MarketEventeListFragments extends Fragment {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
 
-        marketList = new ArrayList<>();
-        Market m = new Market();
-        m.setCompetitionId("19191");
-        m.setCompetitionName("Copa Libertadores");
-        m.setCountryCode("AR");
-        m.setEventId(new BigInteger("1"));
-        m.setMarketId(new BigInteger("123"));
-        m.setStartDateGMT(new Date());
-        m.addRunner(new Runner(new BigInteger("1"), "Boca Juniors"));
-        m.addRunner(new Runner(new BigInteger("8888"), "Empate"));
-        m.addRunner(new Runner(new BigInteger("2"), "River Plate"));
-        marketList.add(m);
-
-        Market m2 = new Market();
-        m2.setCompetitionId("19192");
-        m2.setCompetitionName("Supercopa");
-        m2.setCountryCode("AR");
-        m2.setEventId(new BigInteger("2"));
-        m2.setMarketId(new BigInteger("124"));
-        m2.setStartDateGMT(new Date());
-        m2.addRunner(new Runner(new BigInteger("55"), "Villa Dálmine"));
-        m2.addRunner(new Runner(new BigInteger("8888"), "Empate"));
-        m2.addRunner(new Runner(new BigInteger("65"), "Sacachispas"));
-        marketList.add(m2);
-
-        Market m3 = new Market();
-        m2.setCompetitionId("877");
-        m2.setCompetitionName("Champions League");
-        m2.setCountryCode("AR");
-        m2.setEventId(new BigInteger("12"));
-        m2.setMarketId(new BigInteger("887"));
-        m2.setStartDateGMT(new Date());
-        m2.addRunner(new Runner(new BigInteger("43"), "Nueva Chicago"));
-        m2.addRunner(new Runner(new BigInteger("8888"), "Empate"));
-        m2.addRunner(new Runner(new BigInteger("9989"), "Manchester United"));
-        marketList.add(m3);
-
-        marketList.add(m);
-        marketList.add(m2);
-        marketList.add(m3);
-
+        this.marketList = DevelopUtils.hardcodeFutbalMarketList();
     }
 
     @Override
@@ -129,16 +92,34 @@ public class MarketEventeListFragments extends Fragment {
     }
 
     /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
+     * Esta interfaz permite capturar los eventos que ocurren dento de la lista principal de mercados para:
+     * <ul>
+     *     <li>Mostrar más mercados</li>
+     *     <li>Colocar apuestas a favor</li>
+     *     <li>Colocar apuestas en contra</li>
+     * </ul>
      */
     public interface OnEventMarketInteractionListener {
-        void onListFragmentInteraction(Market item);
+        /**
+         * Se hizo click sobre la opción "Ver más"
+         * @param itemSelected
+         */
+        void onShowMoreMaketsSelected(Market itemSelected);
+
+        /**
+         * El usuario seleccionó la colocación de una apuesta a favor de un runner
+         * @param itemSelected
+         * @param oddSelected
+         * @param runner
+         */
+        void onBackBetSelected(Market itemSelected, String oddSelected, BigInteger runner);
+
+        /**
+         * El usuario seleccionó la colocación de una apuesta en contra de un runner
+         * @param itemSelected
+         * @param oddSelected
+         * @param runner
+         */
+        void onLayBetSelected(Market itemSelected, String oddSelected, Runner runner);
     }
 }

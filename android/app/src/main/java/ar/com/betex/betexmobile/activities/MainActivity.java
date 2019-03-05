@@ -11,9 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import java.math.BigInteger;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.beans.Market;
+import ar.com.betex.betexmobile.beans.Runner;
 import ar.com.betex.betexmobile.fragments.MarketEventeListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
@@ -120,14 +124,28 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
         }
     };
 
+    //Se dispara cuadno se hace click en algún botón para cambiar el tipo de evento: Fútbol, boxeo o MMA
     @Override
     public void onEventTypeClicked(String eventType){
         MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentById(R.id.marketFragment);
         marketFragment.setEventTypeTitle(eventType);
     }
 
+    //Se dispara cuando un usuario hace click en "Ver Más" de una lista determinada
     @Override
-    public void onListFragmentInteraction(Market item) {
+    public void onShowMoreMaketsSelected(Market item) {
+        Toast.makeText(this, "VER MÁS: " + item.getMarketId(), Toast.LENGTH_LONG).show();
+    }
 
+    //Se dispara cuando algún usuario quiere colocar una apuesta a favor de un runner determinado
+    @Override
+    public void onBackBetSelected(Market itemSelected, String oddSelected, BigInteger runner){
+        Toast.makeText(this, "BACK SELECTED: " + itemSelected.getMarketId() + " " + oddSelected, Toast.LENGTH_LONG).show();
+    }
+
+    //Se dispara cuando algún usuario quiere colocar una apuesta en contra de un runner determinado
+    @Override
+    public void onLayBetSelected(Market itemSelected, String oddSelected, Runner runner){
+        Toast.makeText(this, "LAY SELECTED: " + itemSelected.getMarketId() + " " + oddSelected, Toast.LENGTH_LONG).show();
     }
 }

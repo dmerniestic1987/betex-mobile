@@ -5,15 +5,17 @@ import java.math.BigInteger;
 public class Runner {
     private BigInteger id;
     private String runnerName;
+    private int imageId;
 
     public Runner(){
         super();
     }
 
-    public Runner(BigInteger id, String name){
+    public Runner(BigInteger id, String name, int imageId){
         super();
         this.id = id;
         this.runnerName = name;
+        this.imageId = imageId;
     }
 
     public BigInteger getId() {
@@ -29,4 +31,11 @@ public class Runner {
         this.runnerName = runnerName;
     }
 
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
 }

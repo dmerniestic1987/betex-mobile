@@ -131,6 +131,7 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:id="@+id/betTables">
+
         <!-- LOCAL -->
         <GridLayout
             android:layout_width="0dp"
@@ -155,7 +156,7 @@
                 android:textSize="13sp"/>
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/backLocalRunnerButton"
                 android:layout_gravity="center"
                 android:text="1,06"
                 android:layout_width="50dp"
@@ -164,7 +165,7 @@
                 android:textSize="12sp"/>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/layLocalRunnerButton"
                 android:layout_gravity="center"
                 android:text="2,86"
                 android:background="@color/layBets"
@@ -198,7 +199,7 @@
                 android:textSize="13sp"/>
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/backDrawRunnerButton"
                 android:layout_gravity="center"
                 android:text="1,06"
                 android:layout_width="50dp"
@@ -207,7 +208,7 @@
                 android:textSize="12sp"/>
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/layDrawRunnerButton"
                 android:layout_gravity="center"
                 android:text="12,86"
                 android:background="@color/layBets"
@@ -241,7 +242,7 @@
                 android:textSize="13sp"/>
 
             <Button
-                android:id="@+id/butto6"
+                android:id="@+id/backVisitorRunnerButton"
                 android:layout_gravity="center"
                 android:text="11,06"
                 android:layout_width="50dp"
@@ -250,7 +251,7 @@
                 android:textSize="12sp"/>
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/layVisitorRunnerButton"
                 android:layout_gravity="center"
                 android:text="12,86"
                 android:background="@color/layBets"
