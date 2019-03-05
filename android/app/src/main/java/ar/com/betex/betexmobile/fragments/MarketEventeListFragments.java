@@ -10,10 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.ItemMarketEventWithDrawRecyclerViewAdapter;
-import ar.com.betex.betexmobile.fragments.dummy.DummyContent;
-import ar.com.betex.betexmobile.fragments.dummy.DummyContent.DummyItem;
+import ar.com.betex.betexmobile.beans.Market;
+import ar.com.betex.betexmobile.beans.Runner;
 
 /**
  * A fragment representing a list of Items.
@@ -22,28 +27,17 @@ import ar.com.betex.betexmobile.fragments.dummy.DummyContent.DummyItem;
  * interface.
  */
 public class MarketEventeListFragments extends Fragment {
-
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnEventMarketInteractionListener mListener;
+    private List<Market> marketList;
+    private ItemMarketEventWithDrawRecyclerViewAdapter adapter;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
     public MarketEventeListFragments() {
-    }
-
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
-    public static MarketEventeListFragments newInstance(int columnCount) {
-        MarketEventeListFragments fragment = new MarketEventeListFragments();
-        Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
@@ -53,6 +47,48 @@ public class MarketEventeListFragments extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
+
+        marketList = new ArrayList<>();
+        Market m = new Market();
+        m.setCompetitionId("19191");
+        m.setCompetitionName("Copa Libertadores");
+        m.setCountryCode("AR");
+        m.setEventId(new BigInteger("1"));
+        m.setMarketId(new BigInteger("123"));
+        m.setStartDateGMT(new Date());
+        m.addRunner(new Runner(new BigInteger("1"), "Boca Juniors"));
+        m.addRunner(new Runner(new BigInteger("8888"), "Empate"));
+        m.addRunner(new Runner(new BigInteger("2"), "River Plate"));
+        marketList.add(m);
+
+        Market m2 = new Market();
+        m2.setCompetitionId("19192");
+        m2.setCompetitionName("Supercopa");
+        m2.setCountryCode("AR");
+        m2.setEventId(new BigInteger("2"));
+        m2.setMarketId(new BigInteger("124"));
+        m2.setStartDateGMT(new Date());
+        m2.addRunner(new Runner(new BigInteger("55"), "Villa Dálmine"));
+        m2.addRunner(new Runner(new BigInteger("8888"), "Empate"));
+        m2.addRunner(new Runner(new BigInteger("65"), "Sacachispas"));
+        marketList.add(m2);
+
+        Market m3 = new Market();
+        m2.setCompetitionId("877");
+        m2.setCompetitionName("Champions League");
+        m2.setCountryCode("AR");
+        m2.setEventId(new BigInteger("12"));
+        m2.setMarketId(new BigInteger("887"));
+        m2.setStartDateGMT(new Date());
+        m2.addRunner(new Runner(new BigInteger("43"), "Nueva Chicago"));
+        m2.addRunner(new Runner(new BigInteger("8888"), "Empate"));
+        m2.addRunner(new Runner(new BigInteger("9989"), "Manchester United"));
+        marketList.add(m3);
+
+        marketList.add(m);
+        marketList.add(m2);
+        marketList.add(m3);
+
     }
 
     @Override
@@ -60,7 +96,6 @@ public class MarketEventeListFragments extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_market_event_list, container, false);
 
-        // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
@@ -69,7 +104,8 @@ public class MarketEventeListFragments extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ItemMarketEventWithDrawRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            this.adapter = new ItemMarketEventWithDrawRecyclerViewAdapter(marketList, mListener);
+            recyclerView.setAdapter(adapter);
         }
         return view;
     }
@@ -103,7 +139,6 @@ public class MarketEventeListFragments extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnEventMarketInteractionListener {
-        // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Market item);
     }
 }

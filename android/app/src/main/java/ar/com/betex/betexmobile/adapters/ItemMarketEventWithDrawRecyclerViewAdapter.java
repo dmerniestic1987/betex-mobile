@@ -7,23 +7,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.fragments.MarketEventeListFragments.OnEventMarketInteractionListener;
-import ar.com.betex.betexmobile.fragments.dummy.DummyContent.DummyItem;
-
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnEventMarketInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class ItemMarketEventWithDrawRecyclerViewAdapter extends RecyclerView.Adapter<ItemMarketEventWithDrawRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final List<Market> markets;
     private final OnEventMarketInteractionListener mListener;
 
-    public ItemMarketEventWithDrawRecyclerViewAdapter(List<DummyItem> items, OnEventMarketInteractionListener listener) {
-        mValues = items;
+    public ItemMarketEventWithDrawRecyclerViewAdapter(List<Market> items, OnEventMarketInteractionListener listener) {
+        markets = items;
         mListener = listener;
     }
 
@@ -36,9 +30,8 @@ public class ItemMarketEventWithDrawRecyclerViewAdapter extends RecyclerView.Ada
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).content);
-        holder.mContentView.setText(mValues.get(position).details);
+        holder.mItem = markets.get(position);
+
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,25 +47,34 @@ public class ItemMarketEventWithDrawRecyclerViewAdapter extends RecyclerView.Ada
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return markets.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+
+        public final TextView time;
+        public final TextView competitionName;
+        public final TextView localCompetitorName;
+        public final TextView visitorCompetitorName;
+        public final TextView drawName;
+
+        public Market mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.localCompetitorName);
-            mContentView = (TextView) view.findViewById(R.id.visitorCompetitorName);
+            localCompetitorName = (TextView) view.findViewById(R.id.localCompetitorName);
+            visitorCompetitorName = (TextView) view.findViewById(R.id.visitorCompetitorName);
+            drawName = (TextView) view.findViewById(R.id.drawName);
+            time = (TextView) view.findViewById(R.id.time);
+            competitionName = (TextView) view.findViewById(R.id.competitionName);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + visitorCompetitorName.getText() + "'";
         }
     }
 }

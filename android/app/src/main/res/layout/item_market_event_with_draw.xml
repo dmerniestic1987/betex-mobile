@@ -62,7 +62,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/date"
+                android:id="@+id/competitionName"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="Super Copa 2019"
