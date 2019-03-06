@@ -17,7 +17,6 @@ import java.util.List;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.ItemMarketEventWithDrawRecyclerViewAdapter;
 import ar.com.betex.betexmobile.beans.Market;
-import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
 
 /**
  * A fragment representing a list of Items.
@@ -25,31 +24,51 @@ import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
  * Activities containing this fragment MUST implement the {@link OnEventMarketInteractionListener}
  * interface.
  */
-public class MarketEventeListFragments extends Fragment {
+public class MarketEventListFragments extends Fragment {
+    private static final String MARKET_LIST_PARAM = "market_list_param";
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     private OnEventMarketInteractionListener mListener;
     private List<Market> marketList;
     private ItemMarketEventWithDrawRecyclerViewAdapter adapter;
     private RecyclerView recyclerView;
+
+    public static final String TAG = "MarketEventListFragments";
+
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public MarketEventeListFragments() {
+    public MarketEventListFragments() {
         super();
         this.marketList = new ArrayList<>();
+    }
+
+    /**
+     * Obtiene una nueva instancia de la lista de mrecdos;
+     * @param marketList Listado de mercados;
+     * @return A new instance of fragment MarketFragment.
+     */
+    public static MarketEventListFragments newInstance(List<Market> marketList) {
+        MarketEventListFragments fragment = new MarketEventListFragments();
+        Bundle args = new Bundle();
+        ArrayList<Market> serializableArrayList = new ArrayList<>();
+        if (marketList != null) {
+            serializableArrayList.addAll(marketList);
+        }
+
+        args.putSerializable(MARKET_LIST_PARAM, serializableArrayList);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         if (getArguments() != null) {
+            this.marketList = (List<Market>) getArguments().getSerializable(MARKET_LIST_PARAM);
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
-
-        this.marketList = DevelopUtils.hardcodeFutbalMarketList();
     }
 
     @Override
@@ -89,11 +108,6 @@ public class MarketEventeListFragments extends Fragment {
         mListener = null;
     }
 
-    public void changeMarketList(List<Market> marketList){
-        this.marketList = marketList;
-        this.adapter = new ItemMarketEventWithDrawRecyclerViewAdapter(this.marketList, mListener);
-        this.recyclerView.swapAdapter(adapter, true);
-    }
     /**
      * Esta interfaz permite capturar los eventos que ocurren dento de la lista principal de mercados para:
      * <ul>

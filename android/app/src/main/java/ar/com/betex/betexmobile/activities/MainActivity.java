@@ -18,11 +18,14 @@ import java.math.BigInteger;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
-import ar.com.betex.betexmobile.fragments.MarketEventeListFragments;
+import ar.com.betex.betexmobile.fragments.MarketEventListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
+import ar.com.betex.betexmobile.fragments.listener.OnPlaceBetFragmentListener;
 
-public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener, MarketEventeListFragments.OnEventMarketInteractionListener {
+public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener
+                                                             , MarketEventListFragments.OnEventMarketInteractionListener
+                                                             , OnPlaceBetFragmentListener {
     private MarketFragment marketFragment;
 
     @Override
@@ -130,17 +133,16 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
         MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentById(R.id.marketFragment);
         marketFragment.setEventTypeTitle(eventType);
 
-        MarketEventeListFragments listFragments = (MarketEventeListFragments)marketFragment.getChildFragmentManager().findFragmentById(R.id.marketEventListFragment);
         if ("Fútbol".equals(eventType)){
-            listFragments.changeMarketList(DevelopUtils.hardcodeFutbalMarketList());
+            marketFragment.drawMarketListFragment(DevelopUtils.hardcodeFutbalMarketList());
         }
 
         if ("Boxeo".equals(eventType)){
-            listFragments.changeMarketList(DevelopUtils.hardcodeBoxMarketList());
+            marketFragment.drawMarketListFragment(DevelopUtils.hardcodeBoxMarketList());
         }
 
         if ("MMA".equals(eventType)){
-            listFragments.changeMarketList(DevelopUtils.hardcodeMmaMarketList());
+            marketFragment.drawMarketListFragment(DevelopUtils.hardcodeMmaMarketList());
         }
     }
 
@@ -152,13 +154,29 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
 
     //Se dispara cuando algún usuario quiere colocar una apuesta a favor de un runner determinado
     @Override
-    public void onBackBetSelected(Market itemSelected, String oddSelected, BigInteger runner){
-        Toast.makeText(this, "BACK SELECTED: " + itemSelected.getMarketId() + " ODD: " + oddSelected + " RUNER:" + runner, Toast.LENGTH_SHORT).show();
+    public void onBackBetSelected(Market itemSelected, String oddSelected, BigInteger runnerId){
+        MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentById(R.id.marketFragment);
+        marketFragment.drawPlaceBackBetFragment(itemSelected, oddSelected, runnerId);
     }
 
     //Se dispara cuando algún usuario quiere colocar una apuesta en contra de un runner determinado
     @Override
     public void onLayBetSelected(Market itemSelected, String oddSelected, BigInteger runner){
         Toast.makeText(this, "LAY SELECTED: " + itemSelected.getMarketId() + " ODD: " + oddSelected + " RUNER:" + runner, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean placedBackBet() {
+        return false;
+    }
+
+    @Override
+    public boolean placedLayBet() {
+        return false;
+    }
+
+    @Override
+    public boolean cancelPlaceBet() {
+        return false;
     }
 }

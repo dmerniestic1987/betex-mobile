@@ -1,11 +1,12 @@
 package ar.com.betex.betexmobile.beans;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Market {
+public class Market implements Serializable {
     private BigInteger marketId;
     private String marketType;
     private String competitionId;

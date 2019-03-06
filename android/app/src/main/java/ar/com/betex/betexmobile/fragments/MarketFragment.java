@@ -2,11 +2,18 @@ package ar.com.betex.betexmobile.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.math.BigInteger;
+import java.util.List;
+
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.beans.Market;
+import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
 
 /**
  * MarketFragment es la pantalla principal que se ve cuando el usuario
@@ -40,6 +47,13 @@ public class MarketFragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (savedInstanceState == null) {
+            FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
+            MarketEventListFragments fragments = MarketEventListFragments.newInstance(DevelopUtils.hardcodeFutbalMarketList());
+            transaction.add(R.id.marketsListContainer, fragments, MarketEventListFragments.TAG);
+            transaction.commit();
+        }
     }
 
     @Override
@@ -66,4 +80,23 @@ public class MarketFragment extends Fragment{
     public void setEventTypeTitle(String eventType){
         eventTypeTitle.setText(eventType);
     }
+
+    public void drawPlaceBackBetFragment(Market itemSelected, String oddSelected, BigInteger runnerId) {
+        FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
+        PlaceBackBetFragment newFragment = PlaceBackBetFragment.newInstance(itemSelected, oddSelected, runnerId);
+
+        transaction.replace(R.id.marketsListContainer, newFragment, PlaceBackBetFragment.TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void drawMarketListFragment(List<Market> newMarketList) {
+        FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
+        MarketEventListFragments fragments = MarketEventListFragments.newInstance(newMarketList);
+
+        transaction.replace(R.id.marketsListContainer, fragments, MarketEventListFragments.TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
 }

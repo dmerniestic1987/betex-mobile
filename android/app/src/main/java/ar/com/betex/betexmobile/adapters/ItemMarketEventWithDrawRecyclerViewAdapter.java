@@ -11,7 +11,7 @@ import android.widget.TextView;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.beans.Runner;
-import ar.com.betex.betexmobile.fragments.MarketEventeListFragments.OnEventMarketInteractionListener;
+import ar.com.betex.betexmobile.fragments.MarketEventListFragments.OnEventMarketInteractionListener;
 
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;

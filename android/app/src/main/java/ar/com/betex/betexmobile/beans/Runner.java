@@ -1,8 +1,9 @@
 package ar.com.betex.betexmobile.beans;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 
-public class Runner {
+public class Runner implements Serializable {
     private BigInteger id;
     private String runnerName;
     private int imageId;
