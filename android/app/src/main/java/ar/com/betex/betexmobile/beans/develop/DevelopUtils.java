@@ -11,6 +11,136 @@ import ar.com.betex.betexmobile.beans.Runner;
 
 public class DevelopUtils {
 
+    public static List<Market> hardcodeMmaMarketList(){
+        List<Market> marketList = new ArrayList<>();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MINUTE, 30);
+        calendar.set(Calendar.HOUR, 22);
+        calendar.set(Calendar.MONTH, Calendar.MARCH);
+        calendar.set(Calendar.DAY_OF_MONTH, 9);
+        calendar.set(Calendar.YEAR, 2019);
+
+        Market m = new Market();
+        m.setMarketId(new BigInteger("1190"));
+        m.setMarketType("MATCH_ODDS");
+        m.setCompetitionId("1777");
+        m.setCompetitionName("UFC 251");
+        m.setCountryCode("INTL");
+        m.setEventType("MMA");
+        m.setEventId(new BigInteger("1"));
+        m.setCountryCode("AR");
+        m.setStartDateGMT(calendar.getTime());
+        m.addRunner(new Runner(new BigInteger("1"), "Lesnar", R.mipmap.mma_fighter));
+        m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
+        m.addRunner(new Runner(new BigInteger("2"), "Jon Jones", R.mipmap.mma_fighter));
+        marketList.add(m);
+
+        //******************************
+        m = new Market();
+        m.setMarketId(new BigInteger("990"));
+        m.setMarketType("MATCH_ODDS");
+        m.setCompetitionId("205");
+        m.setCompetitionName("UFC 251");
+        m.setCountryCode("INTL");
+        m.setEventType("MMA");
+        m.setEventId(new BigInteger("2"));
+        m.setStartDateGMT(calendar.getTime());
+        m.addRunner(new Runner(new BigInteger("13"), "Diego Sánchez", R.mipmap.mma_fighter));
+        m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
+        m.addRunner(new Runner(new BigInteger("23"), "Anderson Silva", R.mipmap.mma_fighter));
+        marketList.add(m);
+
+        //******************************
+        calendar.set(Calendar.MINUTE, 15);
+        calendar.set(Calendar.HOUR, 20);
+        calendar.set(Calendar.MONTH, Calendar.MAY);
+        calendar.set(Calendar.DAY_OF_MONTH, 2);
+        calendar.set(Calendar.YEAR, 2019);
+
+        m = new Market();
+        m.setMarketId(new BigInteger("2890"));
+        m.setMarketType("MATCH_ODDS");
+        m.setCompetitionId("105");
+        m.setCompetitionName("UFC 251");
+        m.setCountryCode("INTL");
+        m.setEventType("MMA");
+        m.setEventId(new BigInteger("8782"));
+        m.setStartDateGMT(calendar.getTime());
+        m.addRunner(new Runner(new BigInteger("9713"), "Son Gokú", R.mipmap.mma_fighter));
+        m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
+        m.addRunner(new Runner(new BigInteger("9723"), "Vegeta", R.mipmap.mma_fighter));
+        marketList.add(m);
+
+        return marketList;
+    }
+
+    public static List<Market> hardcodeBoxMarketList(){
+        List<Market> marketList = new ArrayList<>();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MINUTE, 30);
+        calendar.set(Calendar.HOUR, 17);
+        calendar.set(Calendar.MONTH, Calendar.APRIL);
+        calendar.set(Calendar.DAY_OF_MONTH, 9);
+        calendar.set(Calendar.YEAR, 2019);
+
+        Market m = new Market();
+        m.setMarketId(new BigInteger("99865"));
+        m.setMarketType("MATCH_ODDS");
+        m.setCompetitionId("1777");
+        m.setCompetitionName("OMB");
+        m.setCountryCode("INTL");
+        m.setEventType("Boxeo");
+        m.setEventId(new BigInteger("1"));
+        m.setCountryCode("AR");
+        m.setStartDateGMT(calendar.getTime());
+        m.addRunner(new Runner(new BigInteger("1"), "Many Pacquiao", R.mipmap.boxeador));
+        m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
+        m.addRunner(new Runner(new BigInteger("2"), "Canelo Alvarez", R.mipmap.boxeador));
+        marketList.add(m);
+
+        //******************************
+        m = new Market();
+        m.setMarketId(new BigInteger("858274"));
+        m.setMarketType("MATCH_ODDS");
+        m.setCompetitionId("205");
+        m.setCompetitionName("Título Mundial Walter");
+        m.setCountryCode("INTL");
+        m.setEventType("Boxeo");
+        m.setEventId(new BigInteger("2"));
+        m.setStartDateGMT(calendar.getTime());
+        m.addRunner(new Runner(new BigInteger("13"), "Roger Stajman", R.mipmap.boxeador));
+        m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
+        m.addRunner(new Runner(new BigInteger("23"), "Golovkin", R.mipmap.boxeador));
+        marketList.add(m);
+
+        //******************************
+        calendar.set(Calendar.MINUTE, 15);
+        calendar.set(Calendar.HOUR, 20);
+        calendar.set(Calendar.MONTH, Calendar.MAY);
+        calendar.set(Calendar.DAY_OF_MONTH, 2);
+        calendar.set(Calendar.YEAR, 2019);
+
+        m = new Market();
+        m.setMarketId(new BigInteger("787747"));
+        m.setMarketType("MATCH_ODDS");
+        m.setCompetitionId("105");
+        m.setCompetitionName("Combate Space");
+        m.setCountryCode("INTL");
+        m.setEventType("Boxeo");
+        m.setEventId(new BigInteger("8782"));
+        m.setStartDateGMT(calendar.getTime());
+        m.addRunner(new Runner(new BigInteger("9713"), "Jorge Lopez", R.mipmap.boxeador));
+        m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
+        m.addRunner(new Runner(new BigInteger("9723"), "Jorge Perez", R.mipmap.boxeador));
+        marketList.add(m);
+
+        return marketList;
+    }
+
     public static List<Market> hardcodeFutbalMarketList(){
         List<Market> marketList = new ArrayList<>();
 

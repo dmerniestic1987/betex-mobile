@@ -12,13 +12,11 @@ import android.view.ViewGroup;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.ItemMarketEventWithDrawRecyclerViewAdapter;
 import ar.com.betex.betexmobile.beans.Market;
-import ar.com.betex.betexmobile.beans.Runner;
 import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
 
 /**
@@ -33,7 +31,7 @@ public class MarketEventeListFragments extends Fragment {
     private OnEventMarketInteractionListener mListener;
     private List<Market> marketList;
     private ItemMarketEventWithDrawRecyclerViewAdapter adapter;
-
+    private RecyclerView recyclerView;
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -61,7 +59,7 @@ public class MarketEventeListFragments extends Fragment {
 
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+            this.recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
@@ -91,6 +89,11 @@ public class MarketEventeListFragments extends Fragment {
         mListener = null;
     }
 
+    public void changeMarketList(List<Market> marketList){
+        this.marketList = marketList;
+        this.adapter = new ItemMarketEventWithDrawRecyclerViewAdapter(this.marketList, mListener);
+        this.recyclerView.swapAdapter(adapter, true);
+    }
     /**
      * Esta interfaz permite capturar los eventos que ocurren dento de la lista principal de mercados para:
      * <ul>
@@ -120,6 +123,6 @@ public class MarketEventeListFragments extends Fragment {
          * @param oddSelected
          * @param runner
          */
-        void onLayBetSelected(Market itemSelected, String oddSelected, Runner runner);
+        void onLayBetSelected(Market itemSelected, String oddSelected, BigInteger runner);
     }
 }

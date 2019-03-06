@@ -17,7 +17,7 @@ import java.math.BigInteger;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.beans.Market;
-import ar.com.betex.betexmobile.beans.Runner;
+import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
 import ar.com.betex.betexmobile.fragments.MarketEventeListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
@@ -129,23 +129,36 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     public void onEventTypeClicked(String eventType){
         MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentById(R.id.marketFragment);
         marketFragment.setEventTypeTitle(eventType);
+
+        MarketEventeListFragments listFragments = (MarketEventeListFragments)marketFragment.getChildFragmentManager().findFragmentById(R.id.marketEventListFragment);
+        if ("Fútbol".equals(eventType)){
+            listFragments.changeMarketList(DevelopUtils.hardcodeFutbalMarketList());
+        }
+
+        if ("Boxeo".equals(eventType)){
+            listFragments.changeMarketList(DevelopUtils.hardcodeBoxMarketList());
+        }
+
+        if ("MMA".equals(eventType)){
+            listFragments.changeMarketList(DevelopUtils.hardcodeMmaMarketList());
+        }
     }
 
     //Se dispara cuando un usuario hace click en "Ver Más" de una lista determinada
     @Override
     public void onShowMoreMaketsSelected(Market item) {
-        Toast.makeText(this, "VER MÁS: " + item.getMarketId(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "VER MÁS: " + item.getMarketId(), Toast.LENGTH_SHORT).show();
     }
 
     //Se dispara cuando algún usuario quiere colocar una apuesta a favor de un runner determinado
     @Override
     public void onBackBetSelected(Market itemSelected, String oddSelected, BigInteger runner){
-        Toast.makeText(this, "BACK SELECTED: " + itemSelected.getMarketId() + " " + oddSelected, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "BACK SELECTED: " + itemSelected.getMarketId() + " ODD: " + oddSelected + " RUNER:" + runner, Toast.LENGTH_SHORT).show();
     }
 
     //Se dispara cuando algún usuario quiere colocar una apuesta en contra de un runner determinado
     @Override
-    public void onLayBetSelected(Market itemSelected, String oddSelected, Runner runner){
-        Toast.makeText(this, "LAY SELECTED: " + itemSelected.getMarketId() + " " + oddSelected, Toast.LENGTH_LONG).show();
+    public void onLayBetSelected(Market itemSelected, String oddSelected, BigInteger runner){
+        Toast.makeText(this, "LAY SELECTED: " + itemSelected.getMarketId() + " ODD: " + oddSelected + " RUNER:" + runner, Toast.LENGTH_SHORT).show();
     }
 }
