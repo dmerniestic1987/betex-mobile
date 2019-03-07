@@ -267,6 +267,7 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:background="@color/colorSecondary"
-         android:layout_marginTop="6dp"
-        android:text="Ver más" />
+        android:text="Ver más"
+         android:layout_marginTop="@dimen/margin_place_bet_10dp"
+         android:layout_marginBottom="@dimen/margin_place_bet_10dp"/>
 </LinearLayout>

@@ -20,7 +20,9 @@
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:textColor="@color/iconTextColor"/>
+        android:textColor="@color/iconTextColor"
+        android:padding="@dimen/margin_place_bet_10dp"
+        />
 
     <FrameLayout
         android:id="@+id/marketsListContainer"

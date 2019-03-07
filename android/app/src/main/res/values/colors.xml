@@ -14,4 +14,5 @@
     <color name="iconTextColor">#fff</color>
     <color name="backBets">#81d4fa</color>
     <color name="layBets">#f8bbd0</color>
+    <color name="greeTitle">#9ccc65</color>
 </resources>
