@@ -60,13 +60,13 @@ public class ItemMarketEventWithDrawRecyclerViewAdapter extends RecyclerView.Ada
             }
         });
 
-        holder.backLocalRunnerButton.setOnClickListener(new OnBackBetClickListener(holder.mItem,  holder.mItem.getRunners().get(0).getId()));
-        holder.backDrawRunnerButton.setOnClickListener(new OnBackBetClickListener(holder.mItem,  holder.mItem.getRunners().get(1).getId()));
-        holder.backVisitorRunnerButton.setOnClickListener(new OnBackBetClickListener(holder.mItem,  holder.mItem.getRunners().get(2).getId()));
+        holder.backLocalRunnerButton.setOnClickListener(new OnBackBetClickListener(holder.mItem,  holder.mItem.getRunners().get(0).getId() ));
+        holder.backDrawRunnerButton.setOnClickListener(new OnBackBetClickListener(holder.mItem,  holder.mItem.getRunners().get(1).getId() ));
+        holder.backVisitorRunnerButton.setOnClickListener(new OnBackBetClickListener(holder.mItem,  holder.mItem.getRunners().get(2).getId() ));
 
-        holder.layLocalRunnerButton.setOnClickListener(new OnLayBetClickListener(holder.mItem,  holder.mItem.getRunners().get(0).getId()));
-        holder.layDrawRunnerButton.setOnClickListener(new OnLayBetClickListener(holder.mItem,  holder.mItem.getRunners().get(1).getId()));
-        holder.layVisitorRunnerButton.setOnClickListener(new OnLayBetClickListener(holder.mItem,  holder.mItem.getRunners().get(2).getId()));
+        holder.layLocalRunnerButton.setOnClickListener(new OnLayBetClickListener(holder.mItem,  holder.mItem.getRunners().get(0).getId() ));
+        holder.layDrawRunnerButton.setOnClickListener(new OnLayBetClickListener(holder.mItem,  holder.mItem.getRunners().get(1).getId() ));
+        holder.layVisitorRunnerButton.setOnClickListener(new OnLayBetClickListener(holder.mItem,  holder.mItem.getRunners().get(2).getId() ));
 
     }
 
@@ -130,7 +130,6 @@ public class ItemMarketEventWithDrawRecyclerViewAdapter extends RecyclerView.Ada
         public final Button backVisitorRunnerButton;
         public final Button layVisitorRunnerButton;
 
-
         public Market mItem;
 
         public ItemMarketEventViewHolder(View view) {
@@ -150,7 +149,6 @@ public class ItemMarketEventWithDrawRecyclerViewAdapter extends RecyclerView.Ada
             layDrawRunnerButton = view.findViewById(R.id.layDrawRunnerButton);
             backVisitorRunnerButton = view.findViewById(R.id.backVisitorRunnerButton);
             layVisitorRunnerButton = view.findViewById(R.id.layVisitorRunnerButton);
-
         }
 
         @Override

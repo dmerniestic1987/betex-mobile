@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorContentPrimary"
+    android:layout_margin="6dp">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A favor: Boca Juniors Ganador"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:layout_margin="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/oddTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cuota"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:textColor="@color/iconTextColor"/>
+
+            <TextView
+                android:id="@+id/oddSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Multiplicador"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:textColor="@color/iconTextColor"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp">
+
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="1.6"
+                android:inputType="numberDecimal"
+                android:textColor="@color/iconTextColor"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seekbarOdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/stakeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tu apuesta"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:textColor="@color/iconTextColor"/>
+
+            <TextView
+                android:id="@+id/stakeSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En ETH"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:textColor="@color/iconTextColor"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp">
+
+
+            <Button
+                android:id="@+id/sustractStake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/stakeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="1.6"
+                android:inputType="numberDecimal"
+                android:textColor="@color/iconTextColor"/>
+
+            <Button
+                android:id="@+id/addStake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seekBarStake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_info_black_24dp"
+            android:tint="@color/colorSecondary"/>
+
+        <TextView
+            android:id="@+id/potentialWinning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ganancia Potencial"
+            android:textAlignment="center"
+            android:gravity="center_vertical"
+            android:textColor="@color/iconTextColor"/>
+
+        <TextView
+            android:id="@+id/potentialWinningValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200 ETH"
+            android:textAlignment="center"
+            android:gravity="center_vertical"
+            android:textColor="@color/iconTextColor"/>
+
+    </LinearLayout>
+</LinearLayout>

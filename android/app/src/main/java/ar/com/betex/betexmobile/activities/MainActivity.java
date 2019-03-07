@@ -156,14 +156,14 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     @Override
     public void onBackBetSelected(Market itemSelected, String oddSelected, BigInteger runnerId){
         MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentById(R.id.marketFragment);
-        marketFragment.drawPlaceBackBetFragment(itemSelected, oddSelected, runnerId);
+        marketFragment.showPlaceBetScreen(itemSelected, oddSelected, runnerId, true);
     }
 
     //Se dispara cuando algún usuario quiere colocar una apuesta en contra de un runner determinado
     @Override
-    public void onLayBetSelected(Market itemSelected, String oddSelected, BigInteger runner){
-        Toast.makeText(this, "LAY SELECTED: " + itemSelected.getMarketId() + " ODD: " + oddSelected + " RUNER:" + runner, Toast.LENGTH_SHORT).show();
-    }
+    public void onLayBetSelected(Market itemSelected, String oddSelected, BigInteger runnerId){
+        MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentById(R.id.marketFragment);
+        marketFragment.showPlaceBetScreen(itemSelected, oddSelected, runnerId, false);    }
 
     @Override
     public boolean placedBackBet() {

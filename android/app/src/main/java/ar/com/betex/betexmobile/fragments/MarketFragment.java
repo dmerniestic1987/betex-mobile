@@ -81,20 +81,31 @@ public class MarketFragment extends Fragment{
         eventTypeTitle.setText(eventType);
     }
 
-    public void drawPlaceBackBetFragment(Market itemSelected, String oddSelected, BigInteger runnerId) {
-        FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
-        PlaceBackBetFragment newFragment = PlaceBackBetFragment.newInstance(itemSelected, oddSelected, runnerId);
-
-        transaction.replace(R.id.marketsListContainer, newFragment, PlaceBackBetFragment.TAG);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-
+    /**
+     * Actualiza el fragment de los event Types
+     * @param newMarketList
+     */
     public void drawMarketListFragment(List<Market> newMarketList) {
         FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
         MarketEventListFragments fragments = MarketEventListFragments.newInstance(newMarketList);
 
         transaction.replace(R.id.marketsListContainer, fragments, MarketEventListFragments.TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    /**
+     * Dibujoa la pantalla de apuestas para colocar una nueva apuesta
+     * @param marketSelected
+     * @param oddSelected
+     * @param runnerId
+     * @param isBack True es una apuesta a favor, false de lo contrario
+     */
+    public void showPlaceBetScreen(Market marketSelected, String oddSelected, BigInteger runnerId, boolean isBack){
+        FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
+        PlaceBetFragment fragments = PlaceBetFragment.newInstance(marketSelected, oddSelected, runnerId, isBack);
+
+        transaction.replace(R.id.marketsListContainer, fragments, PlaceBetFragment.TAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }
