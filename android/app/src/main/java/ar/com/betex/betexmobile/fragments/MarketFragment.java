@@ -90,6 +90,19 @@ public class MarketFragment extends Fragment{
     }
 
     /**
+     * Actualiza el fragment de los event Types
+     * @param newMarketList
+     */
+    public void drawAllMarketsByEvent(List<Market> newMarketList) {
+        FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
+        AllMarketsEventListFragments fragments = AllMarketsEventListFragments.newInstance(newMarketList);
+
+        transaction.replace(R.id.marketsListContainer, fragments, AllMarketsEventListFragments.TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    /**
      * Dibujoa la pantalla de apuestas para colocar una nueva apuesta
      * @param marketSelected
      * @param oddSelected

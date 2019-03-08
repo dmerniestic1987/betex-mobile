@@ -20,7 +20,7 @@
         android:layout_marginLeft="@dimen/margin_place_bet_8dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
-        android:text="A favor: Boca Juniors Ganador"
+        android:text="@string/title_place_bet_example"
         android:textAlignment="center"
         android:textColor="@color/iconTextColor"
         android:textSize="18sp"/>
@@ -58,14 +58,14 @@
                     android:id="@+id/oddTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cuota"
+                    android:text="@string/odd_text"
                     android:textColor="@color/iconTextColor" />
 
                 <TextView
                     android:id="@+id/oddSubtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Multiplicador"
+                    android:text="@string/odd_text_subtitle"
                     android:textColor="@color/iconTextColor"
                     android:textSize="12sp"/>
             </LinearLayout>
@@ -159,7 +159,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:text="Tu apuesta"
+                    android:text="@string/my_bet_text"
                     android:textAlignment="center"
                     android:textColor="@color/iconTextColor" />
 
@@ -168,7 +168,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:text="En ETH"
+                    android:text="@string/cryptocurrency_default"
                     android:textAlignment="center"
                     android:textColor="@color/iconTextColor"
                     android:textSize="12sp"/>
@@ -283,7 +283,7 @@
                     android:id="@+id/minimunBet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Apuesta mínima"
+                    android:text="@string/minimun_bet_text"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     android:textColor="@color/iconTextColor"/>
@@ -296,7 +296,20 @@
                     android:id="@+id/minimumBetValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0.01 ETH"
+                    android:text="0.01"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textColor="@color/iconTextColor"/>
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cryptocurrency_default"
                     android:gravity="center_vertical"
                     android:textStyle="bold"
                     android:textSize="12sp"
@@ -330,8 +343,21 @@
                     android:id="@+id/betCostValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="200 ETH"
+                    android:text="200"
                     android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textColor="@color/iconTextColor"/>
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cryptocurrency_default"
                     android:gravity="center_vertical"
                     android:textStyle="bold"
                     android:textSize="12sp"
@@ -366,7 +392,20 @@
                     android:id="@+id/potentialWinningValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="200 ETH"
+                    android:text="200"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textColor="@color/iconTextColor"/>
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cryptocurrency_default"
                     android:gravity="center_vertical"
                     android:textStyle="bold"
                     android:textSize="12sp"
@@ -384,7 +423,7 @@
         android:layout_marginLeft="@dimen/margin_place_bet_8dp"
         android:layout_marginTop="6dp"
         android:layout_marginBottom="6dp"
-        android:text="Apostar"
+        android:text="@string/place_bet_buton_text"
         android:background="@color/colorSecondary"/>
 
 </LinearLayout>

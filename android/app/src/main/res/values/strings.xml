@@ -22,9 +22,23 @@
     <string name="title_event_type_mma">MMA</string>
 
     <string name="default_event_type">Fútbol</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="back_bet_titles">Apuesta a Favor</string>
     <string name="back_bet_text">A favor</string>
+    <string name="lay_bet_short_text">Contra</string>
     <string name="lay_bet_text">En contra</string>
+    <string name="time_example">23 Abril 19.30 hs</string>
+    <string name="versus_leyend">V.S</string>
+    <string name="competition_example">Copa Libertadores 2019</string>
+    <string name="local_soccer_team_example">Boca Juniors</string>
+    <string name="draw_text">Empate</string>
+    <string name="visitor_soccer_team_example">River Plate</string>
+    <string name="show_more">Ver más</string>
+    <string name="minimun_bet_text">Apuesta mínima</string>
+    <string name="title_place_bet_example">A favor: Boca Juniors Ganador</string>
+    <string name="odd_text">Cuota</string>
+    <string name="odd_text_subtitle">Multiplicador</string>
+    <string name="my_bet_text">Mi apuesta</string>
+    <string name="cryptocurrency_default">ETH</string>
+    <string name="place_bet_buton_text">Apostar</string>
 </resources>

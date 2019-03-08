@@ -171,7 +171,8 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     //Se dispara cuando un usuario hace click en "Ver Más" de una lista determinada
     @Override
     public void onShowMoreMaketsSelected(Market item) {
-        Toast.makeText(this, "VER MÁS: " + item.getMarketId(), Toast.LENGTH_SHORT).show();
+        MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentByTag(MarketFragment.TAG);
+        marketFragment.drawAllMarketsByEvent(DevelopUtils.hardcodeFutbalMarketList());
     }
 
     //Se dispara cuando algún usuario quiere colocar una apuesta a favor de un runner determinado

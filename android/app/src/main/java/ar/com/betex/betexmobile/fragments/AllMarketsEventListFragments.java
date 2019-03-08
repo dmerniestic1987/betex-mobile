@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.adapters.ItemAllMarketEventRecyclerViewAdapter;
 import ar.com.betex.betexmobile.adapters.ItemMarketEventWithDrawRecyclerViewAdapter;
 import ar.com.betex.betexmobile.beans.Market;
 
@@ -24,24 +25,17 @@ import ar.com.betex.betexmobile.beans.Market;
  * Activities containing this fragment MUST implement the {@link OnEventMarketInteractionListener}
  * interface.
  */
-public class MarketEventListFragments extends Fragment {
-    protected static final String MARKET_LIST_PARAM = "market_list_param";
-    protected static final String ARG_COLUMN_COUNT = "column-count";
-    protected int mColumnCount = 1;
-    protected OnEventMarketInteractionListener mListener;
-    protected List<Market> marketList;
-    private ItemMarketEventWithDrawRecyclerViewAdapter adapter;
-    protected RecyclerView recyclerView;
+public class AllMarketsEventListFragments extends MarketEventListFragments {
+    private ItemAllMarketEventRecyclerViewAdapter adapter;
 
-    public static final String TAG = "MarketEventListFragments";
+    public static final String TAG = "AllMarketsEventListFragments";
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public MarketEventListFragments() {
+    public AllMarketsEventListFragments() {
         super();
-        this.marketList = new ArrayList<>();
     }
 
     /**
@@ -49,8 +43,8 @@ public class MarketEventListFragments extends Fragment {
      * @param marketList Listado de mercados;
      * @return A new instance of fragment MarketFragment.
      */
-    public static MarketEventListFragments newInstance(List<Market> marketList) {
-        MarketEventListFragments fragment = new MarketEventListFragments();
+    public static AllMarketsEventListFragments newInstance(List<Market> marketList) {
+        AllMarketsEventListFragments fragment = new AllMarketsEventListFragments();
         Bundle args = new Bundle();
         ArrayList<Market> serializableArrayList = new ArrayList<>();
         if (marketList != null) {
@@ -60,15 +54,6 @@ public class MarketEventListFragments extends Fragment {
         args.putSerializable(MARKET_LIST_PARAM, serializableArrayList);
         fragment.setArguments(args);
         return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            this.marketList = (List<Market>) getArguments().getSerializable(MARKET_LIST_PARAM);
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-        }
     }
 
     @Override
@@ -84,7 +69,7 @@ public class MarketEventListFragments extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            this.adapter = new ItemMarketEventWithDrawRecyclerViewAdapter(marketList, mListener);
+            this.adapter = new ItemAllMarketEventRecyclerViewAdapter(marketList, mListener);
             recyclerView.setAdapter(adapter);
         }
         return view;
@@ -106,37 +91,5 @@ public class MarketEventListFragments extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
-
-    /**
-     * Esta interfaz permite capturar los eventos que ocurren dento de la lista principal de mercados para:
-     * <ul>
-     *     <li>Mostrar más mercados</li>
-     *     <li>Colocar apuestas a favor</li>
-     *     <li>Colocar apuestas en contra</li>
-     * </ul>
-     */
-    public interface OnEventMarketInteractionListener {
-        /**
-         * Se hizo click sobre la opción "Ver más"
-         * @param itemSelected
-         */
-        void onShowMoreMaketsSelected(Market itemSelected);
-
-        /**
-         * El usuario seleccionó la colocación de una apuesta a favor de un runner
-         * @param itemSelected
-         * @param oddSelected
-         * @param runner
-         */
-        void onBackBetSelected(Market itemSelected, String oddSelected, BigInteger runner);
-
-        /**
-         * El usuario seleccionó la colocación de una apuesta en contra de un runner
-         * @param itemSelected
-         * @param oddSelected
-         * @param runner
-         */
-        void onLayBetSelected(Market itemSelected, String oddSelected, BigInteger runner);
     }
 }
