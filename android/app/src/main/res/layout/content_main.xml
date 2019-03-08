@@ -10,10 +10,11 @@
     style="@style/AppTheme.Content"
     android:orientation="vertical">
 
-    <fragment
-        android:id="@+id/marketFragment"
-        android:name="ar.com.betex.betexmobile.fragments.MarketFragment"
+    <FrameLayout
+        android:id="@+id/contentFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"/>
+        android:layout_marginBottom="60dp">
+
+    </FrameLayout>
 </LinearLayout>

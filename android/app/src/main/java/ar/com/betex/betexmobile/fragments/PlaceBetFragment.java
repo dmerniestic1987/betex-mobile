@@ -36,6 +36,7 @@ public class PlaceBetFragment extends Fragment {
     private BigInteger runnerId;
     private boolean isBackBet;
     private String odd;
+    private PlaceBetView placeBetView;
 
     public static final String TAG = "PlaceBetFragment";
 
@@ -69,7 +70,7 @@ public class PlaceBetFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FrameLayout frame = getActivity().findViewById(R.id.placeBetContainer);
-        frame.addView(new PlaceBetView(getContext(), market, runnerId, odd, isBackBet));
+        frame.addView(this.placeBetView);
     }
 
     @Override
@@ -80,6 +81,7 @@ public class PlaceBetFragment extends Fragment {
             this.odd = getArguments().getString(PARAM_INITIAL_ODD);
             this.runnerId = (BigInteger) getArguments().getSerializable(PARAM_RUNNER_ID);
             this.isBackBet = getArguments().getBoolean(PARAM_BET_TYPE);
+            this.placeBetView = new PlaceBetView(getContext(), market, runnerId, odd, isBackBet);
         }
     }
 

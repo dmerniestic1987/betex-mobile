@@ -21,6 +21,16 @@ public class Market implements Serializable {
         super();
         this.runners = new ArrayList<>();
     }
+
+    public Runner getRunnerByRunnerId(BigInteger runnerId){
+        for (Runner runner : runners){
+            if (runner.getId().equals(runnerId)){
+                return runner;
+            }
+        }
+
+        return null;
+    }
     public BigInteger getMarketId() {
         return marketId;
     }

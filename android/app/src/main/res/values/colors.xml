@@ -9,7 +9,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorDarkGreyNavigation">#343a40</color>
     <color name="colorContentPrimary">#212121</color>
-    <color name="colorContentPrimaryLight">#484848</color>
+    <color name="colorContentPrimaryLight">#a0a0a0</color>
     <color name="colorContentPrimaryDark">#000000</color>
     <color name="iconTextColor">#fff</color>
     <color name="backBets">#81d4fa</color>

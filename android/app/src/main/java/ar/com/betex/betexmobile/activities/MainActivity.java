@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -26,8 +28,6 @@ import ar.com.betex.betexmobile.fragments.listener.OnPlaceBetFragmentListener;
 public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener
                                                              , MarketEventListFragments.OnEventMarketInteractionListener
                                                              , OnPlaceBetFragmentListener {
-    private MarketFragment marketFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +48,29 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottonNavigation);
         navigation.setOnNavigationItemSelectedListener(this.onButtonNavigationViewItemSelectedListener);
 
-        marketFragment = MarketFragment.newInstance("", "");
+        this.addFragment(MarketFragment.newInstance(), MarketFragment.TAG);
+    }
+
+    /**
+     * Agrega un fragment a la pila del activity
+     * @param fragment
+     * @param tag
+     */
+    protected void addFragment(Fragment fragment, String tag){
+        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.contentFrameLayout, fragment, tag);
+        transaction.commit();
+    }
+
+    /**
+     * Reemplaza un fragment
+     * @param fragment
+     * @param tag
+     */
+    protected void replaceFragment(Fragment fragment, String tag){
+        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.contentFrameLayout, fragment, tag);
+        transaction.commit();
     }
 
     @Override
@@ -101,10 +123,10 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            // Handle navigation view item clicks here.
             int id = item.getItemId();
 
             if (id == R.id.nav_events) {
+                replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
 
             } else if (id == R.id.nav_myBets) {
 
@@ -130,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     //Se dispara cuadno se hace click en algún botón para cambiar el tipo de evento: Fútbol, boxeo o MMA
     @Override
     public void onEventTypeClicked(String eventType){
-        MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentById(R.id.marketFragment);
+        MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentByTag(MarketFragment.TAG);
         marketFragment.setEventTypeTitle(eventType);
 
         if ("Fútbol".equals(eventType)){
@@ -155,14 +177,14 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     //Se dispara cuando algún usuario quiere colocar una apuesta a favor de un runner determinado
     @Override
     public void onBackBetSelected(Market itemSelected, String oddSelected, BigInteger runnerId){
-        MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentById(R.id.marketFragment);
+        MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentByTag(MarketFragment.TAG);
         marketFragment.showPlaceBetScreen(itemSelected, oddSelected, runnerId, true);
     }
 
     //Se dispara cuando algún usuario quiere colocar una apuesta en contra de un runner determinado
     @Override
     public void onLayBetSelected(Market itemSelected, String oddSelected, BigInteger runnerId){
-        MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentById(R.id.marketFragment);
+        MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentByTag(MarketFragment.TAG);
         marketFragment.showPlaceBetScreen(itemSelected, oddSelected, runnerId, false);    }
 
     @Override

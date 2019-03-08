@@ -18,11 +18,11 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/margin_place_bet_8dp"
         android:layout_marginLeft="@dimen/margin_place_bet_8dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:text="A favor: Boca Juniors Ganador"
         android:textAlignment="center"
-        android:textColor="@color/colorSecondary"
+        android:textColor="@color/iconTextColor"
         android:textSize="18sp"/>
 
     <LinearLayout
@@ -40,7 +40,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_place_bet_8dp"
+            android:layout_marginRight="@dimen/margin_place_bet_8dp"
+            android:layout_marginLeft="@dimen/margin_place_bet_8dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -63,7 +66,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Multiplicador"
-                    android:textColor="@color/iconTextColor" />
+                    android:textColor="@color/iconTextColor"
+                    android:textSize="12sp"/>
             </LinearLayout>
 
             <Space
@@ -76,41 +80,46 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_place_bet_10dp"
                 android:layout_marginRight="@dimen/margin_place_bet_10dp"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:orientation="horizontal">
 
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/buttonOddSustract"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-" />
+                    android:text="-"
+                    android:background="@color/colorContentPrimaryLight"/>
 
                 <EditText
-                    android:id="@+id/editText4"
+                    android:id="@+id/oddValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="numberDecimal"
-                    android:text="1.6"
+                    android:text="1.61"
                     android:textAlignment="center"
-                    android:textColor="@color/iconTextColor" />
+                    android:textColor="@color/iconTextColor"/>
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/buttonOddPlus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="+" />
+                    android:text="+"
+                    android:background="@color/colorContentPrimaryLight"/>
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_place_bet_8dp"
+            android:layout_marginRight="@dimen/margin_place_bet_8dp"
+            android:layout_marginLeft="@dimen/margin_place_bet_8dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -131,7 +140,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_place_bet_8dp"
+            android:layout_marginRight="@dimen/margin_place_bet_8dp"
+            android:layout_marginLeft="@dimen/margin_place_bet_8dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -158,7 +170,8 @@
                     android:gravity="center_vertical"
                     android:text="En ETH"
                     android:textAlignment="center"
-                    android:textColor="@color/iconTextColor" />
+                    android:textColor="@color/iconTextColor"
+                    android:textSize="12sp"/>
             </LinearLayout>
 
             <Space
@@ -171,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:orientation="horizontal">
 
 
@@ -179,6 +192,7 @@
                     android:id="@+id/sustractStake"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorContentPrimaryLight"
                     android:layout_weight="1"
                     android:text="-" />
 
@@ -189,7 +203,7 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="numberDecimal"
-                    android:text="1.6"
+                    android:text="0.01"
                     android:textAlignment="center"
                     android:textColor="@color/iconTextColor" />
 
@@ -198,6 +212,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@color/colorContentPrimaryLight"
                     android:text="+" />
             </LinearLayout>
         </LinearLayout>
@@ -205,7 +220,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_place_bet_8dp"
+            android:layout_marginRight="@dimen/margin_place_bet_8dp"
+            android:layout_marginLeft="@dimen/margin_place_bet_8dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -242,14 +260,14 @@
             android:layout_height="35dp"
             app:srcCompat="@drawable/ic_info_black_24dp"
             android:tint="@color/greeTitle"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"/>
+            android:layout_gravity="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginRight="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -258,11 +276,45 @@
 
 
                 <Space
-                    android:layout_width="20dp"
+                    android:layout_width="15dp"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/comisionesText"
+                    android:id="@+id/minimunBet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apuesta mínima"
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/iconTextColor"/>
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/minimumBetValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.01 ETH"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textColor="@color/iconTextColor"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right">
+
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/betConstText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Costo de la apuesta"
@@ -271,18 +323,18 @@
                     android:textColor="@color/iconTextColor"/>
 
                 <Space
-                    android:layout_width="20dp"
+                    android:layout_width="15dp"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/comisionesValue"
+                    android:id="@+id/betCostValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="200 ETH"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     android:textStyle="bold"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:textColor="@color/iconTextColor"/>
             </LinearLayout>
 
@@ -294,20 +346,20 @@
 
 
                 <Space
-                    android:layout_width="20dp"
+                    android:layout_width="15dp"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/potentialWinning"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ganancia Potencial (*)"
+                    android:text="Ganancia Potencial"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     android:textColor="@color/iconTextColor"/>
 
                 <Space
-                    android:layout_width="20dp"
+                    android:layout_width="15dp"
                     android:layout_height="wrap_content" />
 
                 <TextView
@@ -317,7 +369,7 @@
                     android:text="200 ETH"
                     android:gravity="center_vertical"
                     android:textStyle="bold"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:textColor="@color/iconTextColor"/>
             </LinearLayout>
         </LinearLayout>
@@ -325,6 +377,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/placeBetButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/margin_place_bet_8dp"
