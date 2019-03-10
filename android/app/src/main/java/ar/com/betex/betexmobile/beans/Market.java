@@ -9,6 +9,7 @@ import java.util.List;
 public class Market implements Serializable {
     private BigInteger marketId;
     private String marketType;
+    private String marketName;
     private String competitionId;
     private String competitionName;
     private String eventType;
@@ -90,5 +91,13 @@ public class Market implements Serializable {
 
     public void addRunner(Runner runner){
         this.runners.add(runner);
+    }
+
+    public String getMarketName() {
+        return marketName;
+    }
+
+    public void setMarketName(String marketName) {
+        this.marketName = marketName;
     }
 }

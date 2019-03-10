@@ -41,4 +41,5 @@
     <string name="my_bet_text">Mi apuesta</string>
     <string name="cryptocurrency_default">ETH</string>
     <string name="place_bet_buton_text">Apostar</string>
+    <string name="total_quantity_text">Total de goles</string>
 </resources>

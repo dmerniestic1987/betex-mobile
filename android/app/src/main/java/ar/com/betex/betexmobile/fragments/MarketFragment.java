@@ -46,7 +46,7 @@ public class MarketFragment extends Fragment{
         if (savedInstanceState == null) {
             FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
             MarketEventListFragments fragments = MarketEventListFragments.newInstance(DevelopUtils.hardcodeFutbalMarketList());
-            transaction.add(R.id.marketsListContainer, fragments, MarketEventListFragments.TAG);
+            transaction.replace(R.id.marketsListContainer, fragments, MarketEventListFragments.TAG);
             transaction.commit();
         }
     }

@@ -172,7 +172,16 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     @Override
     public void onShowMoreMaketsSelected(Market item) {
         MarketFragment marketFragment = (MarketFragment) getSupportFragmentManager().findFragmentByTag(MarketFragment.TAG);
-        marketFragment.drawAllMarketsByEvent(DevelopUtils.hardcodeFutbalMarketList());
+
+        if ("Boxeo".equals(item.getEventType())){
+            marketFragment.drawAllMarketsByEvent(DevelopUtils.hardcodeAllMarketsBoxeo(item));
+        }
+        else if ("MMA".equals(item.getEventType())){
+            marketFragment.drawAllMarketsByEvent(DevelopUtils.hardcodeAllMarketsMMA(item));
+        }
+        else {
+            marketFragment.drawAllMarketsByEvent(DevelopUtils.hardcodeAllMarketsFutbol(item));
+        }
     }
 
     //Se dispara cuando algún usuario quiere colocar una apuesta a favor de un runner determinado

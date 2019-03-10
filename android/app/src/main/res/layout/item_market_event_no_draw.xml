@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorContentPrimary"
+    android:layout_margin="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/marketInfo">
+
+        <ImageView
+            android:id="@+id/imgLocalCompetitor"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:srcCompat="@mipmap/menor_goles" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/marketName"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/total_quantity_text"
+                android:layout_gravity="center"
+                android:textColor="@color/colorSecondary"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgVisitorCompetitor"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:srcCompat="@mipmap/mayor_goles" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/competitorsHeader">
+        <TextView
+            android:id="@+id/localCompetitorName"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="@string/local_soccer_team_example"
+            android:textColor="@color/iconTextColor"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/visitorCompetitorName"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="@string/visitor_soccer_team_example"
+            android:textStyle="bold"
+            android:textColor="@color/iconTextColor"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:id="@+id/betTables">
+
+        <!-- LOCAL -->
+        <GridLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:orientation="horizontal"
+            android:id="@+id/localBetTable"
+            android:layout_marginLeft="6dp">
+            <TextView
+                android:layout_gravity="center"
+                android:text="@string/back_bet_text"
+                android:textColor="@color/backBets"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:layout_gravity="center"
+                android:text="@string/lay_bet_short_text"
+                android:textColor="@color/layBets"
+                android:textSize="13sp"/>
+
+            <Button
+                android:id="@+id/backLocalRunnerButton"
+                android:layout_gravity="center"
+                android:text="1.06"
+                android:layout_width="50dp"
+                android:height="15dp"
+                android:background="@color/backBets"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/layLocalRunnerButton"
+                android:layout_gravity="center"
+                android:text="2.86"
+                android:background="@color/layBets"
+                android:layout_width="50dp"
+                android:height="15dp"
+                android:textSize="12sp"/>
+
+        </GridLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <!-- VISITANTE -->
+        <GridLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:orientation="horizontal"
+            android:id="@+id/visitorBetTable"
+            android:layout_marginLeft="6dp">
+            <TextView
+                android:layout_gravity="center"
+                android:text="@string/back_bet_text"
+                android:textColor="@color/backBets"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:layout_gravity="center"
+                android:text="@string/lay_bet_short_text"
+                android:textColor="@color/layBets"
+                android:textSize="13sp"/>
+
+            <Button
+                android:id="@+id/backVisitorRunnerButton"
+                android:layout_gravity="center"
+                android:text="3.76"
+                android:layout_width="50dp"
+                android:height="15dp"
+                android:background="@color/backBets"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/layVisitorRunnerButton"
+                android:layout_gravity="center"
+                android:text="4.99"
+                android:background="@color/layBets"
+                android:layout_width="50dp"
+                android:height="15dp"
+                android:textSize="12sp"/>
+
+        </GridLayout>
+    </LinearLayout>
+</LinearLayout>

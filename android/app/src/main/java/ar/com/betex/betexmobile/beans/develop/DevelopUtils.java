@@ -141,6 +141,113 @@ public class DevelopUtils {
         return marketList;
     }
 
+    public static List<Market> hardcodeAllMarketsFutbol(Market market){
+        List<Market> marketList = new ArrayList<>();
+        marketList.add(market);
+
+        Market m = new Market();
+        m.setMarketId(new BigInteger("8878774"));
+        m.setMarketType("UNDER_2_5_GOALS");
+        m.setCompetitionId(market.getCompetitionId());
+        m.setCompetitionName(market.getCompetitionName());
+        m.setCountryCode(market.getCountryCode());
+        m.setEventType(market.getEventType());
+        m.setEventId(market.getEventId());
+        m.setStartDateGMT(market.getStartDateGMT());
+        m.addRunner(new Runner(new BigInteger("1"), "Menos de 2.5 goles", R.mipmap.menor_goles));
+        m.addRunner(new Runner(new BigInteger("2"), "Más de 2.5 goles", R.mipmap.mayor_goles));
+        m.setMarketName("Total de goles");
+        marketList.add(m);
+
+        m = new Market();
+        m.setMarketId(new BigInteger("8866774"));
+        m.setMarketType("GOALS_EVEN");
+        m.setCompetitionId(market.getCompetitionId());
+        m.setCompetitionName(market.getCompetitionName());
+        m.setCountryCode(market.getCountryCode());
+        m.setEventType(market.getEventType());
+        m.setEventId(market.getEventId());
+        m.setStartDateGMT(market.getStartDateGMT());
+        m.addRunner(new Runner(new BigInteger("1"), "Goles Pares", R.mipmap.menor_goles));
+        m.addRunner(new Runner(new BigInteger("2"), "Goles impares", R.mipmap.mayor_goles));
+        m.setMarketName("Goles pares e impares");
+        marketList.add(m);
+
+        return marketList;
+    }
+
+    public static List<Market> hardcodeAllMarketsBoxeo(Market market){
+        List<Market> marketList = new ArrayList<>();
+        marketList.add(market);
+
+        Market m = new Market();
+        m.setMarketId(new BigInteger("8878774"));
+        m.setMarketType("WINNER");
+        m.setCompetitionId(market.getCompetitionId());
+        m.setCompetitionName(market.getCompetitionName());
+        m.setCountryCode(market.getCountryCode());
+        m.setEventType(market.getEventType());
+        m.setEventId(market.getEventId());
+        m.setStartDateGMT(market.getStartDateGMT());
+        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO o DQ", R.mipmap.boxing_training));
+        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.mipmap.boxing_definiton));
+        m.setMarketName(market.getRunners().get(0).getRunnerName() + " - Victoria");
+        marketList.add(m);
+
+        m = new Market();
+        m.setMarketId(new BigInteger("8899774"));
+        m.setMarketType("WINNER");
+        m.setCompetitionId(market.getCompetitionId());
+        m.setCompetitionName(market.getCompetitionName());
+        m.setCountryCode(market.getCountryCode());
+        m.setEventType(market.getEventType());
+        m.setEventId(market.getEventId());
+        m.setStartDateGMT(market.getStartDateGMT());
+        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO o DQ", R.mipmap.boxing_training));
+        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.mipmap.boxing_definiton));
+        m.setMarketName(market.getRunners().get(2).getRunnerName() + " - Victoria");
+        marketList.add(m);
+
+        return marketList;
+    }
+
+    public static List<Market> hardcodeAllMarketsMMA(Market market){
+        List<Market> marketList = new ArrayList<>();
+        marketList.add(market);
+
+        Market m = new Market();
+        m.setMarketId(new BigInteger("8878774"));
+        m.setMarketType("WINNER");
+        m.setCompetitionId(market.getCompetitionId());
+        m.setCompetitionName(market.getCompetitionName());
+        m.setCountryCode(market.getCountryCode());
+        m.setEventType(market.getEventType());
+        m.setEventId(market.getEventId());
+        m.setStartDateGMT(market.getStartDateGMT());
+        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO/SUB o DQ", R.mipmap.mma_rodillazo));
+        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.mipmap.boxing_definiton));
+        m.setMarketName(market.getRunners().get(0).getRunnerName() + " - Victoria");
+        marketList.add(m);
+
+        m = new Market();
+        m.setMarketId(new BigInteger("8899774"));
+        m.setMarketType("WINNER");
+        m.setCompetitionId(market.getCompetitionId());
+        m.setCompetitionName(market.getCompetitionName());
+        m.setCountryCode(market.getCountryCode());
+        m.setEventType(market.getEventType());
+        m.setEventId(market.getEventId());
+        m.setStartDateGMT(market.getStartDateGMT());
+        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO/SUB o DQ", R.mipmap.mma_rodillazo));
+        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.mipmap.boxing_definiton));
+        m.setMarketName(market.getRunners().get(2).getRunnerName() + " - Victoria");
+        marketList.add(m);
+
+        return marketList;
+    }
+
+
+
     public static List<Market> hardcodeFutbalMarketList(){
         List<Market> marketList = new ArrayList<>();
 
