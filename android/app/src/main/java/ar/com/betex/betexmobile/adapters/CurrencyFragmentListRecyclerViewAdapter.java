@@ -12,6 +12,7 @@ import ar.com.betex.betexmobile.beans.Currency;
 import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.List;
 
 /**
@@ -38,15 +39,22 @@ public class CurrencyFragmentListRecyclerViewAdapter extends RecyclerView.Adapte
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+        NumberFormat formatCurrency = NumberFormat.getCurrencyInstance();
+        NumberFormat formatNumber = NumberFormat.getNumberInstance();
+
         holder.currency = mValues.get(position);
         holder.currencyName.setText(mValues.get(position).getCurrencyName());
-        holder.currencyValue.setText(mValues.get(position).getBalance().toString());
+        holder.currencyValue.setText(formatNumber.format(mValues.get(position).getBalance()));
+
         holder.currencySymbol.setText(mValues.get(position).getSymbol());
         holder.currencyImg.setImageResource(mValues.get(position).getImgId());
-        holder.currencyInUsd.setText(mValues.get(position).getValueInUsd().toString());
+
+        holder.currencyInUsd.setText(formatCurrency.format(mValues.get(position).getValueInUsd()));
+
+
 
         BigDecimal balanceInUsde = mValues.get(position).getValueInUsd().multiply(mValues.get(position).getBalance()).setScale(2, BigDecimal.ROUND_HALF_DOWN);
-        holder.currencyBalanceInUsd.setText(balanceInUsde.toString());
+        holder.currencyBalanceInUsd.setText(formatCurrency.format(balanceInUsde));
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
