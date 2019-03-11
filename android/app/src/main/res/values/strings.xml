@@ -42,4 +42,6 @@
     <string name="cryptocurrency_default">ETH</string>
     <string name="place_bet_buton_text">Apostar</string>
     <string name="total_quantity_text">Total de goles</string>
+    <string name="send_text">Enviar</string>
+    <string name="receive_text">Recibir</string>
 </resources>

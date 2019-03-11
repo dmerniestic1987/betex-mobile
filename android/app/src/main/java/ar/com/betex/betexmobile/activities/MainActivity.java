@@ -20,6 +20,7 @@ import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.beans.Currency;
 import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
+import ar.com.betex.betexmobile.fragments.CurrencyFragment;
 import ar.com.betex.betexmobile.fragments.CurrencyFragmentListFragment;
 import ar.com.betex.betexmobile.fragments.MarketEventListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
 
             switch (item.getItemId()) {
                 case R.id.nav_bottom_events:
+                    replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
                     return true;
                 case R.id.nav_bottom_challeges:
                     return true;
@@ -221,6 +223,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
 
     @Override
     public void onCurrencySelected(Currency currency) {
-
+        CurrencyFragment fragment = CurrencyFragment.newInstance(currency);
+        replaceFragment(fragment, CurrencyFragment.TAG);
     }
 }
