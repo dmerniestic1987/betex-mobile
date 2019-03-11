@@ -13,21 +13,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import java.math.BigInteger;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.beans.Currency;
 import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
+import ar.com.betex.betexmobile.fragments.CurrencyFragmentListFragment;
 import ar.com.betex.betexmobile.fragments.MarketEventListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
+import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
 import ar.com.betex.betexmobile.fragments.listener.OnPlaceBetFragmentListener;
 
 public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener
                                                              , MarketEventListFragments.OnEventMarketInteractionListener
-                                                             , OnPlaceBetFragmentListener {
+                                                             , OnPlaceBetFragmentListener
+                                                             , OnWalletCurrencyListSelectedListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -141,6 +144,10 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
             } else if (id == R.id.nav_settings) {
 
             } else if (id == R.id.nav_wallet) {
+                CurrencyFragmentListFragment currencyFragmentListFragment = CurrencyFragmentListFragment.newInstance(DevelopUtils.hardcodeCryptoCurrencies());
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.contentFrameLayout, currencyFragmentListFragment, CurrencyFragmentListFragment.TAG);
+                transaction.commit();
 
             }
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -210,5 +217,10 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     @Override
     public boolean cancelPlaceBet() {
         return false;
+    }
+
+    @Override
+    public void onCurrencySelected(Currency currency) {
+
     }
 }

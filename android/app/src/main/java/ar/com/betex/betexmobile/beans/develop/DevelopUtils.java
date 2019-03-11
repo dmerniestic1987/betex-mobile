@@ -1,11 +1,14 @@
 package ar.com.betex.betexmobile.beans.develop;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Calendar;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.beans.Currency;
 import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.beans.Runner;
 
@@ -326,5 +329,18 @@ public class DevelopUtils {
         marketList.add(m);
 
         return marketList;
+    }
+
+    public static List<Currency> hardcodeCryptoCurrencies(){
+        List<Currency> currencies = new ArrayList<Currency>();
+        BigDecimal etherInUsd = new BigDecimal(150.30).setScale(2, RoundingMode.HALF_DOWN);
+        BigDecimal etherBalance = new BigDecimal(100.13).setScale(2, RoundingMode.HALF_DOWN);
+
+        currencies.add(new Currency("ETH", etherBalance, "Ether", etherInUsd, R.mipmap.eth));
+
+        BigDecimal pgsBalance = new BigDecimal(150.85).setScale(2, RoundingMode.HALF_DOWN);
+        BigDecimal pgsInUsd = new BigDecimal(150.30).setScale(2, RoundingMode.HALF_DOWN);
+        currencies.add(new Currency("BTX", pgsBalance, "Betex", pgsInUsd, R.mipmap.pgs));
+        return currencies;
     }
 }
