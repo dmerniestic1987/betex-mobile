@@ -15,4 +15,6 @@
     <dimen name="padding_sides_place_bet">8dp</dimen>
     <dimen name="padding_top_bottom_place_bet">12dp</dimen>
     <dimen name="padding_info_mesage">10dp</dimen>
+
+    <dimen name="bet_button_top_margin">6dp</dimen>
 </resources>

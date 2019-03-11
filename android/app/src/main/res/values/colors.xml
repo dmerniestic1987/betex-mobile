@@ -11,8 +11,14 @@
     <color name="colorContentPrimary">#212121</color>
     <color name="colorContentPrimaryLight">#a0a0a0</color>
     <color name="colorContentPrimaryDark">#000000</color>
-    <color name="iconTextColor">#fff</color>
-    <color name="backBets">#81d4fa</color>
+    <color name="white">#fff</color>
+    <color name="backBets">#b3e5fc</color>
+    <color name="backBetsDark">#81d4fa</color>
+    <color name="backBetLight">#e6ffff</color>
     <color name="layBets">#f8bbd0</color>
+    <color name="layBetsDark">#ffc1e3</color>
+    <color name="layBetsLigth">#ffeeff</color>
+
     <color name="greeTitle">#9ccc65</color>
+
 </resources>

@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:text="@string/time_example"
             android:textStyle="bold"
-            android:textColor="@color/iconTextColor"
+            android:textColor="@color/white"
             android:gravity="center"
             android:textAlignment="center"/>
     </LinearLayout>
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:text="@string/local_soccer_team_example"
-            android:textColor="@color/iconTextColor"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textAlignment="center"/>
 
@@ -109,7 +109,7 @@
             android:layout_margin="4dp"
             android:text="@string/draw_text"
             android:textStyle="bold"
-            android:textColor="@color/iconTextColor"
+            android:textColor="@color/white"
             android:textAlignment="center"/>
 
         <TextView
@@ -121,7 +121,7 @@
             android:layout_margin="4dp"
             android:text="@string/visitor_soccer_team_example"
             android:textStyle="bold"
-            android:textColor="@color/iconTextColor"
+            android:textColor="@color/white"
             android:textAlignment="center"/>
     </LinearLayout>
 
@@ -157,21 +157,13 @@
 
             <Button
                 android:id="@+id/backLocalRunnerButton"
-                android:layout_gravity="center"
                 android:text="1.06"
-                android:layout_width="50dp"
-                android:height="15dp"
-                android:background="@color/backBets"
-                android:textSize="12sp"/>
+                style="@style/BackBetButton"/>
 
             <Button
                 android:id="@+id/layLocalRunnerButton"
-                android:layout_gravity="center"
                 android:text="2.86"
-                android:background="@color/layBets"
-                android:layout_width="50dp"
-                android:height="15dp"
-                android:textSize="12sp"/>
+                style="@style/LayBetButton"/>
 
         </GridLayout>
 
@@ -200,21 +192,13 @@
 
             <Button
                 android:id="@+id/backDrawRunnerButton"
-                android:layout_gravity="center"
                 android:text="1.87"
-                android:layout_width="50dp"
-                android:height="15dp"
-                android:background="@color/backBets"
-                android:textSize="12sp"/>
+                style="@style/BackBetButton"/>
 
             <Button
                 android:id="@+id/layDrawRunnerButton"
-                android:layout_gravity="center"
                 android:text="12.44"
-                android:background="@color/layBets"
-                android:layout_width="50dp"
-                android:height="15dp"
-                android:textSize="12sp"/>
+                style="@style/LayBetButton"/>
 
         </GridLayout>
 
@@ -243,31 +227,19 @@
 
             <Button
                 android:id="@+id/backVisitorRunnerButton"
-                android:layout_gravity="center"
                 android:text="3.76"
-                android:layout_width="50dp"
-                android:height="15dp"
-                android:background="@color/backBets"
-                android:textSize="12sp"/>
+                style="@style/BackBetButton"/>
 
             <Button
                 android:id="@+id/layVisitorRunnerButton"
-                android:layout_gravity="center"
                 android:text="4.99"
-                android:background="@color/layBets"
-                android:layout_width="50dp"
-                android:height="15dp"
-                android:textSize="12sp"/>
+                style="@style/LayBetButton"/>
 
         </GridLayout>
     </LinearLayout>
 
      <Button
         android:id="@+id/viewMoreMarkets"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/colorSecondary"
         android:text="@string/show_more"
-        android:layout_marginTop="@dimen/margin_place_bet_10dp"
-        android:layout_marginBottom="@dimen/margin_place_bet_10dp"/>
+        style="@style/ButtonShowMore"/>
 </LinearLayout>

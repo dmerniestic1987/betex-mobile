@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:text="@string/local_soccer_team_example"
-            android:textColor="@color/iconTextColor"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textAlignment="center"/>
 
@@ -83,7 +83,7 @@
             android:layout_margin="4dp"
             android:text="@string/visitor_soccer_team_example"
             android:textStyle="bold"
-            android:textColor="@color/iconTextColor"
+            android:textColor="@color/white"
             android:textAlignment="center"/>
     </LinearLayout>
 
@@ -119,21 +119,13 @@
 
             <Button
                 android:id="@+id/backLocalRunnerButton"
-                android:layout_gravity="center"
                 android:text="1.06"
-                android:layout_width="50dp"
-                android:height="15dp"
-                android:background="@color/backBets"
-                android:textSize="12sp"/>
+                style="@style/BackBetButton"/>
 
             <Button
                 android:id="@+id/layLocalRunnerButton"
-                android:layout_gravity="center"
                 android:text="2.86"
-                android:background="@color/layBets"
-                android:layout_width="50dp"
-                android:height="15dp"
-                android:textSize="12sp"/>
+                style="@style/LayBetButton"/>
 
         </GridLayout>
 
@@ -167,21 +159,13 @@
 
             <Button
                 android:id="@+id/backVisitorRunnerButton"
-                android:layout_gravity="center"
                 android:text="3.76"
-                android:layout_width="50dp"
-                android:height="15dp"
-                android:background="@color/backBets"
-                android:textSize="12sp"/>
+                style="@style/BackBetButton"/>
 
             <Button
                 android:id="@+id/layVisitorRunnerButton"
-                android:layout_gravity="center"
-                android:text="4.99"
-                android:background="@color/layBets"
-                android:layout_width="50dp"
-                android:height="15dp"
-                android:textSize="12sp"/>
+                android:text="41.99"
+                style="@style/LayBetButton"/>
 
         </GridLayout>
     </LinearLayout>

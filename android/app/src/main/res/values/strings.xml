@@ -17,8 +17,8 @@
     <string name="title_nav_share">Compartir</string>
     <string name="title_nav_wallet">Mi billetera</string>
 
-    <string name="title_event_type_soccer">Fútbol</string>
-    <string name="title_event_type_boxing">Boxeo</string>
+    <string name="title_event_type_soccer">FÚTBOL</string>
+    <string name="title_event_type_boxing">BOXEO</string>
     <string name="title_event_type_mma">MMA</string>
 
     <string name="default_event_type">Fútbol</string>

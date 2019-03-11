@@ -19,8 +19,18 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:background">@drawable/button_yellow_background</item>
+    </style>
 
-        <item name="android:background">@color/colorSecondary</item>
+    <style name="ButtonShowMore" parent="AppTheme.ButttonBar">
+        <item name="android:background">@drawable/button_yellow_background</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_place_bet_10dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="AppTheme.BottomNavigationView" parent="AppTheme">
@@ -30,9 +40,26 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+
     <style name="AppTheme.Content" parent="AppTheme">
         <item name="android:background">@color/colorContentPrimaryDark</item>
-        <item name="android:textColor">@color/iconTextColor</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BetButton">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">@dimen/bet_button_top_margin</item>
+    </style>
+
+    <style name="LayBetButton" parent="BetButton">
+        <item name="android:background">@drawable/button_lay_bet_background</item>
+    </style>
+
+    <style name="BackBetButton" parent="BetButton">
+        <item name="android:background">@drawable/button_back_bet_background</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
