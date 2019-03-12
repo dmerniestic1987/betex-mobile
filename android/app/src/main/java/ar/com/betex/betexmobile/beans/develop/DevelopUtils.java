@@ -35,9 +35,9 @@ public class DevelopUtils {
         m.setEventId(new BigInteger("1"));
         m.setCountryCode("AR");
         m.setStartDateGMT(calendar.getTime());
-        m.addRunner(new Runner(new BigInteger("1"), "Lesnar", R.mipmap.mma_fighter));
+        m.addRunner(new Runner(new BigInteger("1"), "Lesnar", R.drawable.mma_fighter));
         m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
-        m.addRunner(new Runner(new BigInteger("2"), "Jon Jones", R.mipmap.mma_fighter));
+        m.addRunner(new Runner(new BigInteger("2"), "Jon Jones", R.drawable.mma_fighter));
         marketList.add(m);
 
         //******************************
@@ -50,9 +50,9 @@ public class DevelopUtils {
         m.setEventType("MMA");
         m.setEventId(new BigInteger("2"));
         m.setStartDateGMT(calendar.getTime());
-        m.addRunner(new Runner(new BigInteger("13"), "Diego Sánchez", R.mipmap.mma_fighter));
+        m.addRunner(new Runner(new BigInteger("13"), "Diego Sánchez", R.drawable.mma_fighter));
         m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
-        m.addRunner(new Runner(new BigInteger("23"), "Anderson Silva", R.mipmap.mma_fighter));
+        m.addRunner(new Runner(new BigInteger("23"), "Anderson Silva", R.drawable.mma_fighter));
         marketList.add(m);
 
         //******************************
@@ -71,9 +71,9 @@ public class DevelopUtils {
         m.setEventType("MMA");
         m.setEventId(new BigInteger("8782"));
         m.setStartDateGMT(calendar.getTime());
-        m.addRunner(new Runner(new BigInteger("9713"), "Son Gokú", R.mipmap.mma_fighter));
+        m.addRunner(new Runner(new BigInteger("9713"), "Son Gokú", R.drawable.mma_fighter));
         m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
-        m.addRunner(new Runner(new BigInteger("9723"), "Vegeta", R.mipmap.mma_fighter));
+        m.addRunner(new Runner(new BigInteger("9723"), "Vegeta", R.drawable.mma_fighter));
         marketList.add(m);
 
         return marketList;
@@ -100,9 +100,9 @@ public class DevelopUtils {
         m.setEventId(new BigInteger("1"));
         m.setCountryCode("AR");
         m.setStartDateGMT(calendar.getTime());
-        m.addRunner(new Runner(new BigInteger("1"), "Many Pacquiao", R.mipmap.boxeador));
+        m.addRunner(new Runner(new BigInteger("1"), "Many Pacquiao", R.drawable.boxeador));
         m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
-        m.addRunner(new Runner(new BigInteger("2"), "Canelo Alvarez", R.mipmap.boxeador));
+        m.addRunner(new Runner(new BigInteger("2"), "Canelo Alvarez", R.drawable.boxeador));
         marketList.add(m);
 
         //******************************
@@ -115,9 +115,9 @@ public class DevelopUtils {
         m.setEventType("Boxeo");
         m.setEventId(new BigInteger("2"));
         m.setStartDateGMT(calendar.getTime());
-        m.addRunner(new Runner(new BigInteger("13"), "Roger Stajman", R.mipmap.boxeador));
+        m.addRunner(new Runner(new BigInteger("13"), "Roger Stajman", R.drawable.boxeador));
         m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
-        m.addRunner(new Runner(new BigInteger("23"), "Golovkin", R.mipmap.boxeador));
+        m.addRunner(new Runner(new BigInteger("23"), "Golovkin", R.drawable.boxeador));
         marketList.add(m);
 
         //******************************
@@ -136,9 +136,9 @@ public class DevelopUtils {
         m.setEventType("Boxeo");
         m.setEventId(new BigInteger("8782"));
         m.setStartDateGMT(calendar.getTime());
-        m.addRunner(new Runner(new BigInteger("9713"), "Jorge Lopez", R.mipmap.boxeador));
+        m.addRunner(new Runner(new BigInteger("9713"), "Jorge Lopez", R.drawable.boxeador));
         m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
-        m.addRunner(new Runner(new BigInteger("9723"), "Jorge Perez", R.mipmap.boxeador));
+        m.addRunner(new Runner(new BigInteger("9723"), "Jorge Perez", R.drawable.boxeador));
         marketList.add(m);
 
         return marketList;
@@ -157,8 +157,8 @@ public class DevelopUtils {
         m.setEventType(market.getEventType());
         m.setEventId(market.getEventId());
         m.setStartDateGMT(market.getStartDateGMT());
-        m.addRunner(new Runner(new BigInteger("1"), "Menos de 2.5 goles", R.mipmap.menor_goles));
-        m.addRunner(new Runner(new BigInteger("2"), "Más de 2.5 goles", R.mipmap.mayor_goles));
+        m.addRunner(new Runner(new BigInteger("1"), "Menos de 2.5 goles", R.drawable.menor_goles));
+        m.addRunner(new Runner(new BigInteger("2"), "Más de 2.5 goles", R.drawable.mayor_goles));
         m.setMarketName("Total de goles");
         marketList.add(m);
 
@@ -171,8 +171,8 @@ public class DevelopUtils {
         m.setEventType(market.getEventType());
         m.setEventId(market.getEventId());
         m.setStartDateGMT(market.getStartDateGMT());
-        m.addRunner(new Runner(new BigInteger("1"), "Goles Pares", R.mipmap.menor_goles));
-        m.addRunner(new Runner(new BigInteger("2"), "Goles impares", R.mipmap.mayor_goles));
+        m.addRunner(new Runner(new BigInteger("1"), "Goles Pares", R.drawable.menor_goles));
+        m.addRunner(new Runner(new BigInteger("2"), "Goles impares", R.drawable.mayor_goles));
         m.setMarketName("Goles pares e impares");
         marketList.add(m);
 
@@ -192,8 +192,8 @@ public class DevelopUtils {
         m.setEventType(market.getEventType());
         m.setEventId(market.getEventId());
         m.setStartDateGMT(market.getStartDateGMT());
-        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO o DQ", R.mipmap.boxing_training));
-        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.mipmap.boxing_definiton));
+        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO o DQ", R.drawable.boxing_training));
+        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.drawable.boxing_definiton));
         m.setMarketName(market.getRunners().get(0).getRunnerName() + " - Victoria");
         marketList.add(m);
 
@@ -206,8 +206,8 @@ public class DevelopUtils {
         m.setEventType(market.getEventType());
         m.setEventId(market.getEventId());
         m.setStartDateGMT(market.getStartDateGMT());
-        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO o DQ", R.mipmap.boxing_training));
-        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.mipmap.boxing_definiton));
+        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO o DQ", R.drawable.boxing_training));
+        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.drawable.boxing_definiton));
         m.setMarketName(market.getRunners().get(2).getRunnerName() + " - Victoria");
         marketList.add(m);
 
@@ -227,8 +227,8 @@ public class DevelopUtils {
         m.setEventType(market.getEventType());
         m.setEventId(market.getEventId());
         m.setStartDateGMT(market.getStartDateGMT());
-        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO/SUB o DQ", R.mipmap.mma_rodillazo));
-        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.mipmap.boxing_definiton));
+        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO/SUB o DQ", R.drawable.mma_rodillazo));
+        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.drawable.boxing_definiton));
         m.setMarketName(market.getRunners().get(0).getRunnerName() + " - Victoria");
         marketList.add(m);
 
@@ -241,8 +241,8 @@ public class DevelopUtils {
         m.setEventType(market.getEventType());
         m.setEventId(market.getEventId());
         m.setStartDateGMT(market.getStartDateGMT());
-        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO/SUB o DQ", R.mipmap.mma_rodillazo));
-        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.mipmap.boxing_definiton));
+        m.addRunner(new Runner(new BigInteger("1"), "KO/TKO/SUB o DQ", R.drawable.mma_rodillazo));
+        m.addRunner(new Runner(new BigInteger("2"), "Decisión", R.drawable.boxing_definiton));
         m.setMarketName(market.getRunners().get(2).getRunnerName() + " - Victoria");
         marketList.add(m);
 
@@ -272,9 +272,9 @@ public class DevelopUtils {
         m.setEventId(new BigInteger("1"));
         m.setCountryCode("AR");
         m.setStartDateGMT(calendar.getTime());
-        m.addRunner(new Runner(new BigInteger("1"), "Boca Juniors", R.mipmap.boca_juniors));
+        m.addRunner(new Runner(new BigInteger("1"), "Boca Juniors", R.drawable.boca_juniors));
         m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
-        m.addRunner(new Runner(new BigInteger("2"), "River Plate", R.mipmap.river_plate));
+        m.addRunner(new Runner(new BigInteger("2"), "River Plate", R.drawable.river_plate));
         marketList.add(m);
 
         //******************************
@@ -287,9 +287,9 @@ public class DevelopUtils {
         m.setEventType("Fútbol");
         m.setEventId(new BigInteger("2"));
         m.setStartDateGMT(calendar.getTime());
-        m.addRunner(new Runner(new BigInteger("13"), "San Lorenzo", R.mipmap.san_lorenzo));
+        m.addRunner(new Runner(new BigInteger("13"), "San Lorenzo", R.drawable.san_lorenzo));
         m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
-        m.addRunner(new Runner(new BigInteger("23"), "Huracán", R.mipmap.huracan));
+        m.addRunner(new Runner(new BigInteger("23"), "Huracán", R.drawable.huracan));
         marketList.add(m);
 
         //******************************
@@ -308,9 +308,9 @@ public class DevelopUtils {
         m.setEventType("Fútbol");
         m.setEventId(new BigInteger("8782"));
         m.setStartDateGMT(calendar.getTime());
-        m.addRunner(new Runner(new BigInteger("9713"), "Liverpool", R.mipmap.liverpool));
+        m.addRunner(new Runner(new BigInteger("9713"), "Liverpool", R.drawable.liverpool));
         m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
-        m.addRunner(new Runner(new BigInteger("9723"), "Manchester City", R.mipmap.manchester_city));
+        m.addRunner(new Runner(new BigInteger("9723"), "Manchester City", R.drawable.manchester_city));
         marketList.add(m);
 
         //******************************
@@ -323,9 +323,9 @@ public class DevelopUtils {
         m.setEventType("Fútbol");
         m.setEventId(new BigInteger("75412"));
         m.setStartDateGMT(calendar.getTime());
-        m.addRunner(new Runner(new BigInteger("9713"), "Corintians", R.mipmap.corinthians));
+        m.addRunner(new Runner(new BigInteger("9713"), "Corintians", R.drawable.corinthians));
         m.addRunner(new Runner(new BigInteger("8888"), "Empate", 0));
-        m.addRunner(new Runner(new BigInteger("9723"), "Colo colo", R.mipmap.colo_colo));
+        m.addRunner(new Runner(new BigInteger("9723"), "Colo colo", R.drawable.colo_colo));
         marketList.add(m);
 
         return marketList;
@@ -336,11 +336,11 @@ public class DevelopUtils {
         BigDecimal etherInUsd = new BigDecimal(150.30).setScale(2, RoundingMode.HALF_DOWN);
         BigDecimal etherBalance = new BigDecimal(100.13).setScale(2, RoundingMode.HALF_DOWN);
 
-        currencies.add(new Currency("ETH", etherBalance, "Ether", etherInUsd, R.mipmap.eth));
+        currencies.add(new Currency("ETH", etherBalance, "Ether", etherInUsd, R.drawable.eth));
 
         BigDecimal pgsBalance = new BigDecimal(150.85).setScale(2, RoundingMode.HALF_DOWN);
         BigDecimal pgsInUsd = new BigDecimal(150.30).setScale(2, RoundingMode.HALF_DOWN);
-        currencies.add(new Currency("BTX", pgsBalance, "Betex", pgsInUsd, R.mipmap.pgs));
+        currencies.add(new Currency("BTX", pgsBalance, "Betex", pgsInUsd, R.drawable.pgs));
         return currencies;
     }
 }

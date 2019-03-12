@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.beans.Currency;
@@ -45,7 +47,16 @@ public class CurrencyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_currency, container, false);
+        View view = inflater.inflate(R.layout.fragment_currency, container, false);
+        TextView title = view.findViewById(R.id.currencyTitle);
+        title.setText(currency.getCurrencyName());
+
+        TextView currencyBalance = view.findViewById(R.id.currencyBalance);
+        currencyBalance.setText(currency.getBalance().toString() + " " + currency.getSymbol());
+
+        ImageView currencyImage = view.findViewById(R.id.currencyImage);
+        currencyImage.setImageResource(currency.getImgId());
+        return view;
     }
 
 }

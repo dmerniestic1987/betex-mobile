@@ -61,21 +61,32 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">12sp</item>
         <item name="android:layout_marginTop">@dimen/bet_button_top_margin</item>
-        <item name="android:drawableTop">@drawable/ic_place_bet</item>
+        <item name="android:drawableTop">@drawable/ic_my_bets</item>
     </style>
 
     <style name="LayBetButton" parent="BetButton">
-        <item name="android:background">@drawable/button_lay_bet_background</item>
+        <item name="android:background">@drawable/button_yellow_background</item>
     </style>
 
     <style name="BackBetButton" parent="BetButton">
-        <item name="android:background">@drawable/button_back_bet_background</item>
+        <item name="android:background">@drawable/button_yellow_background</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ItemCurrency">
+        <item name="android:background">@drawable/item_currency_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/padding_currency_item</item>
+        <item name="android:paddingBottom">@dimen/padding_currency_item</item>
+        <item name="android:paddingRight">@dimen/margin_place_bet_10dp</item>
+        <item name="android:paddingLeft">@dimen/margin_place_bet_10dp</item>
+        <item name="android:layout_marginTop">@dimen/wallet_margin_fragments</item>
+        <item name="android:layout_marginBottom">@dimen/wallet_margin_fragments</item>
+    </style>
 </resources>
 
 

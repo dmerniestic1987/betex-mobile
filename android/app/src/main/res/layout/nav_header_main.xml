@@ -19,7 +19,7 @@
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:layout_marginTop="8dp"
-        app:srcCompat="@mipmap/persona_round" />
+        app:srcCompat="@drawable/persona_round" />
 
     <TextView
         android:id="@+id/textView"
