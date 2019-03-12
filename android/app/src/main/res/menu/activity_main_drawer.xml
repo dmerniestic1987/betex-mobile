@@ -10,7 +10,7 @@
             android:title="@string/title_nav_events" />
         <item
             android:id="@+id/nav_myBets"
-            android:icon="@drawable/ic_my_bets"
+            android:icon="@drawable/ic_betex"
             android:title="@string/title_my_bets" />
         <item
             android:id="@+id/nav_challeges"
