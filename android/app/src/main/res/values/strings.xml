@@ -44,4 +44,9 @@
     <string name="total_quantity_text">Total de goles</string>
     <string name="send_text">Enviar</string>
     <string name="receive_text">Recibir</string>
+
+    <string name="exit_dialog_fragment_title">Betex Mobile</string>
+    <string name="exit_dialog_fragment_content">¿Desea salir de Betex Mobile?</string>
+    <string name="exit_dialog_fragment_exit">Salir</string>
+    <string name="exit_dialog_fragment_continue">Seguir jugando</string>
 </resources>

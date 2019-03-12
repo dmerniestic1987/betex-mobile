@@ -1,5 +1,6 @@
 package ar.com.betex.betexmobile.activities;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -22,16 +23,19 @@ import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
 import ar.com.betex.betexmobile.fragments.CurrencyFragment;
 import ar.com.betex.betexmobile.fragments.CurrencyFragmentListFragment;
+import ar.com.betex.betexmobile.fragments.ExitDialogFragment;
 import ar.com.betex.betexmobile.fragments.MarketEventListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
+import ar.com.betex.betexmobile.fragments.WalletFragment;
 import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
 import ar.com.betex.betexmobile.fragments.listener.OnPlaceBetFragmentListener;
 
 public class MainActivity extends AppCompatActivity implements MarketButtonBarFragment.OnEventTypeFilterClickedListener
                                                              , MarketEventListFragments.OnEventMarketInteractionListener
                                                              , OnPlaceBetFragmentListener
-                                                             , OnWalletCurrencyListSelectedListener {
+                                                             , OnWalletCurrencyListSelectedListener
+                                                             , ExitDialogFragment.OnContinuePlayingListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,18 +56,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottonNavigation);
         navigation.setOnNavigationItemSelectedListener(this.onButtonNavigationViewItemSelectedListener);
 
-        this.addFragment(MarketFragment.newInstance(), MarketFragment.TAG);
-    }
-
-    /**
-     * Agrega un fragment a la pila del activity
-     * @param fragment
-     * @param tag
-     */
-    protected void addFragment(Fragment fragment, String tag){
-        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.contentFrameLayout, fragment, tag);
-        transaction.commit();
+        this.replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
     }
 
     /**
@@ -83,7 +76,13 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            //No quedan fragments para mostrar
+            if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                getSupportFragmentManager().popBackStack();
+            } else {
+                ExitDialogFragment myDiag = new ExitDialogFragment();
+                myDiag.show(getSupportFragmentManager(), "Diag");
+            }
         }
     }
 
@@ -146,11 +145,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
             } else if (id == R.id.nav_settings) {
 
             } else if (id == R.id.nav_wallet) {
-                CurrencyFragmentListFragment currencyFragmentListFragment = CurrencyFragmentListFragment.newInstance(DevelopUtils.hardcodeCryptoCurrencies());
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.contentFrameLayout, currencyFragmentListFragment, CurrencyFragmentListFragment.TAG);
-                transaction.commit();
-
+                replaceFragment(new WalletFragment(), WalletFragment.TAG);
             }
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
@@ -223,7 +218,12 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
 
     @Override
     public void onCurrencySelected(Currency currency) {
-        CurrencyFragment fragment = CurrencyFragment.newInstance(currency);
-        replaceFragment(fragment, CurrencyFragment.TAG);
+        WalletFragment walletFragment = (WalletFragment) getSupportFragmentManager().findFragmentByTag(WalletFragment.TAG);
+        walletFragment.drawCurrencyFragment(currency);
+    }
+
+    @Override
+    public void loadMarketEvents(){
+        this.replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
     }
 }

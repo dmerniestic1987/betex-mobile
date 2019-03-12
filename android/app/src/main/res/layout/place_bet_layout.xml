@@ -417,13 +417,7 @@
 
     <Button
         android:id="@+id/placeBetButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/margin_place_bet_8dp"
-        android:layout_marginLeft="@dimen/margin_place_bet_8dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
         android:text="@string/place_bet_buton_text"
-        android:background="@color/colorSecondary"/>
+        style="@style/ButtonPlaceBet"/>
 
 </LinearLayout>
