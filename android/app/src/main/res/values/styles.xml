@@ -10,6 +10,13 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="NavigationBarImage">
+        <item name="android:layout_width">@dimen/navigation_bar_image_width</item>
+        <item name="android:layout_height">@dimen/navigation_bar_image_height</item>
+        <item name="contentDescription">@string/nav_header_desc</item>
+        <item name="android:paddingTop">@dimen/nav_header_vertical_spacing</item>
+    </style>
+
     <style name="AppTheme.ButttonBar">
         <item name="android:layout_margin">@dimen/button_bar_margin </item>
     </style>
@@ -36,10 +43,11 @@
     <style name="ButtonPlaceBet" parent="ButtonShowMore">
         <item name="android:layout_width">match_parent</item>
         <item name="android:drawableTop">@drawable/ic_betex</item>
-        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingTop">10dp</item>
         <item name="android:paddingBottom">6dp</item>
-        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingLeft">6dp</item>
         <item name="android:paddingRight">10dp</item>
+        <item name="android:drawablePadding">4dp</item>
     </style>
 
     <style name="AppTheme.BottomNavigationView" parent="AppTheme">
@@ -80,12 +88,34 @@
         <item name="android:background">@drawable/item_currency_background</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingTop">@dimen/padding_currency_item</item>
-        <item name="android:paddingBottom">@dimen/padding_currency_item</item>
-        <item name="android:paddingRight">@dimen/margin_place_bet_10dp</item>
-        <item name="android:paddingLeft">@dimen/margin_place_bet_10dp</item>
         <item name="android:layout_marginTop">@dimen/wallet_margin_fragments</item>
         <item name="android:layout_marginBottom">@dimen/wallet_margin_fragments</item>
+    </style>
+    <style name="ItemCurrency.ImageView">
+        <item name="android:layout_width">@dimen/item_currency_list_width</item>
+        <item name="android:layout_height">@dimen/item_currency_list_height</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="ItemEventMarket">
+
+    </style>
+    <style name="ItemEventMarket.ImageView">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_height">@dimen/item_market_event_image_height</item>
+        <item name="android:layout_width">@dimen/item_market_event_image_width</item>
+    </style>
+
+    <style name="ItemEventMarket.MainData">
+        <item name="android:layout_gravity">right</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ItemEventMarket.SubData" parent="ItemEventMarket.MainData">
+        <item name="android:textSize">11sp</item>
     </style>
 </resources>
 

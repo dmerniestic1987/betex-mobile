@@ -36,11 +36,7 @@
 
         <ImageView
             android:id="@+id/imgLocalCompetitor"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
+            style="@style/ItemEventMarket.ImageView"
             app:srcCompat="@drawable/boca_juniors" />
 
         <LinearLayout
@@ -75,11 +71,7 @@
 
         <ImageView
             android:id="@+id/imgVisitorCompetitor"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
+            style="@style/ItemEventMarket.ImageView"
             app:srcCompat="@drawable/river_plate" />
     </LinearLayout>
 

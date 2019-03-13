@@ -20,4 +20,16 @@
 
     <dimen name="wallet_margin_fragments">6dp</dimen>
     <dimen name="padding_currency_item">15dp</dimen>
+
+    <dimen name="currency_detail_image_width">120dp</dimen>
+    <dimen name="currency_detail_image_height">120dp</dimen>
+
+    <dimen name="navigation_bar_image_width">100dp</dimen>
+    <dimen name="navigation_bar_image_height">100dp</dimen>
+
+    <dimen name="item_market_event_image_width">90dp</dimen>
+    <dimen name="item_market_event_image_height">90dp</dimen>
+
+    <dimen name="item_currency_list_width">45dp</dimen>
+    <dimen name="item_currency_list_height">45dp</dimen>
 </resources>

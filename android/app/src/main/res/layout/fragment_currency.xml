@@ -18,8 +18,9 @@
 
         <ImageView
             android:id="@+id/currencyImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/currency_detail_image_width"
+            android:layout_height="@dimen/currency_detail_image_height"
+            android:layout_gravity="center"
             android:background="@color/colorContentPrimary"
             android:src="@drawable/eth"
             android:layout_margin="@dimen/margin_place_bet_10dp"/>

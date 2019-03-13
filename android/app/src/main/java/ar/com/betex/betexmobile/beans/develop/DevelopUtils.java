@@ -334,12 +334,12 @@ public class DevelopUtils {
     public static List<Currency> hardcodeCryptoCurrencies(){
         List<Currency> currencies = new ArrayList<Currency>();
         BigDecimal etherInUsd = new BigDecimal(150.30).setScale(2, RoundingMode.HALF_DOWN);
-        BigDecimal etherBalance = new BigDecimal(100.13).setScale(2, RoundingMode.HALF_DOWN);
+        BigDecimal etherBalance = new BigDecimal(15050.13).setScale(2, RoundingMode.HALF_DOWN);
 
         currencies.add(new Currency("ETH", etherBalance, "Ether", etherInUsd, R.drawable.eth));
 
         BigDecimal pgsBalance = new BigDecimal(150.85).setScale(2, RoundingMode.HALF_DOWN);
-        BigDecimal pgsInUsd = new BigDecimal(150.30).setScale(2, RoundingMode.HALF_DOWN);
+        BigDecimal pgsInUsd = new BigDecimal(1500.30).setScale(2, RoundingMode.HALF_DOWN);
         currencies.add(new Currency("BTX", pgsBalance, "Betex", pgsInUsd, R.drawable.pgs));
         return currencies;
     }
