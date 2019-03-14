@@ -19,9 +19,9 @@
         android:text="@string/my_bets_in_play_title"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="20sp"
         android:textColor="@color/white"
-        android:padding="@dimen/margin_place_bet_10dp"
+        android:padding="@dimen/bet_button_top_margin"
+        android:textSize="15sp"
         />
 
     <fragment

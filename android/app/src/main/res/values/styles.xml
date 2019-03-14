@@ -116,6 +116,16 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="ItemMyBetStakeText" parent="ItemMyBetsText">
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="ItemMyBetStakeValue" parent="ItemMyBetsText">
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="ItemCurrency.ImageView">
         <item name="android:layout_width">@dimen/item_currency_list_width</item>
         <item name="android:layout_height">@dimen/item_currency_list_height</item>

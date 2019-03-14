@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/stakeTitle"
+        style="@style/ItemMyBetStakeText"
+        android:layout_width="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="140dp"
+        android:text="@string/stake_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/stakeValue"
+        style="@style/ItemMyBetStakeValue"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="16dp"
+        android:text="100"
+        app:layout_constraintStart_toEndOf="@+id/stakeTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stakeSymbol"
+        style="@style/ItemMyBetStakeValue"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/cryptocurrency_default"
+        app:layout_constraintStart_toEndOf="@+id/stakeValue"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/oddTitle"
+        style="@style/ItemMyBetStakeText"
+        android:layout_width="@dimen/my_bet_item_stake_text_view_width"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/odd_text"
+        app:layout_constraintEnd_toStartOf="@+id/oddValue"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/oddValue"
+        style="@style/ItemMyBetStakeValue"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:text="10.54"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/liabilityText"
+        style="@style/ItemMyBetStakeText"
+        android:layout_width="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/liability_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stakeTitle" />
+
+    <TextView
+        android:id="@+id/liabilityValue"
+        style="@style/ItemMyBetStakeValue"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="8dp"
+        android:text="100"
+        app:layout_constraintStart_toEndOf="@+id/liabilityText"
+        app:layout_constraintTop_toBottomOf="@+id/stakeValue" />
+
+    <TextView
+        android:id="@+id/liabilitySymbol"
+        style="@style/ItemMyBetStakeValue"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/cryptocurrency_default"
+        app:layout_constraintStart_toEndOf="@+id/liabilityValue"
+        app:layout_constraintTop_toBottomOf="@+id/stakeSymbol" />
+
+    <TextView
+        android:id="@+id/matchedTitle"
+        style="@style/ItemMyBetStakeText"
+        android:layout_width="@dimen/my_bet_item_stake_text_view_width"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/matched_bet_text"
+        app:layout_constraintEnd_toStartOf="@+id/matchedValue"
+        app:layout_constraintTop_toBottomOf="@+id/oddTitle" />
+
+    <TextView
+        android:id="@+id/matchedValue"
+        style="@style/ItemMyBetStakeValue"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:text="10.54"
+        app:layout_constraintEnd_toStartOf="@+id/matchedSymbol"
+        app:layout_constraintTop_toBottomOf="@+id/oddValue" />
+
+    <TextView
+        android:id="@+id/matchedSymbol"
+        style="@style/ItemMyBetStakeValue"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/cryptocurrency_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oddValue" />
+
+</android.support.constraint.ConstraintLayout>

@@ -19,9 +19,9 @@
         android:text="@string/default_event_type"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textColor="@color/white"
-        android:padding="@dimen/margin_place_bet_10dp"
+        android:padding="@dimen/bet_button_top_margin"
         />
 
     <FrameLayout

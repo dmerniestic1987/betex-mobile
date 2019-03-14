@@ -11,7 +11,7 @@
         android:id="@+id/matchedBetButton"
         android:drawableTop="@drawable/ic_check"
         style="@style/AppTheme.ButttonBar.Button"
-        android:text="@string/matched_bet"/>
+        android:text="@string/matched_bet_text"/>
 
     <Button
         android:id="@+id/unmutchedBetButton"

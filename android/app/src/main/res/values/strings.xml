@@ -53,10 +53,14 @@
     <string name="exit_dialog_fragment_continue">Seguir jugando</string>
     <string name="balance_example">104.56</string>
 
-    <string name="my_bets_in_play_title">En juego</string>
+    <string name="my_bets_in_play_title">Jugando</string>
     <string name="my_bets_all_tittle">Todas</string>
     <string name="my_bets_back">Devueltas</string>
-    <string name="matched_bet">Matcheadas</string>
+    <string name="matched_bet_text">Matcheadas</string>
     <string name="unmutched_bet">Sin Matchear</string>
     <string name="search_title">Buscar</string>
+    <string name="soccer_event_example_my_bet">Mancester city - Manchester United</string>
+    <string name="market_type_example_my_bet">Más de 2.5 goles</string>
+    <string name="liability_text">En riesgo</string>
+    <string name="stake_text">Apuesta</string>
 </resources>

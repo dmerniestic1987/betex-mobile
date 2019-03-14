@@ -38,4 +38,5 @@
     <dimen name="item_currency_list_height">45dp</dimen>
 
     <dimen name="button_text_size">12sp</dimen>
+    <dimen name="my_bet_item_stake_text_view_width">65dp</dimen>
 </resources>
