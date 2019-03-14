@@ -25,7 +25,7 @@ public class ExitDialogFragment extends DialogFragment {
     }
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
-        return new AlertDialog.Builder(getActivity())
+        Dialog dialog = new AlertDialog.Builder(getActivity())
             .setTitle(this.getResources().getString(R.string.exit_dialog_fragment_title))
             .setMessage(this.getResources().getString(R.string.exit_dialog_fragment_content))
             .setPositiveButton(this.getResources().getString(R.string.exit_dialog_fragment_exit), new DialogInterface.OnClickListener() {
@@ -44,6 +44,8 @@ public class ExitDialogFragment extends DialogFragment {
                 }
             })
             .create();
+
+        return dialog;
     }
 
     public interface OnContinuePlayingListener{
