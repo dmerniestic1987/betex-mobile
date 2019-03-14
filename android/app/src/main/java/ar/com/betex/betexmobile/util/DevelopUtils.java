@@ -1,4 +1,4 @@
-package ar.com.betex.betexmobile.beans.develop;
+package ar.com.betex.betexmobile.util;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

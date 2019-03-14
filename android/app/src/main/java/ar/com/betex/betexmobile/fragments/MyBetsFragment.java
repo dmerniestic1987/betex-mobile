@@ -1,7 +1,5 @@
 package ar.com.betex.betexmobile.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -11,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
+import ar.com.betex.betexmobile.util.BetexUtils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +24,12 @@ public class MyBetsFragment extends Fragment {
 
     public MyBetsFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(BetexUtils.CURRENT_FRAGMENT_SELECTED_BY_USER, TAG);
     }
 
     /**

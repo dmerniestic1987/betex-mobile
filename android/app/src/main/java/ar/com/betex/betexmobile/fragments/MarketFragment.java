@@ -1,6 +1,7 @@
 package ar.com.betex.betexmobile.fragments;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -13,7 +14,8 @@ import java.util.List;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.beans.Market;
-import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
+import ar.com.betex.betexmobile.util.BetexUtils;
+import ar.com.betex.betexmobile.util.DevelopUtils;
 
 /**
  * MarketFragment es la pantalla principal que se ve cuando el usuario
@@ -37,6 +39,12 @@ public class MarketFragment extends Fragment{
     public static MarketFragment newInstance() {
         MarketFragment fragment = new MarketFragment();
         return fragment;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(BetexUtils.CURRENT_FRAGMENT_SELECTED_BY_USER, TAG);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package ar.com.betex.betexmobile.activities;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -21,9 +20,8 @@ import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.beans.Bet;
 import ar.com.betex.betexmobile.beans.Currency;
 import ar.com.betex.betexmobile.beans.Market;
-import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
-import ar.com.betex.betexmobile.fragments.CurrencyFragment;
-import ar.com.betex.betexmobile.fragments.CurrencyFragmentListFragment;
+import ar.com.betex.betexmobile.util.BetexUtils;
+import ar.com.betex.betexmobile.util.DevelopUtils;
 import ar.com.betex.betexmobile.fragments.ExitDialogFragment;
 import ar.com.betex.betexmobile.fragments.MarketEventListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
@@ -42,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                                                              , ExitDialogFragment.OnContinuePlayingListener
                                                              , MyBetsButtonBar.OnMyBetTypeFilterClickedListener
                                                              , OnMyBetSelectedListener {
+    private Fragment currentFragment;
+    private static final String CURRENT_FRAGMENT = "current_fragment_main_activity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +62,21 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottonNavigation);
         navigation.setOnNavigationItemSelectedListener(this.onButtonNavigationViewItemSelectedListener);
 
-        this.replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
+        if (savedInstanceState == null) {
+            this.replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
+        }
+        else{
+            currentFragment = getSupportFragmentManager().getFragment(savedInstanceState, CURRENT_FRAGMENT);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        //Guaradamos una instancia del fragment actual porque al rotar el dispositivo se dibujaba el
+        //fragment de mercados aunque estemos en otra funcionalidad
+        getSupportFragmentManager().putFragment(outState, CURRENT_FRAGMENT, currentFragment);
     }
 
     /**
@@ -71,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
      * @param tag
      */
     protected void replaceFragment(Fragment fragment, String tag){
+        this.currentFragment = fragment;
         FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.contentFrameLayout, fragment, tag);
         transaction.commit();
@@ -237,7 +252,6 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
 
     @Override
     public void onMyBetTypeClicked(String eventType) {
-
         MyBetsFragment marketFragment = (MyBetsFragment) getSupportFragmentManager().findFragmentByTag(MyBetsFragment.TAG);
         marketFragment.setMyBetTitle(eventType);
     }
