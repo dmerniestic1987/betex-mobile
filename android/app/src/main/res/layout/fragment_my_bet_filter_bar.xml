@@ -8,20 +8,22 @@
     android:gravity="center_horizontal">
 
     <Button
-        android:id="@+id/soccerEventTypeButton"
-        android:drawableTop="@drawable/ic_futbol2"
+        android:id="@+id/matchedBetButton"
+        android:drawableTop="@drawable/ic_check"
         style="@style/AppTheme.ButttonBar.Button"
-        android:text="@string/title_event_type_soccer"/>
+        android:text="@string/matched_bet"/>
 
     <Button
-        android:id="@+id/boxingEventTypeButton"
-        android:drawableTop="@drawable/ic_boxing"
+        android:id="@+id/unmutchedBetButton"
+        android:drawableTop="@drawable/ic_close_black_24dp"
         style="@style/AppTheme.ButttonBar.Button"
-        android:text="@string/title_event_type_boxing" />
+        android:text="@string/unmutched_bet" />
 
     <Button
-        android:id="@+id/mmaEventTypeButton"
-        android:drawableTop="@drawable/ic_mma"
+        android:id="@+id/findButty"
+        android:drawableTop="@drawable/ic_search_black_24dp"
         style="@style/AppTheme.ButttonBar.Button"
-        android:text="@string/title_event_type_mma" />
+        android:text="@string/search_title" />
+
+
 </LinearLayout>

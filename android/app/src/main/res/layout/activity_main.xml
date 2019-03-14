@@ -16,9 +16,10 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
-        android:background="@color/colorContentPrimary"
+        android:background="@color/contentBackgroundLight"
         app:itemTextColor="@color/white"
         app:itemIconTint="@color/white"
+        android:elevation="@dimen/navigation_bar_elevation"
         />
 
         <RelativeLayout

@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/colorContentPrimary"
-    android:layout_margin="6dp">
+    android:background="@color/contentBackgroundLight"
+    android:layout_margin="6dp"
+    android:elevation="@dimen/card_elevation">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,19 +33,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/competitionInfo">
+        android:id="@+id/competitionInfo"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/imgLocalCompetitor"
             style="@style/ItemEventMarket.ImageView"
-            app:srcCompat="@drawable/boca_juniors" />
+            android:layout_weight="1"
+            app:srcCompat="@drawable/boca_juniors"
+            />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="4dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:orientation="vertical">
 
             <TextView
@@ -55,7 +59,7 @@
                 android:layout_gravity="center"
                 android:textColor="@color/colorSecondary"
                 android:textAlignment="center"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/competitionName"
@@ -65,14 +69,15 @@
                 android:layout_gravity="center"
                 android:textColor="@color/colorSecondary"
                 android:textAlignment="center"
-                android:textSize="14sp" />
+                android:textSize="11sp" />
 
         </LinearLayout>
 
         <ImageView
             android:id="@+id/imgVisitorCompetitor"
             style="@style/ItemEventMarket.ImageView"
-            app:srcCompat="@drawable/river_plate" />
+            app:srcCompat="@drawable/river_plate"
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -138,24 +143,24 @@
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/back_bet_text"
-                android:textColor="@color/backBets"
-                android:textSize="13sp"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="11sp"/>
 
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/lay_bet_short_text"
-                android:textColor="@color/layBets"
-                android:textSize="13sp"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="11sp"/>
 
             <Button
                 android:id="@+id/backLocalRunnerButton"
                 android:text="1.06"
-                style="@style/BackBetButton"/>
+                style="@style/BetButton"/>
 
             <Button
                 android:id="@+id/layLocalRunnerButton"
                 android:text="2.86"
-                style="@style/LayBetButton"/>
+                style="@style/BetButton"/>
 
         </GridLayout>
 
@@ -173,24 +178,24 @@
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/back_bet_text"
-                android:textColor="@color/backBets"
-                android:textSize="13sp"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="11sp"/>
 
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/lay_bet_short_text"
-                android:textColor="@color/layBets"
-                android:textSize="13sp"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="11sp"/>
 
             <Button
                 android:id="@+id/backDrawRunnerButton"
                 android:text="1.87"
-                style="@style/BackBetButton"/>
+                style="@style/BetButton"/>
 
             <Button
                 android:id="@+id/layDrawRunnerButton"
                 android:text="12.44"
-                style="@style/LayBetButton"/>
+                style="@style/BetButton"/>
 
         </GridLayout>
 
@@ -208,24 +213,24 @@
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/back_bet_text"
-                android:textColor="@color/backBets"
-                android:textSize="13sp"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="11sp"/>
 
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/lay_bet_short_text"
-                android:textColor="@color/layBets"
-                android:textSize="13sp"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="11sp"/>
 
             <Button
                 android:id="@+id/backVisitorRunnerButton"
                 android:text="3.76"
-                style="@style/BackBetButton"/>
+                style="@style/BetButton"/>
 
             <Button
                 android:id="@+id/layVisitorRunnerButton"
                 android:text="4.99"
-                style="@style/LayBetButton"/>
+                style="@style/BetButton"/>
 
         </GridLayout>
     </LinearLayout>

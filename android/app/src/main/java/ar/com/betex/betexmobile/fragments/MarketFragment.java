@@ -46,7 +46,7 @@ public class MarketFragment extends Fragment{
         if (savedInstanceState == null) {
             FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
             MarketEventListFragments fragments = MarketEventListFragments.newInstance(DevelopUtils.hardcodeFutbalMarketList());
-            transaction.replace(R.id.marketsListContainer, fragments, MarketEventListFragments.TAG);
+            transaction.replace(R.id.marketListFragmentContainer, fragments, MarketEventListFragments.TAG);
             transaction.commit();
         }
     }
@@ -65,7 +65,7 @@ public class MarketFragment extends Fragment{
     @Override
     public void onStart(){
         super.onStart();
-        eventTypeTitle = (TextView) getActivity().findViewById(R.id.eventTypeTitle);
+        eventTypeTitle = (TextView) getActivity().findViewById(R.id.eventTitles);
     }
 
     /**
@@ -84,7 +84,7 @@ public class MarketFragment extends Fragment{
         FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
         MarketEventListFragments fragments = MarketEventListFragments.newInstance(newMarketList);
 
-        transaction.replace(R.id.marketsListContainer, fragments, MarketEventListFragments.TAG);
+        transaction.replace(R.id.marketListFragmentContainer, fragments, MarketEventListFragments.TAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }
@@ -97,7 +97,7 @@ public class MarketFragment extends Fragment{
         FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
         AllMarketsEventListFragments fragments = AllMarketsEventListFragments.newInstance(newMarketList);
 
-        transaction.replace(R.id.marketsListContainer, fragments, AllMarketsEventListFragments.TAG);
+        transaction.replace(R.id.marketListFragmentContainer, fragments, AllMarketsEventListFragments.TAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }
@@ -113,7 +113,7 @@ public class MarketFragment extends Fragment{
         FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
         PlaceBetFragment fragments = PlaceBetFragment.newInstance(marketSelected, oddSelected, runnerId, isBack);
 
-        transaction.replace(R.id.marketsListContainer, fragments, PlaceBetFragment.TAG);
+        transaction.replace(R.id.marketListFragmentContainer, fragments, PlaceBetFragment.TAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }

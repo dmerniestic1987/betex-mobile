@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Betex Sports</string>
+    <string name="default_bet_value">10.01</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_balance_title">Disponible:</string>
@@ -17,8 +18,8 @@
     <string name="title_nav_share">Compartir</string>
     <string name="title_nav_wallet">Mi billetera</string>
 
-    <string name="title_event_type_soccer">FÚTBOL</string>
-    <string name="title_event_type_boxing">BOXEO</string>
+    <string name="title_event_type_soccer">Fútbol</string>
+    <string name="title_event_type_boxing">Boxeo</string>
     <string name="title_event_type_mma">MMA</string>
 
     <string name="default_event_type">Fútbol</string>
@@ -40,6 +41,7 @@
     <string name="odd_text_subtitle">Multiplicador</string>
     <string name="my_bet_text">Mi apuesta</string>
     <string name="cryptocurrency_default">ETH</string>
+    <string name="cryptocurrency_name_default">Ether</string>
     <string name="place_bet_buton_text">Apostar</string>
     <string name="total_quantity_text">Total de goles</string>
     <string name="send_text">Enviar</string>
@@ -49,4 +51,12 @@
     <string name="exit_dialog_fragment_content">¿Desea salir de Betex Mobile?</string>
     <string name="exit_dialog_fragment_exit">Salir</string>
     <string name="exit_dialog_fragment_continue">Seguir jugando</string>
+    <string name="balance_example">104.56</string>
+
+    <string name="my_bets_in_play_title">En juego</string>
+    <string name="my_bets_all_tittle">Todas</string>
+    <string name="my_bets_back">Devueltas</string>
+    <string name="matched_bet">Matcheadas</string>
+    <string name="unmutched_bet">Sin Matchear</string>
+    <string name="search_title">Buscar</string>
 </resources>

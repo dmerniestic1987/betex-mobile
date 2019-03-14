@@ -2,6 +2,10 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="navigation_bar_elevation">16dp</dimen>
+    <dimen name="card_elevation">6dp</dimen>
+    <dimen name="button_elevation">8dp</dimen>
 
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">180dp</dimen>
@@ -21,15 +25,17 @@
     <dimen name="wallet_margin_fragments">6dp</dimen>
     <dimen name="padding_currency_item">15dp</dimen>
 
-    <dimen name="currency_detail_image_width">120dp</dimen>
-    <dimen name="currency_detail_image_height">120dp</dimen>
+    <dimen name="currency_detail_image_width">90dp</dimen>
+    <dimen name="currency_detail_image_height">90dp</dimen>
 
     <dimen name="navigation_bar_image_width">100dp</dimen>
     <dimen name="navigation_bar_image_height">100dp</dimen>
 
-    <dimen name="item_market_event_image_width">90dp</dimen>
-    <dimen name="item_market_event_image_height">90dp</dimen>
+    <dimen name="item_market_event_image_width">80dp</dimen>
+    <dimen name="item_market_event_image_height">80dp</dimen>
 
     <dimen name="item_currency_list_width">45dp</dimen>
     <dimen name="item_currency_list_height">45dp</dimen>
+
+    <dimen name="button_text_size">12sp</dimen>
 </resources>

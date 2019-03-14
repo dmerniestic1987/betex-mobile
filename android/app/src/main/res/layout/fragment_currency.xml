@@ -1,77 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.CurrencyFragment"
+    android:layout_marginTop="@dimen/wallet_margin_fragments"
     android:orientation="vertical"
     android:theme="@style/AppTheme.Content"
-    android:layout_marginTop="@dimen/wallet_margin_fragments"
-    style="@style/ItemCurrency">
+    tools:context=".fragments.CurrencyFragment"
+    style="@style/ItemCurrency"
+    android:elevation="@dimen/card_elevation">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/colorContentPrimary">
+        android:layout_height="wrap_content"
+        style="@style/ItemCurrency">
 
-        <ImageView
-            android:id="@+id/currencyImage"
-            android:layout_width="@dimen/currency_detail_image_width"
-            android:layout_height="@dimen/currency_detail_image_height"
-            android:layout_gravity="center"
-            android:background="@color/colorContentPrimary"
-            android:src="@drawable/eth"
-            android:layout_margin="@dimen/margin_place_bet_10dp"/>
-
-        <TextView
-            android:layout_gravity="center"
-            android:id="@+id/currencyTitle"
+        <android.support.constraint.ConstraintLayout
+            style="@style/ItemCurrency"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:background="@color/colorContentPrimary"
-            android:textAlignment="center"
-            android:textSize="25sp"
-            android:layout_margin="20dp"
-            android:text="Ether" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_gravity="center"
-            android:id="@+id/currencyBalance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorContentPrimary"
-            android:textColor="@color/colorSecondary"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:text="TextView" />
+            <ImageView
+                android:id="@+id/currencyImage"
+                android:layout_width="@dimen/currency_detail_image_width"
+                android:layout_height="@dimen/currency_detail_image_height"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/contentBackgroundLight"
+                android:contentDescription="@string/cryptocurrency_name_default"
+                android:src="@drawable/eth"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/margin_place_bet_10dp"
-            android:background="@color/colorContentPrimary">
+            <TextView
+                android:id="@+id/currencyBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/contentBackgroundLight"
+                android:text="@string/balance_example"
+                android:textAlignment="center"
+                android:textColor="@color/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.422"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currencyImage" />
 
-            <Button
-                android:id="@+id/sendButton"
-                android:layout_weight="1"
-                android:text="@string/send_text"
-                style="@style/ButtonShowMore"
-                android:drawableTop="@drawable/ic_wallet_send"
-                android:textColor="@color/colorContentPrimary"/>
-
-            <Button
-                android:id="@+id/receiveButton"
-                android:layout_weight="1"
-                android:text="@string/receive_text"
-                style="@style/ButtonShowMore"
-                android:textColor="@color/colorContentPrimary"
-                android:drawableTop="@drawable/ic_wallet_receive"/>
-
-        </LinearLayout>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/currencySymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/contentBackgroundLight"
+                android:text="@string/cryptocurrency_default"
+                android:textAlignment="center"
+                android:textColor="@color/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.097"
+                app:layout_constraintStart_toEndOf="@+id/currencyBalance"
+                app:layout_constraintTop_toBottomOf="@+id/currencyImage" />
 
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/currencyInUsd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:background="@color/contentBackgroundLight"
+                android:text="@string/cryptocurrency_name_default"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/currencyBalance"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/balanceInUsd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:background="@color/contentBackgroundLight"
+                android:text="@string/cryptocurrency_name_default"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/currencyInUsd"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@color/contentBackgroundLight"
+                android:gravity="center"
+                android:padding="@dimen/margin_place_bet_10dp"
+                app:layout_constraintTop_toBottomOf="@+id/balanceInUsd"
+                tools:layout_editor_absoluteX="0dp">
+
+                <Button
+                    android:id="@+id/sendButton"
+                    style="@style/ButtonShowMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableTop="@drawable/ic_wallet_send"
+                    android:text="@string/send_text"
+                    android:textColor="@color/contentBackgroundLight" />
+
+                <Button
+                    android:id="@+id/receiveButton"
+                    style="@style/ButtonShowMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableTop="@drawable/ic_wallet_receive"
+                    android:text="@string/receive_text"
+                    android:textColor="@color/contentBackgroundLight" />
+
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+
+</FrameLayout>

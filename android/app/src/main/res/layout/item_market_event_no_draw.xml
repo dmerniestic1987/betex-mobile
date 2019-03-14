@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/colorContentPrimary"
-    android:layout_margin="6dp">
+    android:background="@color/contentBackgroundLight"
+    android:layout_margin="6dp"
+    android:elevation="@dimen/card_elevation">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -108,24 +109,24 @@
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/back_bet_text"
-                android:textColor="@color/backBets"
+                android:textColor="@color/colorAccent"
                 android:textSize="13sp"/>
 
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/lay_bet_short_text"
-                android:textColor="@color/layBets"
+                android:textColor="@color/colorAccent"
                 android:textSize="13sp"/>
 
             <Button
                 android:id="@+id/backLocalRunnerButton"
                 android:text="1.06"
-                style="@style/BackBetButton"/>
+                style="@style/BetButton"/>
 
             <Button
                 android:id="@+id/layLocalRunnerButton"
                 android:text="2.86"
-                style="@style/LayBetButton"/>
+                style="@style/BetButton"/>
 
         </GridLayout>
 
@@ -148,24 +149,24 @@
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/back_bet_text"
-                android:textColor="@color/backBets"
+                android:textColor="@color/colorAccent"
                 android:textSize="13sp"/>
 
             <TextView
                 android:layout_gravity="center"
                 android:text="@string/lay_bet_short_text"
-                android:textColor="@color/layBets"
+                android:textColor="@color/colorAccent"
                 android:textSize="13sp"/>
 
             <Button
                 android:id="@+id/backVisitorRunnerButton"
                 android:text="3.76"
-                style="@style/BackBetButton"/>
+                style="@style/BetButton"/>
 
             <Button
                 android:id="@+id/layVisitorRunnerButton"
                 android:text="41.99"
-                style="@style/LayBetButton"/>
+                style="@style/BetButton"/>
 
         </GridLayout>
     </LinearLayout>

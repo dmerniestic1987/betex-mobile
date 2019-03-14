@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.beans.Currency;
 
@@ -47,12 +50,23 @@ public class CurrencyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_currency, container, false);
-        TextView title = view.findViewById(R.id.currencyTitle);
-        title.setText(currency.getCurrencyName());
+        NumberFormat formatCurrency = NumberFormat.getCurrencyInstance();
+        NumberFormat formatNumber = NumberFormat.getNumberInstance();
 
-        TextView currencyBalance = view.findViewById(R.id.currencyBalance);
-        currencyBalance.setText(currency.getBalance().toString() + " " + currency.getSymbol());
+        BigDecimal balanceInUsde = currency.getValueInUsd().multiply(currency.getBalance()).setScale(2, BigDecimal.ROUND_HALF_DOWN);
+
+        View view = inflater.inflate(R.layout.fragment_currency, container, false);
+        TextView title = view.findViewById(R.id.currencyBalance);
+        title.setText(formatNumber.format(currency.getBalance()));
+
+        TextView currencySymbol = view.findViewById(R.id.currencySymbol);
+        currencySymbol.setText(currency.getSymbol());
+
+        TextView currencyInUsd = view.findViewById(R.id.currencyInUsd);
+        currencyInUsd.setText("En dólares: " + formatCurrency.format(currency.getValueInUsd()));
+
+        TextView balanceInUsd = view.findViewById(R.id.balanceInUsd);
+        balanceInUsd.setText("Saldo dólares: " + formatCurrency.format(balanceInUsde));
 
         ImageView currencyImage = view.findViewById(R.id.currencyImage);
         currencyImage.setImageResource(currency.getImgId());

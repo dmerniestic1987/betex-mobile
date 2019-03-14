@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#7b1fa2</color>
-    <color name="colorPrimaryLight">#ae52d4</color>
-    <color name="colorPrimaryDark">#4a0072</color>
-    <color name="colorSecondary">#FFDD00</color>
+
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryLight">#D1C4E9</color>
+    <color name="colorPrimaryDark">#512DA8</color>
+
+    <color name="colorAccent">#FFEB3B</color>
+    <color name="colorSecondary">@color/colorAccent</color>
+
     <color name="colorSecondaryLight">#ffff00</color>
     <color name="colorSecondaryDark">#ffce18</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="colorDarkGreyNavigation">#343a40</color>
-    <color name="colorContentPrimary">#212121</color>
-    <color name="colorContentPrimaryLight">#a0a0a0</color>
-    <color name="colorContentPrimaryDark">#000000</color>
-    <color name="white">#fff</color>
-    <color name="backBets">#b3e5fc</color>
-    <color name="backBetsDark">#81d4fa</color>
-    <color name="backBetLight">#e6ffff</color>
-    <color name="layBets">#f8bbd0</color>
-    <color name="layBetsDark">#ffc1e3</color>
-    <color name="layBetsLigth">#ffeeff</color>
 
-    <color name="greeTitle">#9ccc65</color>
+    <color name="contentBackgroundLight">#303030</color>
+    <color name="contentBackground">#212121</color>
+
+    <color name="white">#fff</color>
 
 </resources>

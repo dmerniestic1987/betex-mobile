@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     style="@style/ItemCurrency"
+    android:elevation="@dimen/card_elevation"
     >
 
     <ImageView
@@ -24,7 +25,7 @@
         style="@style/ItemEventMarket.MainData"
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
-        android:text="Ether"
+        android:text="@string/cryptocurrency_name_default"
         app:layout_constraintStart_toEndOf="@+id/currencyImg"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,8 +46,8 @@
         style="@style/ItemEventMarket.MainData"
         android:layout_marginStart="120dp"
         android:layout_marginTop="8dp"
-        android:text="104.56"
-        android:layout_width="70dp"
+        android:text="@string/balance_example"
+        android:layout_width="65dp"
         app:layout_constraintStart_toEndOf="@+id/currencyImg"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,7 +56,7 @@
         style="@style/ItemEventMarket.MainData"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
-        android:text="ETH"
+        android:text="@string/cryptocurrency_default"
         app:layout_constraintStart_toEndOf="@+id/currencyValue"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,7 +67,7 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="$30510.40"
+        android:text="@string/balance_example"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

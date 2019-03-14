@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import java.math.BigInteger;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.beans.Bet;
 import ar.com.betex.betexmobile.beans.Currency;
 import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.beans.develop.DevelopUtils;
@@ -27,7 +28,10 @@ import ar.com.betex.betexmobile.fragments.ExitDialogFragment;
 import ar.com.betex.betexmobile.fragments.MarketEventListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
+import ar.com.betex.betexmobile.fragments.MyBetsButtonBar;
+import ar.com.betex.betexmobile.fragments.MyBetsFragment;
 import ar.com.betex.betexmobile.fragments.WalletFragment;
+import ar.com.betex.betexmobile.fragments.listener.OnMyBetSelectedListener;
 import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
 import ar.com.betex.betexmobile.fragments.listener.OnPlaceBetFragmentListener;
 
@@ -35,7 +39,9 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                                                              , MarketEventListFragments.OnEventMarketInteractionListener
                                                              , OnPlaceBetFragmentListener
                                                              , OnWalletCurrencyListSelectedListener
-                                                             , ExitDialogFragment.OnContinuePlayingListener {
+                                                             , ExitDialogFragment.OnContinuePlayingListener
+                                                             , MyBetsButtonBar.OnMyBetTypeFilterClickedListener
+                                                             , OnMyBetSelectedListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                 case R.id.nav_bottom_challeges:
                     return true;
                 case R.id.nav_bottom_myBets:
+                    replaceFragment(MyBetsFragment.newInstance(), MyBetsFragment.TAG);
                     return true;
             }
             return false;
@@ -133,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                 replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
 
             } else if (id == R.id.nav_myBets) {
+                replaceFragment(MyBetsFragment.newInstance(), MyBetsFragment.TAG);
 
             } else if (id == R.id.nav_challeges) {
 
@@ -225,5 +233,22 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     @Override
     public void loadMarketEvents(){
         this.replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
+    }
+
+    @Override
+    public void onMyBetTypeClicked(String eventType) {
+
+        MyBetsFragment marketFragment = (MyBetsFragment) getSupportFragmentManager().findFragmentByTag(MyBetsFragment.TAG);
+        marketFragment.setMyBetTitle(eventType);
+    }
+
+    @Override
+    public void onSelectedBetFromList(Bet bet) {
+
+    }
+
+    @Override
+    public void onCancelSelectedBet(Bet bet) {
+
     }
 }

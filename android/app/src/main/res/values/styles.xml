@@ -17,27 +17,29 @@
         <item name="android:paddingTop">@dimen/nav_header_vertical_spacing</item>
     </style>
 
-    <style name="AppTheme.ButttonBar">
+    <style name="AppTheme.ButtonBar">
         <item name="android:layout_margin">@dimen/button_bar_margin </item>
+        <item name="android:textSize">@dimen/button_text_size</item>
     </style>
 
-    <style name="AppTheme.ButttonBar.Button" parent="AppTheme.ButttonBar">
+    <style name="AppTheme.ButttonBar.Button" parent="AppTheme.ButtonBar">
         <item name="android:padding">@dimen/button_bar_padding</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
         <item name="android:background">@drawable/button_yellow_background</item>
+        <item name="android:elevation">@dimen/button_elevation</item>
     </style>
 
-    <style name="ButtonShowMore" parent="AppTheme.ButttonBar">
+    <style name="ButtonShowMore" parent="AppTheme.ButtonBar">
         <item name="android:background">@drawable/button_yellow_background</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/margin_place_bet_8dp</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:padding">10dp</item>
-        <item name="android:textAllCaps">true</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:elevation">@dimen/button_elevation</item>
     </style>
 
     <style name="ButtonPlaceBet" parent="ButtonShowMore">
@@ -48,6 +50,7 @@
         <item name="android:paddingLeft">6dp</item>
         <item name="android:paddingRight">10dp</item>
         <item name="android:drawablePadding">4dp</item>
+        <item name="android:elevation">@dimen/button_elevation</item>
     </style>
 
     <style name="AppTheme.BottomNavigationView" parent="AppTheme">
@@ -59,25 +62,23 @@
 
 
     <style name="AppTheme.Content" parent="AppTheme">
-        <item name="android:background">@color/colorContentPrimaryDark</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/contentBackground</item>
     </style>
-
+    <style name="BetexBetButton">
+        <item name="android:background">@drawable/button_yellow_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:elevation">@dimen/button_elevation</item>
+    </style>
     <style name="BetButton">
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_width">50dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">10sp</item>
         <item name="android:layout_marginTop">@dimen/bet_button_top_margin</item>
         <item name="android:drawableTop">@drawable/ic_coin</item>
-    </style>
-
-    <style name="LayBetButton" parent="BetButton">
         <item name="android:background">@drawable/button_yellow_background</item>
-    </style>
-
-    <style name="BackBetButton" parent="BetButton">
-        <item name="android:background">@drawable/button_yellow_background</item>
+        <item name="android:elevation">@dimen/button_elevation</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -91,6 +92,30 @@
         <item name="android:layout_marginTop">@dimen/wallet_margin_fragments</item>
         <item name="android:layout_marginBottom">@dimen/wallet_margin_fragments</item>
     </style>
+
+    <style name="ItemMyBets" parent="ItemCurrency">
+        <item name="android:padding">@dimen/margin_place_bet_8dp</item>
+        <item name="android:layout_marginLeft">@dimen/wallet_margin_fragments</item>
+        <item name="android:layout_marginRight">@dimen/wallet_margin_fragments</item>
+    </style>
+
+    <style name="ItemMyBetsTextOdds">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="ItemMyBetsText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
     <style name="ItemCurrency.ImageView">
         <item name="android:layout_width">@dimen/item_currency_list_width</item>
         <item name="android:layout_height">@dimen/item_currency_list_height</item>
