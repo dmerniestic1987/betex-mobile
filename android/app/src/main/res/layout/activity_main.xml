@@ -16,7 +16,7 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
-        android:background="@color/contentBackgroundLight"
+        android:background="@drawable/background_app"
         app:itemTextColor="@color/white"
         app:itemIconTint="@color/white"
         android:elevation="@dimen/navigation_bar_elevation"
@@ -37,6 +37,7 @@
                 app:itemTextColor="@color/white"
                 app:itemIconTint="@color/white"
                 app:menu="@menu/navigation"
+                android:elevation="@dimen/botton_navigation_bar"
                 app:labelVisibilityMode="labeled" />
         </RelativeLayout>
 

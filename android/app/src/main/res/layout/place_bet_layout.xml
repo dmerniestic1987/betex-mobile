@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/contentBackgroundLight"
+    android:background="@color/contentBackground"
     android:layout_margin="6dp"
     android:paddingLeft="@dimen/padding_sides_place_bet"
     android:paddingRight="@dimen/padding_sides_place_bet"

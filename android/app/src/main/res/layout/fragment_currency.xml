@@ -14,12 +14,14 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/ItemCurrency">
+        style="@style/ItemCurrency"
+        android:background="@android:color/transparent" >
 
         <android.support.constraint.ConstraintLayout
             style="@style/ItemCurrency"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
 
             <ImageView
                 android:id="@+id/currencyImage"
@@ -29,8 +31,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
-                android:background="@color/contentBackgroundLight"
                 android:contentDescription="@string/cryptocurrency_name_default"
+                android:background="@android:color/transparent"
                 android:src="@drawable/eth"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,11 +45,11 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
-                android:background="@color/contentBackgroundLight"
                 android:text="@string/balance_example"
                 android:textAlignment="center"
                 android:textColor="@color/colorSecondary"
                 android:textSize="20sp"
+                android:background="@android:color/transparent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.422"
                 app:layout_constraintStart_toStartOf="parent"
@@ -60,11 +62,11 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="2dp"
                 android:layout_marginTop="12dp"
-                android:background="@color/contentBackgroundLight"
                 android:text="@string/cryptocurrency_default"
                 android:textAlignment="center"
                 android:textColor="@color/colorSecondary"
                 android:textSize="20sp"
+                android:background="@android:color/transparent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.097"
                 app:layout_constraintStart_toEndOf="@+id/currencyBalance"
@@ -77,11 +79,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
-                android:background="@color/contentBackgroundLight"
                 android:text="@string/cryptocurrency_name_default"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="15sp"
+                android:background="@android:color/transparent"
                 app:layout_constraintTop_toBottomOf="@+id/currencyBalance"
                 tools:layout_editor_absoluteX="0dp" />
 
@@ -91,11 +93,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
-                android:background="@color/contentBackgroundLight"
                 android:text="@string/cryptocurrency_name_default"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="15sp"
+                android:background="@android:color/transparent"
                 app:layout_constraintTop_toBottomOf="@+id/currencyInUsd"
                 tools:layout_editor_absoluteX="0dp" />
 
@@ -104,9 +106,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:background="@color/contentBackgroundLight"
                 android:gravity="center"
                 android:padding="@dimen/margin_place_bet_10dp"
+                android:background="@android:color/transparent"
                 app:layout_constraintTop_toBottomOf="@+id/balanceInUsd"
                 tools:layout_editor_absoluteX="0dp">
 
@@ -117,8 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:drawableTop="@drawable/ic_wallet_send"
-                    android:text="@string/send_text"
-                    android:textColor="@color/contentBackgroundLight" />
+                    android:text="@string/send_text" />
 
                 <Button
                     android:id="@+id/receiveButton"
@@ -127,8 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:drawableTop="@drawable/ic_wallet_receive"
-                    android:text="@string/receive_text"
-                    android:textColor="@color/contentBackgroundLight" />
+                    android:text="@string/receive_text" />
 
             </LinearLayout>
         </android.support.constraint.ConstraintLayout>

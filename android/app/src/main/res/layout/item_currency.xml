@@ -11,6 +11,7 @@
     <ImageView
         android:id="@+id/currencyImg"
         style="@style/ItemCurrency.ImageView"
+        android:background="@android:color/transparent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"

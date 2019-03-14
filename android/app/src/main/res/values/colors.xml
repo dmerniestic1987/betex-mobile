@@ -6,19 +6,26 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
 
-    <color name="colorPrimary">#673AB7</color>
-    <color name="colorPrimaryLight">#D1C4E9</color>
-    <color name="colorPrimaryDark">#512DA8</color>
+    <color name="colorPrimary">#8e24aa</color>
+    <color name="colorPrimaryLight">#c158dc</color>
+    <color name="colorPrimaryDark">#5c007a</color>
 
-    <color name="colorAccent">#FFEB3B</color>
+    <color name="colorAccent">#FFe8c020</color>
     <color name="colorSecondary">@color/colorAccent</color>
 
     <color name="colorSecondaryLight">#ffff00</color>
-    <color name="colorSecondaryDark">#ffce18</color>
+    <color name="colorSecondaryMiddle">#FFE7BD1E</color>
+    <color name="colorSecondaryDark">#FFE3A412</color>
 
+    <!--
     <color name="contentBackgroundLight">#303030</color>
     <color name="contentBackground">#212121</color>
+    <color name="white">#fff</color>
+    -->
 
+    <color name="contentBackgroundLight">#9E9E9E</color>
+    <color name="contentBackground">#616161</color>
+    <color name="contentBackgroundDark">#050505</color>
     <color name="white">#fff</color>
 
 </resources>
