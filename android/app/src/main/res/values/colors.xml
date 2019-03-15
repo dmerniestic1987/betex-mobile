@@ -18,7 +18,7 @@
     <color name="contentBackgroundLight">#9E9E9E</color>
     <color name="contentBackground">#616161</color>
     <color name="contentBackgroundDark">#050505</color>
-
+    <color name="black">#000000</color>
 
     <color name="background_app_startColor">#FF302e36</color>
     <color name="background_app_centerColor">#FF28272D</color>
@@ -29,7 +29,7 @@
     <color name="background_item_endColor">#FF313033</color>
     <color name="background_item_border_line">@color/contentBackgroundDark</color>
 
-
+    <color name="negro_semitransparente">@color/background_item_centerColor</color>
 <!--
     <color name="contentBackgroundLight">#ffffff</color>
     <color name="contentBackground">#f1f1f1</color>

@@ -2,12 +2,15 @@ package ar.com.betex.betexmobile.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -26,7 +29,7 @@ import ar.com.betex.betexmobile.util.DevelopUtils;
 public class MarketFragment extends Fragment{
     private TextView eventTypeTitle;
     public static final String TAG = "MarketFragment";
-
+    private FloatingActionsMenu menuFabMarkets;
     public MarketFragment() {
         super();
     }
@@ -73,7 +76,8 @@ public class MarketFragment extends Fragment{
     @Override
     public void onStart(){
         super.onStart();
-        eventTypeTitle = (TextView) getActivity().findViewById(R.id.eventTitles);
+        eventTypeTitle = getActivity().findViewById(R.id.eventTitles);
+        menuFabMarkets = getActivity().findViewById(R.id.menuFabMarkets);
     }
 
     /**
@@ -120,7 +124,6 @@ public class MarketFragment extends Fragment{
     public void showPlaceBetScreen(Market marketSelected, String oddSelected, BigInteger runnerId, boolean isBack){
         FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
         PlaceBetFragment fragments = PlaceBetFragment.newInstance(marketSelected, oddSelected, runnerId, isBack);
-
         transaction.replace(R.id.marketListFragmentContainer, fragments, PlaceBetFragment.TAG);
         transaction.addToBackStack(null);
         transaction.commit();

@@ -4,6 +4,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar" parent="AppTheme">
@@ -78,7 +79,7 @@
 
     <style name="AppTheme.BottomNavigationView" parent="AppTheme">
         <item name="android:layout_alignParentBottom">true</item>
-        <item name="android:background">#000000</item>
+        <item name="android:background">@color/colorPrimary</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
@@ -177,6 +178,12 @@
     <style name="ItemEventMarket.SubData" parent="ItemEventMarket.MainData">
         <item name="android:textSize">11sp</item>
         <item name="android:textColor">@color/secondaryText</item>
+    </style>
+
+    <style name="FabLabel">
+        <item name="android:background">@drawable/background_label_fab</item>
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:textSize">13sp</item>
     </style>
 </resources>
 
