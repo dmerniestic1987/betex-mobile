@@ -24,7 +24,7 @@
     <TextView
         android:id="@+id/currencyName"
         style="@style/ItemEventMarket.MainData"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:text="@string/cryptocurrency_name_default"
         app:layout_constraintStart_toEndOf="@+id/currencyImg"
@@ -33,7 +33,7 @@
     <TextView
         android:id="@+id/currencyInUsd"
         style="@style/ItemEventMarket.SubData"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="9dp"
         android:layout_marginBottom="8dp"
         android:text="$30501.40"
@@ -45,30 +45,33 @@
     <TextView
         android:id="@+id/currencyValue"
         style="@style/ItemEventMarket.MainData"
-        android:layout_marginStart="120dp"
+        android:layout_width="70dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="8dp"
         android:text="@string/balance_example"
-        android:layout_width="65dp"
         app:layout_constraintStart_toEndOf="@+id/currencyImg"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="viewStart"/>
 
     <TextView
         android:id="@+id/currencySymbol"
         style="@style/ItemEventMarket.MainData"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/cryptocurrency_default"
         app:layout_constraintStart_toEndOf="@+id/currencyValue"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        style="@style/ItemEventMarket.SubData"
         android:id="@+id/currencyBalanceInUsd"
-        android:layout_marginStart="120dp"
+        style="@style/ItemEventMarket.SubData"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/balance_example"
+        android:layout_width="70dp"
+        android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
