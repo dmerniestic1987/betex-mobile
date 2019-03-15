@@ -19,7 +19,7 @@
         android:text="@string/my_bets_in_play_title"
         android:gravity="center"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/primaryText"
         android:padding="@dimen/bet_button_top_margin"
         android:textSize="15sp"
         />

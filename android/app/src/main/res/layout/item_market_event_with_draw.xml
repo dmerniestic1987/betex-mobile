@@ -23,7 +23,7 @@
             android:layout_weight="1"
             android:text="@string/time_example"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/primaryText"
             android:gravity="center"
             android:textAlignment="center"/>
     </LinearLayout>
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:text="@string/local_soccer_team_example"
-            android:textColor="@color/white"
+            android:textColor="@color/primaryText"
             android:textStyle="bold"
             android:textAlignment="center"/>
 
@@ -106,7 +106,7 @@
             android:layout_margin="4dp"
             android:text="@string/draw_text"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/primaryText"
             android:textAlignment="center"/>
 
         <TextView
@@ -118,7 +118,7 @@
             android:layout_margin="4dp"
             android:text="@string/visitor_soccer_team_example"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/primaryText"
             android:textAlignment="center"/>
     </LinearLayout>
 
@@ -155,12 +155,12 @@
             <Button
                 android:id="@+id/backLocalRunnerButton"
                 android:text="1.06"
-                style="@style/BetButton"/>
+                style="@style/BetexBetButton.BetButton"/>
 
             <Button
                 android:id="@+id/layLocalRunnerButton"
                 android:text="2.86"
-                style="@style/BetButton"/>
+                style="@style/BetexBetButton.BetButton"/>
 
         </GridLayout>
 
@@ -190,12 +190,12 @@
             <Button
                 android:id="@+id/backDrawRunnerButton"
                 android:text="1.87"
-                style="@style/BetButton"/>
+                style="@style/BetexBetButton.BetButton"/>
 
             <Button
                 android:id="@+id/layDrawRunnerButton"
                 android:text="12.44"
-                style="@style/BetButton"/>
+                style="@style/BetexBetButton.BetButton"/>
 
         </GridLayout>
 
@@ -225,12 +225,12 @@
             <Button
                 android:id="@+id/backVisitorRunnerButton"
                 android:text="3.76"
-                style="@style/BetButton"/>
+                style="@style/BetexBetButton.BetButton"/>
 
             <Button
                 android:id="@+id/layVisitorRunnerButton"
                 android:text="4.99"
-                style="@style/BetButton"/>
+                style="@style/BetexBetButton.BetButton"/>
 
         </GridLayout>
     </LinearLayout>

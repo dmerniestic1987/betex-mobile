@@ -1,5 +1,7 @@
 package ar.com.betex.betexmobile.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                                                              , OnMyBetSelectedListener {
     private Fragment currentFragment;
     private static final String CURRENT_FRAGMENT = "current_fragment_main_activity";
+    private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        context = this;
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -135,6 +140,8 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                     replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
                     return true;
                 case R.id.nav_bottom_challeges:
+                    Intent intent = new Intent(context, ChallengeActivity.class);
+                    startActivity(intent);
                     return true;
                 case R.id.nav_bottom_myBets:
                     replaceFragment(MyBetsFragment.newInstance(), MyBetsFragment.TAG);

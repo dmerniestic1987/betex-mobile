@@ -17,8 +17,8 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
         android:background="@drawable/background_app"
-        app:itemTextColor="@color/white"
-        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/primaryText"
+        app:itemIconTint="@color/primaryText"
         android:elevation="@dimen/navigation_bar_elevation"
         />
 
@@ -34,8 +34,8 @@
             <android.support.design.widget.BottomNavigationView
                 style="@style/AppTheme.BottomNavigationView"
                 android:id="@+id/bottonNavigation"
-                app:itemTextColor="@color/white"
-                app:itemIconTint="@color/white"
+                app:itemTextColor="@color/primaryText"
+                app:itemIconTint="@color/primaryText"
                 app:menu="@menu/navigation"
                 android:elevation="@dimen/botton_navigation_bar"
                 app:labelVisibilityMode="labeled" />

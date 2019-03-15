@@ -1,4 +1,5 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -18,7 +19,7 @@
     </style>
 
     <style name="AppTheme.ButtonBar">
-        <item name="android:layout_margin">@dimen/button_bar_margin </item>
+        <item name="android:layout_margin">@dimen/button_bar_margin</item>
         <item name="android:textSize">@dimen/button_text_size</item>
     </style>
 
@@ -55,6 +56,26 @@
         <item name="android:elevation">@dimen/button_elevation</item>
     </style>
 
+    <style name="PlaceBetInfoText">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:layout_marginLeft">8dp</item>
+    </style>
+
+    <style name="PlaceBetSeekBar">
+        <item name="android:thumbTint">@color/colorSecondary</item>
+        <item name="android:max">100</item>
+        <item name="android:thumb">@drawable/ic_betex</item>
+        <item name="android:progress">0</item>
+        <item name="android:progressBackgroundTint">@color/primaryText</item>
+        <item name="android:progressTint">@color/colorSecondary</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
     <style name="AppTheme.BottomNavigationView" parent="AppTheme">
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:background">@color/colorPrimary</item>
@@ -66,6 +87,7 @@
     <style name="AppTheme.Content" parent="AppTheme">
         <item name="android:background">@drawable/background_app</item>
     </style>
+
     <style name="BetexBetButton">
         <item name="android:background">@drawable/button_yellow_background</item>
         <item name="android:gravity">center</item>
@@ -73,16 +95,13 @@
         <item name="android:elevation">@dimen/button_elevation</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
-    <style name="BetButton">
-        <item name="android:layout_gravity">center</item>
+
+    <style name="BetexBetButton.BetButton" parent="BetexBetButton">
         <item name="android:layout_width">50dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">10sp</item>
         <item name="android:layout_marginTop">@dimen/bet_button_top_margin</item>
         <item name="android:drawableTop">@drawable/ic_coin</item>
-        <item name="android:background">@drawable/button_yellow_background</item>
-        <item name="android:elevation">@dimen/button_elevation</item>
-        <item name="android:stateListAnimator">@null</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -106,7 +125,7 @@
     <style name="ItemMyBetsTextOdds">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/primaryText</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:padding">2dp</item>
@@ -115,7 +134,7 @@
     <style name="ItemMyBetsText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/primaryText</item>
         <item name="android:textSize">11sp</item>
         <item name="android:textAlignment">center</item>
     </style>
@@ -139,6 +158,7 @@
     <style name="ItemEventMarket">
 
     </style>
+
     <style name="ItemEventMarket.ImageView">
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_height">@dimen/item_market_event_image_height</item>
@@ -150,7 +170,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/primaryText</item>
     </style>
 
     <style name="ItemEventMarket.SubData" parent="ItemEventMarket.MainData">

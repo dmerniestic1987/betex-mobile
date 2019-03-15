@@ -40,4 +40,6 @@
 
     <dimen name="button_text_size">12sp</dimen>
     <dimen name="my_bet_item_stake_text_view_width">65dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
 </resources>
