@@ -11,5 +11,6 @@
         android:centerColor="@color/colorSecondaryMiddle"
         android:endColor="@color/colorSecondaryDark"
         android:angle="315"/>
-    <stroke android:width="1px" android:color="@color/contentBackgroundDark" />
+
+   <!-- <stroke android:width="1px" android:color="@color/background_item_border_line" /> -->
 </shape>

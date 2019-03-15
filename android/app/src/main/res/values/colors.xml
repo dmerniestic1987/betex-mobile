@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <color name="primaryText">#fff</color>
-    <color name="secondaryText">#757575</color>
+    <color name="secondaryText">#afafaf</color>
     <color name="divider">#BDBDBD</color>
 
     <color name="colorPrimary">#8e24aa</color>
@@ -20,5 +19,45 @@
     <color name="contentBackground">#616161</color>
     <color name="contentBackgroundDark">#050505</color>
 
+
+    <color name="background_app_startColor">#FF302e36</color>
+    <color name="background_app_centerColor">#FF28272D</color>
+    <color name="background_app_endColor">#FF19191a</color>
+
+    <color name="background_item_startColor">#FF434248</color>
+    <color name="background_item_centerColor">#FF414046</color>
+    <color name="background_item_endColor">#FF313033</color>
+    <color name="background_item_border_line">@color/contentBackgroundDark</color>
+
+
+<!--
+    <color name="contentBackgroundLight">#ffffff</color>
+    <color name="contentBackground">#f1f1f1</color>
+    <color name="contentBackgroundDark">#f2f2f2</color>
+
+    <color name="colorPrimary">#8e24aa</color>
+    <color name="colorPrimaryLight">#c158dc</color>
+    <color name="colorPrimaryDark">#5c007a</color>
+
+    <color name="colorAccent">#FFe8c020</color>
+    <color name="colorSecondary">@color/colorAccent</color>
+
+    <color name="colorSecondaryLight">#ffff00</color>
+    <color name="colorSecondaryMiddle">#FFE7BD1E</color>
+    <color name="colorSecondaryDark">#FFE3A412</color>
+
+    <color name="primaryText">#fff</color>
+    <color name="secondaryText">#afafaf</color>
+    <color name="divider">#BDBDBD</color>
+
+    <color name="background_app_startColor">@color/contentBackgroundLight</color>
+    <color name="background_app_centerColor">@color/contentBackground</color>
+    <color name="background_app_endColor">@color/contentBackgroundDark</color>
+
+    <color name="background_item_startColor">@color/colorPrimary</color>
+    <color name="background_item_centerColor">@color/colorPrimary</color>
+    <color name="background_item_endColor">@color/colorPrimary</color>
+    <color name="background_item_border_line">@android:color/transparent</color>
+-->
 
 </resources>

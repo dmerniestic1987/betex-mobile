@@ -78,14 +78,14 @@
 
     <style name="AppTheme.BottomNavigationView" parent="AppTheme">
         <item name="android:layout_alignParentBottom">true</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:background">#000000</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
 
     <style name="AppTheme.Content" parent="AppTheme">
-        <item name="android:background">@drawable/background_app</item>
+        <item name="android:background">#000000</item>
     </style>
 
     <style name="BetexBetButton">
@@ -101,6 +101,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">10sp</item>
         <item name="android:layout_marginTop">@dimen/bet_button_top_margin</item>
+        <item name="android:layout_marginLeft">2dp</item>
         <item name="android:drawableTop">@drawable/ic_coin</item>
     </style>
 
@@ -109,7 +110,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="ItemCurrency">
-        <item name="android:background">@drawable/item_background</item>
+        <item name="android:background">@drawable/background_item</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/wallet_margin_fragments</item>
@@ -175,6 +176,7 @@
 
     <style name="ItemEventMarket.SubData" parent="ItemEventMarket.MainData">
         <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/secondaryText</item>
     </style>
 </resources>
 
