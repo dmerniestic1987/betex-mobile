@@ -3,6 +3,7 @@
     <color name="primaryText">#fff</color>
     <color name="secondaryText">#afafaf</color>
     <color name="divider">#BDBDBD</color>
+    <color name="darkTextColor">#FF313033</color>
 
     <color name="colorPrimary">#8e24aa</color>
     <color name="colorPrimaryLight">#c158dc</color>

@@ -2,6 +2,7 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
     <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="botton_navigation_bar">8dp</dimen>
     <dimen name="navigation_bar_elevation">16dp</dimen>
@@ -42,4 +43,8 @@
     <dimen name="my_bet_item_stake_text_view_width">65dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+
+    <dimen name="margin_show_more_buttton">10dp</dimen>
+    <dimen name="material_button_padding_16_dp">16dp</dimen>
+    <dimen name="material_button_padding_8_dp">8dp</dimen>
 </resources>

@@ -235,8 +235,14 @@
         </GridLayout>
     </LinearLayout>
 
-     <Button
+
+    <android.support.design.button.MaterialButton
         android:id="@+id/viewMoreMarkets"
+        style="@style/BetexMaterialButton"
+        android:layout_marginTop="@dimen/margin_show_more_buttton"
+        android:layout_marginBottom="@dimen/margin_show_more_buttton"
         android:text="@string/show_more"
-        style="@style/ButtonShowMore"/>
+        app:icon="@drawable/ic_remove_red_eye_black_24dp"
+        app:iconTint="@color/darkTextColor"
+        app:rippleColor="@color/colorPrimaryDark" />
 </LinearLayout>

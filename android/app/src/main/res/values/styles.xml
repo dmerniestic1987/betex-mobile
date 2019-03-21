@@ -24,6 +24,20 @@
         <item name="android:textSize">@dimen/button_text_size</item>
     </style>
 
+    <style name="BetexMaterialButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/material_button_padding_16_dp</item>
+        <item name="android:paddingTop">@dimen/material_button_padding_8_dp</item>
+        <item name="android:paddingEnd">@dimen/material_button_padding_16_dp</item>
+        <item name="android:paddingBottom">@dimen/material_button_padding_8_dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:textColor">@color/darkTextColor</item>
+    </style>
+
     <style name="AppTheme.ButttonBar.Button" parent="AppTheme.ButtonBar">
         <item name="android:padding">@dimen/button_bar_padding</item>
         <item name="android:layout_width">wrap_content</item>
@@ -34,7 +48,8 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="ButtonShowMore" parent="AppTheme.ButtonBar">
+
+    <style name="ButtonShowMore">
         <item name="android:background">@drawable/button_yellow_background</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -45,6 +60,8 @@
         <item name="android:elevation">@dimen/button_elevation</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
+
+
 
     <style name="ButtonPlaceBet" parent="ButtonShowMore">
         <item name="android:layout_width">match_parent</item>
