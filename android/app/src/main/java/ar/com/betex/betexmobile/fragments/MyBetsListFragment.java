@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.MyBetsListFragmentRecyclerViewAdapter;
-import ar.com.betex.betexmobile.fragments.dummy.DummyContent;
+import ar.com.betex.betexmobile.fragments.dummy.MyBetDummyContent;
 import ar.com.betex.betexmobile.fragments.listener.OnMyBetSelectedListener;
 
 /**
@@ -21,26 +21,26 @@ import ar.com.betex.betexmobile.fragments.listener.OnMyBetSelectedListener;
  * Activities containing this fragment MUST implement the {@link OnMyBetSelectedListener}
  * interface.
  */
-public class MyBetsListFragmentFragment extends Fragment {
+public class MyBetsListFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnMyBetSelectedListener mListener;
-    public static final String TAG = "MyBetsListFragmentFragment";
+    public static final String TAG = "MyBetsListFragment";
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public MyBetsListFragmentFragment() {
+    public MyBetsListFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static MyBetsListFragmentFragment newInstance() {
-        MyBetsListFragmentFragment fragment = new MyBetsListFragmentFragment();
+    public static MyBetsListFragment newInstance() {
+        MyBetsListFragment fragment = new MyBetsListFragment();
         return fragment;
     }
 
@@ -67,7 +67,7 @@ public class MyBetsListFragmentFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyBetsListFragmentRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyBetsListFragmentRecyclerViewAdapter(MyBetDummyContent.ITEMS, mListener));
         }
         return view;
     }

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.fragments.dummy.DummyContent.DummyItem;
+import ar.com.betex.betexmobile.fragments.dummy.MyBetDummyContent.DummyItem;
 import ar.com.betex.betexmobile.fragments.listener.OnMyBetSelectedListener;
 
 import java.util.List;

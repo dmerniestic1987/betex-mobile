@@ -49,7 +49,7 @@ public class MyBetsFragment extends Fragment {
 
         if (savedInstanceState == null) {
             FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
-            MyBetsListFragmentFragment fragments = MyBetsListFragmentFragment.newInstance();
+            MyBetsListFragment fragments = MyBetsListFragment.newInstance();
             transaction.replace(R.id.myBetsFragmentList, fragments, MarketEventListFragments.TAG);
             transaction.commit();
         }
