@@ -16,7 +16,6 @@ import ar.com.betex.betexmobile.adapters.ViewPagerFragmentAdapter;
 
 public class TabFragment extends Fragment {
     protected static final String ARG_TITLES = "arg_titles_list_tab_fragment";
-    protected static final String ARG_FRAGMENTS = "arg_fragments_list_tab_fragment";
 
     protected List<String> titles;
     protected List<Fragment> fragments;
@@ -26,22 +25,22 @@ public class TabFragment extends Fragment {
     public static final String TAG = "TabFragment";
 
     public TabFragment() {
-        // Required empty public constructor
+        super();
+        titles = new ArrayList<>();
+        fragments = new ArrayList<>();
     }
 
 
     /**
      * Utiliza un método factory para obtener una nueva instacia del fragment
      * @param titles Parameter 1.
-     * @param fragments Parameter 2.
      * @return A new instance of fragment TabFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TabFragment newInstance(List<String> titles, List<Fragment> fragments) {
+    public static TabFragment newInstance(List<String> titles) {
         TabFragment fragment = new TabFragment();
         Bundle args = new Bundle();
         args.putStringArrayList(ARG_TITLES, new ArrayList<>(titles));
-        args.putSerializable(ARG_FRAGMENTS, new ArrayList<>(fragments));
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,8 +50,15 @@ public class TabFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             titles = getArguments().getStringArrayList(ARG_TITLES);
-            fragments = (List) getArguments().getSerializable(ARG_FRAGMENTS);
+            initFragments();
         }
+    }
+
+    /*
+        Inicializa los frgamntes;
+     */
+    protected void initFragments() {
+        this.fragments = new ArrayList<>();
     }
 
     @Override
@@ -79,5 +85,8 @@ public class TabFragment extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
     }
 
+    public void addFragment(Fragment f){
+        this.fragments.add(f);
+    }
 
 }

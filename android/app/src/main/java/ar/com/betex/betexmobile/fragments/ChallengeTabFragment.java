@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import ar.com.betex.betexmobile.R;
 
@@ -14,8 +13,17 @@ import ar.com.betex.betexmobile.R;
  */
 public class ChallengeTabFragment  extends TabFragment{
     public static final String TAG = "ChallengeTabFragment";
-    public ChallengeTabFragment(){
 
+    public ChallengeTabFragment(){
+        super();
+    }
+
+    @Override
+    protected void initFragments() {
+        fragments = new ArrayList<>();
+        fragments.add(WalletFragment.newInstance());
+        fragments.add(MyBetsFragment.newInstance());
+        fragments.add(new MarketButtonBarFragment());
     }
 
 
@@ -33,13 +41,6 @@ public class ChallengeTabFragment  extends TabFragment{
         tabTitles.add( context.getResources().getString(R.string.tab_title_open_challenges) );
         tabTitles.add( context.getResources().getString(R.string.tab_title_my_challenges_challenges) );
         tabTitles.add( context.getResources().getString(R.string.tab_title_my_contacts_challenges) );
-
-        ArrayList<Fragment> tabFragments = new ArrayList<>();
-        tabFragments.add(WalletFragment.newInstance());
-        tabFragments.add(MyBetsFragment.newInstance());
-        tabFragments.add(new MarketButtonBarFragment());
-
-        args.putSerializable(ARG_FRAGMENTS, tabFragments);
         fragment.setArguments(args);
         return fragment;
     }
