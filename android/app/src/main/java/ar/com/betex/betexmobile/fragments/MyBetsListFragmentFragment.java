@@ -11,11 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.adapters.MyBetsListFragmentRecyclerViewAdapter;
 import ar.com.betex.betexmobile.fragments.dummy.DummyContent;
-import ar.com.betex.betexmobile.fragments.dummy.DummyContent.DummyItem;
 import ar.com.betex.betexmobile.fragments.listener.OnMyBetSelectedListener;
-
-import java.util.List;
 
 /**
  * A fragment representing a list of Items.

@@ -1,4 +1,4 @@
-package ar.com.betex.betexmobile.fragments;
+package ar.com.betex.betexmobile.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

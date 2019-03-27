@@ -22,7 +22,7 @@ import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.beans.Bet;
 import ar.com.betex.betexmobile.beans.Currency;
 import ar.com.betex.betexmobile.beans.Market;
-import ar.com.betex.betexmobile.util.BetexUtils;
+import ar.com.betex.betexmobile.fragments.ChallengeTabFragment;
 import ar.com.betex.betexmobile.util.DevelopUtils;
 import ar.com.betex.betexmobile.fragments.ExitDialogFragment;
 import ar.com.betex.betexmobile.fragments.MarketEventListFragments;
@@ -140,8 +140,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                     replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
                     return true;
                 case R.id.nav_bottom_challeges:
-                    Intent intent = new Intent(context, ChallengeActivity.class);
-                    startActivity(intent);
+                    replaceFragment(ChallengeTabFragment.newInstance(context), ChallengeTabFragment.TAG);
                     return true;
                 case R.id.nav_bottom_myBets:
                     replaceFragment(MyBetsFragment.newInstance(), MyBetsFragment.TAG);
