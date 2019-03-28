@@ -13,7 +13,7 @@ public class BetexFragment extends Fragment {
     protected void replaceFragment(Fragment fragment, String tag, String addToBackStack, int contentId){
         FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
         transaction.replace(contentId, fragment, tag);
-        transaction.setCustomAnimations(R.anim.pull_in_left, R.anim.push_out_left);
+        transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
         transaction.addToBackStack(addToBackStack);
         transaction.commit();
     }
