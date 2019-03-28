@@ -166,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                 replaceFragment(MyBetsFragment.newInstance(), MyBetsFragment.TAG);
 
             } else if (id == R.id.nav_challeges) {
+                replaceFragment(ChallengeTabFragment.newInstance(context), ChallengeTabFragment.TAG);
 
             } else if (id == R.id.nav_rules) {
 
