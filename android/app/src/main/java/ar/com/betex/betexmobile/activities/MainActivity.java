@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     protected void replaceFragment(Fragment fragment, String tag){
         this.currentFragment = fragment;
         FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
-        transaction.setCustomAnimations(R.anim.pull_in_left, R.anim.push_out_left);
+        transaction.setCustomAnimations(R.anim.pull_in_left, R.anim.push_out_left, R.anim.pull_in_right, R.anim.push_out_right);
         transaction.replace(R.id.contentFrameLayout, fragment, tag);
         transaction.commit();
     }
