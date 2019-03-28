@@ -204,11 +204,11 @@
         <item name="android:textSize">11sp</item>
         <item name="android:textColor">@color/secondaryText</item>
     </style>
-
     <style name="FabLabel">
-        <item name="android:background">@drawable/background_label_fab</item>
-        <item name="android:textColor">@color/primaryText</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:background">@color/background_item_endColor</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/material_text_subhead</item>
+        <item name="android:padding">8dp</item>
     </style>
 
     <style name="CarViewItem">

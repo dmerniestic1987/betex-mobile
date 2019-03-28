@@ -70,6 +70,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="create_new_bet">Nueva apuesta</string>
+    <string name="Create_new_challenge">Nuevo reto</string>
     <string name="tab_title_open_challenges">Abiertos</string>
     <string name="tab_title_my_challenges_challenges">Mis Retos</string>
     <string name="tab_title_my_contacts_challenges">Mis amigos</string>

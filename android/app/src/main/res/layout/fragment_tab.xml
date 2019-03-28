@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -25,4 +26,49 @@
         android:layout_below="@+id/tabs">
 
     </android.support.v4.view.ViewPager>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/menuFab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="top|right"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="68dp"
+        android:visibility="visible"
+        app:fab_labelStyle="@style/FabLabel"
+        fab:fab_addButtonColorPressed="?attr/colorPrimary"
+        fab:fab_addButtonColorNormal="?attr/colorAccent"
+        fab:fab_addButtonPlusIconColor="@color/black"
+        fab:fab_addButtonSize="normal"
+        fab:fab_labelsPosition="left">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/actionHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="?attr/colorAccent"
+            fab:fab_icon="@drawable/ic_help_black_24dp"
+            fab:fab_size="normal"
+            fab:fab_title="@string/title_help" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/actionCreateNewP2PBet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="?attr/colorAccent"
+            fab:fab_icon="@drawable/ic_add_black_24dp"
+            fab:fab_size="normal"
+            fab:fab_title="@string/Create_new_challenge"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/actionCreateMarketBet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="?attr/colorAccent"
+            fab:fab_icon="@drawable/ic_add_black_24dp"
+            fab:fab_size="normal"
+            fab:fab_title="@string/create_new_bet"/>
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>

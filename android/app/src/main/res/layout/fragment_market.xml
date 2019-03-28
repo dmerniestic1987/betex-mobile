@@ -48,7 +48,8 @@
         android:visibility="visible"
         app:fab_labelStyle="@style/FabLabel"
         fab:fab_addButtonColorPressed="?attr/colorPrimary"
-        fab:fab_addButtonColorNormal="?attr/colorPrimary"
+        fab:fab_addButtonColorNormal="?attr/colorAccent"
+        fab:fab_addButtonPlusIconColor="@color/black"
         fab:fab_addButtonSize="normal"
         fab:fab_labelsPosition="left">
 

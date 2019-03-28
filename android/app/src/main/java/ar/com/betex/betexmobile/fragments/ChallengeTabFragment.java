@@ -2,7 +2,6 @@ package ar.com.betex.betexmobile.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 
 import java.util.ArrayList;
 
@@ -11,7 +10,7 @@ import ar.com.betex.betexmobile.R;
 /**
  * Retos
  */
-public class ChallengeTabFragment  extends TabFragment{
+public class ChallengeTabFragment  extends TabWithFabFragment {
     public static final String TAG = "ChallengeTabFragment";
 
     public ChallengeTabFragment(){
@@ -28,7 +27,7 @@ public class ChallengeTabFragment  extends TabFragment{
 
     /**
      * Utiliza un método factory para obtener una nueva instacia del fragment
-     * @return A new instance of fragment TabFragment.
+     * @return A new instance of fragment TabWithFabFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static ChallengeTabFragment newInstance(Context context) {
