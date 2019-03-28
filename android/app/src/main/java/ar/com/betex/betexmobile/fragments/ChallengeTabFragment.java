@@ -21,9 +21,8 @@ public class ChallengeTabFragment  extends TabFragment{
     @Override
     protected void initFragments() {
         fragments = new ArrayList<>();
-        fragments.add(WalletFragment.newInstance());
-        fragments.add(MyBetsFragment.newInstance());
-        fragments.add(new MarketButtonBarFragment());
+        fragments.add(P2PBetFragment.newInstance());
+        fragments.add(new P2PBetFragment());
     }
 
 
@@ -40,7 +39,6 @@ public class ChallengeTabFragment  extends TabFragment{
         args.putStringArrayList(ARG_TITLES, tabTitles);
         tabTitles.add( context.getResources().getString(R.string.tab_title_open_challenges) );
         tabTitles.add( context.getResources().getString(R.string.tab_title_my_challenges_challenges) );
-        tabTitles.add( context.getResources().getString(R.string.tab_title_my_contacts_challenges) );
         fragment.setArguments(args);
         return fragment;
     }

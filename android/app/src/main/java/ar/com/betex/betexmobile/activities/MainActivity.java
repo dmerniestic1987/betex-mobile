@@ -23,6 +23,7 @@ import ar.com.betex.betexmobile.beans.Bet;
 import ar.com.betex.betexmobile.beans.Currency;
 import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.fragments.ChallengeTabFragment;
+import ar.com.betex.betexmobile.fragments.listener.OnP2PBetFragmentInteractionListener;
 import ar.com.betex.betexmobile.util.DevelopUtils;
 import ar.com.betex.betexmobile.fragments.ExitDialogFragment;
 import ar.com.betex.betexmobile.fragments.MarketEventListFragments;
@@ -41,7 +42,8 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                                                              , OnWalletCurrencyListSelectedListener
                                                              , ExitDialogFragment.OnContinuePlayingListener
                                                              , MyBetsButtonBar.OnMyBetTypeFilterClickedListener
-                                                             , OnMyBetSelectedListener {
+                                                             , OnMyBetSelectedListener
+, OnP2PBetFragmentInteractionListener {
     private Fragment currentFragment;
     private static final String CURRENT_FRAGMENT = "current_fragment_main_activity";
     private Context context;
@@ -269,6 +271,16 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
 
     @Override
     public void onCancelSelectedBet(Bet bet) {
+
+    }
+
+    @Override
+    public void onP2PBetAccepted(Bet bet) {
+
+    }
+
+    @Override
+    public void onP2PBetCreated(Bet bet) {
 
     }
 }
