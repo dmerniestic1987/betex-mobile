@@ -61,14 +61,5 @@
             fab:fab_icon="@drawable/ic_add_black_24dp"
             fab:fab_size="normal"
             fab:fab_title="@string/Create_new_challenge"/>
-
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/actionCreateMarketBet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            fab:fab_colorNormal="?attr/colorAccent"
-            fab:fab_icon="@drawable/ic_add_black_24dp"
-            fab:fab_size="normal"
-            fab:fab_title="@string/create_new_bet"/>
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>
