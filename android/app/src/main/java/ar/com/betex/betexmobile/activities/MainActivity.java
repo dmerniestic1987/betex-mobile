@@ -1,7 +1,6 @@
 package ar.com.betex.betexmobile.activities;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -94,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     protected void replaceFragment(Fragment fragment, String tag){
         this.currentFragment = fragment;
         FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.pull_in_left, R.anim.push_out_left);
         transaction.replace(R.id.contentFrameLayout, fragment, tag);
         transaction.commit();
     }

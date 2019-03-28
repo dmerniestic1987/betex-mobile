@@ -2,9 +2,6 @@ package ar.com.betex.betexmobile.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +23,7 @@ import ar.com.betex.betexmobile.util.DevelopUtils;
  * a la opción "Deportes y mercados" del NavigationBar
  *
  */
-public class MarketFragment extends Fragment{
+public class MarketFragment extends BetexFragment{
     private TextView eventTypeTitle;
     public static final String TAG = "MarketFragment";
     private FloatingActionsMenu menuFabMarkets;
@@ -55,10 +52,8 @@ public class MarketFragment extends Fragment{
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState == null) {
-            FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
-            MarketEventListFragments fragments = MarketEventListFragments.newInstance(DevelopUtils.hardcodeFutbalMarketList());
-            transaction.replace(R.id.marketListFragmentContainer, fragments, MarketEventListFragments.TAG);
-            transaction.commit();
+            MarketEventListFragments fragment = MarketEventListFragments.newInstance(DevelopUtils.hardcodeFutbalMarketList());
+            this.replaceFragment(fragment, MarketEventListFragments.TAG, null, R.id.marketListFragmentContainer);
         }
     }
 
@@ -93,12 +88,8 @@ public class MarketFragment extends Fragment{
      * @param newMarketList
      */
     public void drawMarketListFragment(List<Market> newMarketList) {
-        FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
-        MarketEventListFragments fragments = MarketEventListFragments.newInstance(newMarketList);
-
-        transaction.replace(R.id.marketListFragmentContainer, fragments, MarketEventListFragments.TAG);
-        transaction.addToBackStack(null);
-        transaction.commit();
+        MarketEventListFragments fragment = MarketEventListFragments.newInstance(newMarketList);
+        this.replaceFragment(fragment, MarketEventListFragments.TAG, null, R.id.marketListFragmentContainer);
     }
 
     /**
@@ -106,12 +97,8 @@ public class MarketFragment extends Fragment{
      * @param newMarketList
      */
     public void drawAllMarketsByEvent(List<Market> newMarketList) {
-        FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
         AllMarketsEventListFragments fragments = AllMarketsEventListFragments.newInstance(newMarketList);
-
-        transaction.replace(R.id.marketListFragmentContainer, fragments, AllMarketsEventListFragments.TAG);
-        transaction.addToBackStack(null);
-        transaction.commit();
+        this.replaceFragment(fragments, AllMarketsEventListFragments.TAG, null, R.id.marketListFragmentContainer);
     }
 
     /**
@@ -122,11 +109,8 @@ public class MarketFragment extends Fragment{
      * @param isBack True es una apuesta a favor, false de lo contrario
      */
     public void showPlaceBetScreen(Market marketSelected, String oddSelected, BigInteger runnerId, boolean isBack){
-        FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
         PlaceBetFragment fragments = PlaceBetFragment.newInstance(marketSelected, oddSelected, runnerId, isBack);
-        transaction.replace(R.id.marketListFragmentContainer, fragments, PlaceBetFragment.TAG);
-        transaction.addToBackStack(null);
-        transaction.commit();
+        this.replaceFragment(fragments, PlaceBetFragment.TAG, null, R.id.marketListFragmentContainer);
     }
 
 }

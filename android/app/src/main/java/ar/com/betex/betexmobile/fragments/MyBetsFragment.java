@@ -2,12 +2,10 @@ package ar.com.betex.betexmobile.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.util.BetexUtils;
 
@@ -18,7 +16,7 @@ import ar.com.betex.betexmobile.util.BetexUtils;
  * Use the {@link MyBetsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MyBetsFragment extends Fragment {
+public class MyBetsFragment extends BetexFragment {
     private TextView myBetsTitle;
     public static String TAG = "MyBetsFragment";
 
@@ -48,10 +46,8 @@ public class MyBetsFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState == null) {
-            FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
             MyBetsListFragmentFragment fragments = MyBetsListFragmentFragment.newInstance();
-            transaction.replace(R.id.myBetsFragmentList, fragments, MarketEventListFragments.TAG);
-            transaction.commit();
+            this.replaceFragment(fragments, MarketEventListFragments.TAG, null, R.id.myBetsFragmentList );
         }
     }
 
