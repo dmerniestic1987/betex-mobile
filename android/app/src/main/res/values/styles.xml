@@ -221,6 +221,28 @@
         <item name="android:paddingLeft">@dimen/card_padding_horizontal</item>
         <item name="android:paddingRight">@dimen/card_padding_horizontal</item>
     </style>
+    
+    <style name="StepperViewContainer">
+        <item name="android:padding">@dimen/stepper_padding</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="StepperViewComponent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/stepper_margin_view</item>
+    </style>
+
+    <style name="StepperViewText" parent="StepperViewComponent">
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:textSize">@dimen/material_text_body1</item>
+    </style>
+
+    <style name="StepperViewText.Title" parent="StepperViewText">
+        <item name="android:textSize">@dimen/material_text_title</item>
+    </style>
 </resources>
 
 

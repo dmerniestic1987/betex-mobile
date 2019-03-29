@@ -73,4 +73,9 @@
 
     <dimen name="text_margin_small">8dp</dimen>
     <dimen name="text_margin_very_small">4dp</dimen>
+
+    <dimen name="stepper_padding">16dp</dimen>
+    <dimen name="stepper_margin_view">10dp</dimen>
+    <dimen name="stepper_img_cell_height">288dp</dimen>
+    <dimen name="stepper_img_cell_width">160dp</dimen>
 </resources>

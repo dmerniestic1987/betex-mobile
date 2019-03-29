@@ -74,4 +74,15 @@
     <string name="tab_title_open_challenges">Abiertos</string>
     <string name="tab_title_my_challenges_challenges">Mis Retos</string>
     <string name="tab_title_my_contacts_challenges">Mis amigos</string>
+
+    <string name="understood_text">Entendido</string>
+    <string name="finish_text">Finalizar</string>
+    <string name="go_back_text">Volver</string>
+    <string name="wellcome_title_01">Bienvenid@ a Betex!</string>
+    <string name="wellcome_title_02">Desafía a tus amig@s!</string>
+    <string name="wellcome_title_03">Controla tus apuestas y fondos!</string>
+    <string name="wellcome_text_01">Betex Mobile es un divertido juego que permite realizar apuestas en Fútbol, Boxeo y Artes Marciales Mixtas contra otras personas, de una manera fácil y emocionante usando criptomonedas.</string>
+    <string name="wellcome_text_02">Puedes apostar directamente contra un amigo o crear una apuesta anónima, cualquier persona del mundo te la puede aceptar gracias a la confiable tecnología Blockchain de Ethereum.</string>
+    <string name="wellcome_text_03">Betex es una wallet... los tokens son 100% tuy@s. Puedes controlar tus apuestas muy fácilmente, y limitar los fondos que destinas al juego porque es tu Wallet Ethereum!</string>
+
 </resources>

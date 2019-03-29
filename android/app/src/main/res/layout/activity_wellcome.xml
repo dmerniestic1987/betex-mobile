@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.WellcomeActivity">
 
     <com.stepstone.stepper.StepperLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -10,6 +12,14 @@
         android:id="@+id/stepperLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:ms_stepperType="progress_bar" />
+        app:ms_stepperType="dots"
+        android:background="@color/colorPrimary"
+        app:ms_completeButtonColor="@color/colorAccent"
+        app:ms_activeStepColor="@color/colorAccent"
+        app:ms_inactiveStepColor="@color/itemTextColor"
+        app:ms_nextButtonColor="@color/colorAccent"
+        app:ms_backButtonColor="@color/itemTextColor"
+        android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+        app:ms_bottomNavigationBackground="@color/colorPrimaryDark"/>
 
 </FrameLayout>
