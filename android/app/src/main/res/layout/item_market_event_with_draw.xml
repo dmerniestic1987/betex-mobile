@@ -117,14 +117,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/competitorsHeader">
+            android:id="@+id/competitorsHeader"
+            android:paddingTop="6dp">
             <TextView
                 android:id="@+id/localCompetitorName"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:text="@string/local_soccer_team_example"
                 android:textColor="@color/primaryText"
                 android:textAlignment="center"/>
@@ -135,7 +135,6 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:text="@string/draw_text"
                 android:textColor="@color/primaryText"
                 android:textAlignment="center"/>
@@ -146,7 +145,6 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:text="@string/visitor_soccer_team_example"
                 android:textColor="@color/primaryText"
                 android:textAlignment="center"/>
@@ -157,8 +155,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:id="@+id/betTables"
-            android:background="@color/colorPrimary"
-            android:paddingTop="6dp"
             android:paddingBottom="12dp">
 
             <!-- LOCAL -->
