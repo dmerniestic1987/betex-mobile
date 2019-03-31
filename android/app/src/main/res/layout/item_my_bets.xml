@@ -1,63 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/item_market_event"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="@style/ItemMyBets"
-    android:elevation="@dimen/card_elevation">
+    style="@style/CarViewItem"
+    app:cardBackgroundColor="@color/background_item_startColor"
+    card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+    card_view:cardElevation="@dimen/card_recycler_elevation">
 
-    <!--EVENT VALUES -->
-    <LinearLayout
-        android:id="@+id/linearEventValues"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="@dimen/card_padding_vertical"
+        android:layout_marginBottom="@dimen/card_padding_vertical">
+
+        <TextView
+            android:id="@+id/eventTitle"
+            android:text="@string/soccer_event_example_my_bet"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:textSize="@dimen/material_text_subhead"
+            android:padding="8dp"
+            style="@style/ItemMyBetsText"
+            android:layout_marginBottom="4dp"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/linearEventValues"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_gravity="center">
-            <TextView
-                android:id="@+id/eventDateValue"
-                android:text="23/05"
-                style="@style/ItemMyBetsText"
-                android:textStyle="bold"
-                android:textColor="@color/colorSecondary"/>
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/eventHoutValue"
-                android:text="19:30"
-                style="@style/ItemMyBetsText"
-                android:textStyle="bold"
-                android:textColor="@color/colorSecondary"/>
-        </LinearLayout>
+            <!-- Icono Event Type y Status -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_gravity="center">
+                <ImageView
+                    android:id="@+id/eventTypeImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_boxing"
+                    android:tint="@color/colorSecondary"
+                    />
 
-            <TextView
-                android:id="@+id/eventTitle"
-                android:text="@string/soccer_event_example_my_bet"
-                style="@style/ItemMyBetsText" />
+                <TextView
+                    android:id="@+id/status"
+                    android:text="@string/my_bets_in_play_title"
+                    style="@style/ItemMyBetsText"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorSecondary"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/marketTypeValue"
                     android:text="@string/market_type_example_my_bet"
-                    style="@style/ItemMyBetsText"/>
+                    style="@style/ItemMyBetsText"
+                    android:textSize="@dimen/material_text_body1"/>
 
                 <TextView
                     android:text=" - "
@@ -71,34 +87,29 @@
                     android:textColor="@color/primaryText"/>
             </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_gravity="center">
-
-            <ImageView
-                android:id="@+id/eventTypeImage"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_boxing"
-                android:tint="@color/colorSecondary"
-                />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/eventDateValue"
+                    android:text="23/05"
+                    style="@style/ItemMyBetsText"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorSecondary"/>
 
-            <TextView
-                android:id="@+id/status"
-                android:text="@string/my_bets_in_play_title"
-                style="@style/ItemMyBetsText"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:textColor="@color/colorSecondary"
-                android:textAlignment="center"/>
+                <TextView
+                    android:id="@+id/eventHoutValue"
+                    android:text="19:30"
+                    style="@style/ItemMyBetsText"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorSecondary"/>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <include layout="@layout/bet_stake_value" />
-</LinearLayout>
+        <include layout="@layout/bet_stake_value" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

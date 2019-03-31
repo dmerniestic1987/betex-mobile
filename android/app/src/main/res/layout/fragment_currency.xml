@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_market_event"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/wallet_margin_fragments"
-    android:orientation="vertical"
-    android:theme="@style/AppTheme.Content"
-    tools:context=".fragments.CurrencyFragment"
-    style="@style/ItemCurrency"
-    android:elevation="@dimen/card_elevation">
+    style="@style/CarViewItem"
+    app:cardBackgroundColor="@color/background_item_startColor"
+    card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+    card_view:cardElevation="@dimen/card_recycler_elevation">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/ItemCurrency"
+        android:layout_height="match_parent"
         android:background="@android:color/transparent" >
 
         <android.support.constraint.ConstraintLayout
-            style="@style/ItemCurrency"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent">
@@ -133,6 +131,4 @@
             </LinearLayout>
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
-
-
-</FrameLayout>
+</android.support.v7.widget.CardView>
