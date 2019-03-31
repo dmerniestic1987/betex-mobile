@@ -37,7 +37,7 @@
 
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
-        android:id="@+id/menuFabMarkets"
+        android:id="@+id/menuFab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

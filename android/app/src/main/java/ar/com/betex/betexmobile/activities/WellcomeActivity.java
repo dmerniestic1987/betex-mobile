@@ -1,20 +1,18 @@
 package ar.com.betex.betexmobile.activities;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
-
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.WellcomeStepperAdapter;
 
+/**
+ * Es la pantalla de Bienvenida a la Aplicación, y la que explica como utilizarla.
+ */
 public class WellcomeActivity extends AppCompatActivity implements StepperLayout.StepperListener {
     private StepperLayout stepperLayout;
     @Override

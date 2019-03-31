@@ -17,7 +17,7 @@ import java.util.List;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.ViewPagerFragmentAdapter;
 
-public class TabWithFabFragment extends Fragment {
+public class TabWithFabFragment extends BetexFragment {
     protected static final String ARG_TITLES = "arg_titles_list_tab_fragment";
 
     protected List<String> titles;
@@ -40,7 +40,6 @@ public class TabWithFabFragment extends Fragment {
      * @param titles Parameter 1.
      * @return A new instance of fragment TabWithFabFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static TabWithFabFragment newInstance(List<String> titles) {
         TabWithFabFragment fragment = new TabWithFabFragment();
         Bundle args = new Bundle();
@@ -88,9 +87,4 @@ public class TabWithFabFragment extends Fragment {
         viewPager.setAdapter(mFragmentAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
-
-    public void addFragment(Fragment f){
-        this.fragments.add(f);
-    }
-
 }

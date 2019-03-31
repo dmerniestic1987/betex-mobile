@@ -1,6 +1,7 @@
 package ar.com.betex.betexmobile.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -124,6 +125,9 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.toolbar_help) {
+            Intent myIntent = new Intent(MainActivity.this, HelpActivity.class);
+            startActivity(myIntent);
+
             return true;
         }
 
@@ -173,6 +177,8 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
             } else if (id == R.id.nav_share) {
 
             } else if (id == R.id.nav_help) {
+                Intent myIntent = new Intent(MainActivity.this, HelpActivity.class);
+                startActivity(myIntent);
 
             } else if (id == R.id.nav_settings) {
 

@@ -11,19 +11,20 @@ import com.stepstone.stepper.adapter.AbstractFragmentStepAdapter;
 import com.stepstone.stepper.viewmodel.StepViewModel;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.fragments.WellcomeStepFragment;
+import ar.com.betex.betexmobile.fragments.HelpStepFragment;
 
-public class WellcomeStepperAdapter extends AbstractFragmentStepAdapter {
+public class HelpStepperAdapter extends AbstractFragmentStepAdapter {
 
-    public WellcomeStepperAdapter(FragmentManager fm, Context context) {
+    public HelpStepperAdapter(FragmentManager fm, Context context) {
         super(fm, context);
     }
 
     @Override
     public Step createStep(int position) {
-        final WellcomeStepFragment step = new WellcomeStepFragment();
+        //Primera pantalla
+        final HelpStepFragment step = new HelpStepFragment();
         Bundle b = new Bundle();
-        b.putInt(WellcomeStepFragment.CURRENT_STEP_POSITION_KEY, position);
+        b.putInt(HelpStepFragment.CURRENT_STEP_POSITION_KEY, position);
         step.setArguments(b);
         return step;
     }
@@ -36,7 +37,7 @@ public class WellcomeStepperAdapter extends AbstractFragmentStepAdapter {
     @NonNull
     @Override
     public StepViewModel getViewModel(@IntRange(from = 0) int position) {
-        StepViewModel.Builder builder = new StepViewModel.Builder(context).setTitle(context.getResources().getString(R.string.wellcome_title));
+        StepViewModel.Builder builder = new StepViewModel.Builder(context).setTitle("Titulo");
         switch (position) {
             case 0:
                 builder

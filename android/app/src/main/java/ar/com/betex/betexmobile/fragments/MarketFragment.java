@@ -26,7 +26,7 @@ import ar.com.betex.betexmobile.util.DevelopUtils;
 public class MarketFragment extends BetexFragment{
     private TextView eventTypeTitle;
     public static final String TAG = "MarketFragment";
-    private FloatingActionsMenu menuFabMarkets;
+    private FloatingActionsMenu menuFab;
     public MarketFragment() {
         super();
     }
@@ -66,13 +66,19 @@ public class MarketFragment extends BetexFragment{
     @Override
     public void onViewCreated(View v, Bundle savedInstanceState) {
         super.onViewCreated(v, savedInstanceState);
+        eventTypeTitle = getActivity().findViewById(R.id.eventTitles);
+        menuFab = getActivity().findViewById(R.id.menuFab);
     }
 
     @Override
     public void onStart(){
         super.onStart();
-        eventTypeTitle = getActivity().findViewById(R.id.eventTitles);
-        menuFabMarkets = getActivity().findViewById(R.id.menuFabMarkets);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        menuFab.setVisibility(View.VISIBLE);
     }
 
     /**
@@ -109,6 +115,7 @@ public class MarketFragment extends BetexFragment{
      * @param isBack True es una apuesta a favor, false de lo contrario
      */
     public void showPlaceBetScreen(Market marketSelected, String oddSelected, BigInteger runnerId, boolean isBack){
+        menuFab.setVisibility(View.GONE);
         PlaceBetFragment fragments = PlaceBetFragment.newInstance(marketSelected, oddSelected, runnerId, isBack);
         this.replaceFragment(fragments, PlaceBetFragment.TAG, null, R.id.marketListFragmentContainer);
     }

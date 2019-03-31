@@ -36,7 +36,7 @@
     <string name="visitor_soccer_team_example">River Plate</string>
     <string name="show_more">Más apuestas</string>
     <string name="minimun_bet_text">Apuesta mínima</string>
-    <string name="title_place_bet_example">A favor: Boca Juniors Ganador</string>
+    <string name="title_place_bet_example">Boca Juniors Ganador</string>
     <string name="odd_text">Cuota</string>
     <string name="odd_text_subtitle">Multiplicador</string>
     <string name="my_bet_text">Mi apuesta</string>
@@ -84,5 +84,17 @@
     <string name="wellcome_text_01">Betex Mobile es un divertido juego que permite realizar apuestas en Fútbol, Boxeo y Artes Marciales Mixtas contra otras personas, de una manera fácil y emocionante usando criptomonedas.</string>
     <string name="wellcome_text_02">Puedes apostar directamente contra un amigo o crear una apuesta anónima, cualquier persona del mundo te la puede aceptar gracias a la confiable tecnología Blockchain de Ethereum.</string>
     <string name="wellcome_text_03">Betex es una wallet... los tokens son 100% tuy@s. Puedes controlar tus apuestas muy fácilmente, y limitar los fondos que destinas al juego porque es tu Wallet Ethereum!</string>
+    <string name="title_activity_help">Betex Ayuda</string>
+    <string name="wellcome_title">Bienvenido a Betex Sports</string>
 
+
+    <string name="help_title_01">Apuestas en Betex</string>
+    <string name="help_text_01">Betex te permite apostar contra otros usuarios de manera anónima (a través del mercado de apuestas) o directamente contra una persona (a através de Retos directos)</string>
+
+    <string name="help_title_02">Mercado de apuestas</string>
+    <string name="help_text_02">En el mercado puedes crear una nueva apuesta o aceptar alguna existente. Para aceptarla haz click en algún botón con ícono de la ficha.</string>
+
+    <string name="help_title_03">Aceptar una apuesta</string>
+    <string name="help_text_03">En un encuentro de fútbol entre Boca Juniors y Colo Colo puedes apostar a favor o en contra de algún restulado.</string>
+    <string name="help_text2_03">Si apuestas a favor de Boca Jrs, significa que arriesgas a que gane. Si apuestas en contra, juegas a que gana Colo Colo o empatan</string>
 </resources>

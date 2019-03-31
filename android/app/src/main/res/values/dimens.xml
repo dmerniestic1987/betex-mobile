@@ -78,4 +78,7 @@
     <dimen name="stepper_margin_view">10dp</dimen>
     <dimen name="stepper_img_cell_height">288dp</dimen>
     <dimen name="stepper_img_cell_width">160dp</dimen>
+
+    <dimen name="help_stepper_img_cell_height">230dp</dimen>
+    <dimen name="help_stepper_img_cell_width">128dp</dimen>
 </resources>
