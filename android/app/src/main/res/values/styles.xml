@@ -248,6 +248,12 @@
         <item name="android:textSize">@dimen/material_text_caption</item>
     </style>
 
+    <style name="ItemMyBetTitleContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:padding">@dimen/card_padding</item>
+    </style>
 </resources>
 
 

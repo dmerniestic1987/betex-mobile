@@ -2,15 +2,13 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <corners android:radius="5dp" />
+    <corners android:radius="@dimen/card_recycler_corner_radius" />
 
     <gradient
         android:type="linear"
         android:centerX="10%"
         android:startColor="@color/colorSecondary"
         android:centerColor="@color/colorSecondaryMiddle"
-        android:endColor="@color/colorSecondaryDark"
+        android:endColor="@color/colorSecondary"
         android:angle="315"/>
-
-   <!-- <stroke android:width="1px" android:color="@color/background_item_border_line" /> -->
 </shape>

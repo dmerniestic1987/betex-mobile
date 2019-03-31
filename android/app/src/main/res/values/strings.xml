@@ -74,6 +74,7 @@
     <string name="tab_title_open_challenges">Abiertos</string>
     <string name="tab_title_my_challenges_challenges">Mis Retos</string>
     <string name="tab_title_my_contacts_challenges">Mis amigos</string>
+    <string name="start_event_text">Inicio del evento</string>
 
     <string name="understood_text">Entendido</string>
     <string name="finish_text">Finalizar</string>
