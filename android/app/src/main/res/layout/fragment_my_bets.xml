@@ -9,30 +9,13 @@
     <fragment
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="ar.com.betex.betexmobile.fragments.MyBetsButtonBar"
-        android:id="@+id/myBetsButtonBarFragment"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/myBetsTitle"
-        android:text="@string/my_bets_in_play_title"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textColor="@color/primaryText"
-        android:padding="@dimen/bet_button_top_margin"
-        android:textSize="15sp"
-        />
-
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:name="ar.com.betex.betexmobile.fragments.MyBetFilterBarFragment"
         android:id="@+id/myBetFilterBar"/>
 
-    <FrameLayout
+    <fragment
         android:id="@+id/myBetsFragmentList"
+        android:name="ar.com.betex.betexmobile.fragments.MyBetsListFragmentFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </FrameLayout>
+    </fragment>
 </LinearLayout>

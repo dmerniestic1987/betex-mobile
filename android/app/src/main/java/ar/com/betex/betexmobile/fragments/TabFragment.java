@@ -14,16 +14,16 @@ import java.util.List;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.ViewPagerFragmentAdapter;
 
-public class TabWithFabFragment extends BetexFragment {
+public class TabFragment extends BetexFragment {
     protected static final String ARG_TITLES = "arg_titles_list_tab_fragment";
     protected List<String> titles;
     protected List<Fragment> fragments;
     protected TabLayout tabLayout;
     protected ViewPager viewPager;
 
-    public static final String TAG = "TabWithFabFragment";
+    public static final String TAG = "TabFragment";
 
-    public TabWithFabFragment() {
+    public TabFragment() {
         super();
         titles = new ArrayList<>();
         fragments = new ArrayList<>();
@@ -35,8 +35,8 @@ public class TabWithFabFragment extends BetexFragment {
      * @param titles Parameter 1.
      * @return A new instance of fragment TabFragment.
      */
-    public static TabWithFabFragment newInstance(List<String> titles) {
-        TabWithFabFragment fragment = new TabWithFabFragment();
+    public static TabFragment newInstance(List<String> titles) {
+        TabFragment fragment = new TabFragment();
         Bundle args = new Bundle();
         args.putStringArrayList(ARG_TITLES, new ArrayList<>(titles));
         fragment.setArguments(args);
@@ -63,7 +63,7 @@ public class TabWithFabFragment extends BetexFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_tab_with_fab, container, false);
+        View view = inflater.inflate(R.layout.fragment_tab, container, false);
         initTabLayout(view);
         return view;
     }

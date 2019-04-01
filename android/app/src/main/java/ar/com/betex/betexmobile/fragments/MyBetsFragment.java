@@ -17,7 +17,6 @@ import ar.com.betex.betexmobile.util.BetexUtils;
  * create an instance of this fragment.
  */
 public class MyBetsFragment extends BetexFragment {
-    private TextView myBetsTitle;
     public static String TAG = "MyBetsFragment";
 
     public MyBetsFragment() {
@@ -40,34 +39,22 @@ public class MyBetsFragment extends BetexFragment {
         MyBetsFragment fragment = new MyBetsFragment();
         return fragment;
     }
-
+/*
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (savedInstanceState == null) {
-            MyBetsListFragmentFragment fragments = MyBetsListFragmentFragment.newInstance();
-            this.replaceFragment(fragments, MarketEventListFragments.TAG, null, R.id.myBetsFragmentList );
-        }
+        MyBetsListFragmentFragment fragments = new MyBetsListFragmentFragment();
+        this.replaceFragment(fragments, MarketEventListFragments.TAG, null, R.id.myBetsFragmentList );
     }
-
+*/
     @Override
     public void onStart() {
         super.onStart();
-        myBetsTitle = (TextView) getActivity().findViewById(R.id.myBetsTitle);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_my_bets, container, false);
-    }
-
-    /**
-     * Actualiza el título del tipo de evento.
-     * @param myBetType
-     */
-    public void setMyBetTitle(String myBetType){
-        myBetsTitle.setText(myBetType);
     }
 }
