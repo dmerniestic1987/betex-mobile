@@ -30,7 +30,6 @@ import ar.com.betex.betexmobile.fragments.ExitDialogFragment;
 import ar.com.betex.betexmobile.fragments.MarketEventListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
-import ar.com.betex.betexmobile.fragments.MyBetsFragment;
 import ar.com.betex.betexmobile.fragments.WalletFragment;
 import ar.com.betex.betexmobile.fragments.listener.OnMyBetSelectedListener;
 import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
@@ -124,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.toolbar_help) {
-            Intent myIntent = new Intent(MainActivity.this, HelpActivity.class);
+            Intent myIntent = new Intent(MainActivity.this, HelpMarketActivity.class);
             startActivity(myIntent);
 
             return true;
@@ -172,11 +171,11 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                 replaceFragment(ChallengeTabFragment.newInstance(context), ChallengeTabFragment.TAG);
 
             } else if (id == R.id.nav_rules) {
-
-            } else if (id == R.id.nav_share) {
+                Intent myIntent = new Intent(MainActivity.this, RulesActivity.class);
+                startActivity(myIntent);
 
             } else if (id == R.id.nav_help) {
-                Intent myIntent = new Intent(MainActivity.this, HelpActivity.class);
+                Intent myIntent = new Intent(MainActivity.this, HelpMarketActivity.class);
                 startActivity(myIntent);
 
             } else if (id == R.id.nav_settings) {

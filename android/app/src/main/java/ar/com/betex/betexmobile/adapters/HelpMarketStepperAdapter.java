@@ -13,9 +13,9 @@ import com.stepstone.stepper.viewmodel.StepViewModel;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.fragments.HelpStepFragment;
 
-public class HelpStepperAdapter extends AbstractFragmentStepAdapter {
+public class HelpMarketStepperAdapter extends AbstractFragmentStepAdapter {
 
-    public HelpStepperAdapter(FragmentManager fm, Context context) {
+    public HelpMarketStepperAdapter(FragmentManager fm, Context context) {
         super(fm, context);
     }
 
@@ -31,7 +31,7 @@ public class HelpStepperAdapter extends AbstractFragmentStepAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 5;
     }
 
     @NonNull
@@ -39,17 +39,12 @@ public class HelpStepperAdapter extends AbstractFragmentStepAdapter {
     public StepViewModel getViewModel(@IntRange(from = 0) int position) {
         StepViewModel.Builder builder = new StepViewModel.Builder(context).setTitle("Titulo");
         switch (position) {
-            case 0:
+            case 0: case 1: case 2: case 3:
                 builder
                         .setEndButtonLabel(context.getResources().getString(R.string.understood_text))
                         .setBackButtonLabel(context.getResources().getString(R.string.go_back_text));
                 break;
-            case 1:
-                builder
-                        .setEndButtonLabel(context.getResources().getString(R.string.understood_text))
-                        .setBackButtonLabel(context.getResources().getString(R.string.go_back_text));
-                break;
-            case 2:
+            case 4:
                 builder
                         .setBackButtonLabel(context.getResources().getString(R.string.go_back_text))
                         .setEndButtonLabel(context.getResources().getString(R.string.finish_text));

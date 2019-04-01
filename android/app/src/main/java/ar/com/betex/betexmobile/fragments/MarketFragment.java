@@ -1,5 +1,6 @@
 package ar.com.betex.betexmobile.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -7,12 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 import java.math.BigInteger;
 import java.util.List;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.activities.HelpMarketActivity;
+import ar.com.betex.betexmobile.activities.MainActivity;
 import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.util.BetexUtils;
 import ar.com.betex.betexmobile.util.DevelopUtils;
@@ -27,6 +31,9 @@ public class MarketFragment extends BetexFragment{
     private TextView eventTypeTitle;
     public static final String TAG = "MarketFragment";
     private FloatingActionsMenu menuFab;
+    private FloatingActionButton actionHelpMarketBet;
+    private FloatingActionButton actionCreateNewMarketBet;
+
     public MarketFragment() {
         super();
     }
@@ -68,17 +75,18 @@ public class MarketFragment extends BetexFragment{
         super.onViewCreated(v, savedInstanceState);
         eventTypeTitle = getActivity().findViewById(R.id.eventTitles);
         menuFab = getActivity().findViewById(R.id.menuFab);
-    }
+        actionHelpMarketBet = getActivity().findViewById(R.id.actionHelpMarketBet);
 
-    @Override
-    public void onStart(){
-        super.onStart();
-    }
+        actionHelpMarketBet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getContext(), HelpMarketActivity.class);
+                startActivity(myIntent);
+            }
+        });
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        menuFab.setVisibility(View.VISIBLE);
+
+        actionCreateNewMarketBet = getActivity().findViewById(R.id.actionCreateNewMarketBet);
     }
 
     /**
@@ -115,9 +123,7 @@ public class MarketFragment extends BetexFragment{
      * @param isBack True es una apuesta a favor, false de lo contrario
      */
     public void showPlaceBetScreen(Market marketSelected, String oddSelected, BigInteger runnerId, boolean isBack){
-        menuFab.setVisibility(View.GONE);
         PlaceBetFragment fragments = PlaceBetFragment.newInstance(marketSelected, oddSelected, runnerId, isBack);
         this.replaceFragment(fragments, PlaceBetFragment.TAG, null, R.id.marketListFragmentContainer);
     }
-
 }

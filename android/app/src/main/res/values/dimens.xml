@@ -81,4 +81,5 @@
 
     <dimen name="help_stepper_img_cell_height">230dp</dimen>
     <dimen name="help_stepper_img_cell_width">128dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
 </resources>

@@ -22,7 +22,10 @@ public class HelpStepFragment extends Fragment implements Step {
     private TextView title;
     private TextView text;
     private TextView text2;
+    private TextView txtImg;
+    private TextView txtImg2;
     private ImageView img;
+    private ImageView img2;
     private LinearLayout secondImage;
 
     public HelpStepFragment() {
@@ -51,6 +54,9 @@ public class HelpStepFragment extends Fragment implements Step {
         title = view.findViewById(R.id.title);
         text = view.findViewById(R.id.text);
         img = view.findViewById(R.id.img);
+        img2 = view.findViewById(R.id.img2);
+        txtImg = view.findViewById(R.id.txtImg);
+        txtImg2 = view.findViewById(R.id.txtImg2);
         secondImage = view.findViewById(R.id.secondImage);
         text2 = view.findViewById(R.id.text2);
 
@@ -59,20 +65,35 @@ public class HelpStepFragment extends Fragment implements Step {
                 break;
 
             case 1:
+                title.setText(getContext().getResources().getString(R.string.help_title_02));
+                text.setText(getContext().getResources().getString(R.string.help_text_02));
+                img.setImageResource(R.drawable.help_market_accept);
+                secondImage.setVisibility(View.GONE);
+                break;
+
+            case 2:
                 title.setText(getContext().getResources().getString(R.string.help_title_03));
                 text.setText(getContext().getResources().getString(R.string.help_text_03));
                 text2.setVisibility(View.VISIBLE);
                 text2.setText(getContext().getResources().getString(R.string.help_text2_03));
-                img.setImageResource(R.drawable.betex_mobile3);
-                break;
-
-            case 2:
-                title.setText(getContext().getResources().getString(R.string.help_title_02));
-                text.setText(getContext().getResources().getString(R.string.help_text_02));
-                img.setImageResource(R.drawable.betex_mobile_resaltada);
                 secondImage.setVisibility(View.GONE);
                 break;
 
+            case 3:
+                title.setText(getContext().getResources().getString(R.string.help_title_03));
+                text.setText(getContext().getResources().getString(R.string.help_text2_04));
+
+                img.setImageResource(R.drawable.help_market_place_bet);
+                img2.setImageResource(R.drawable.help_market_my_bets);
+                txtImg.setText(getContext().getResources().getString(R.string.help_text_my_bets));
+                break;
+
+            case 4:
+                title.setText(getContext().getResources().getString(R.string.help_title_rules));
+                text.setText(getContext().getResources().getString(R.string.help_text_rules));
+                img.setImageResource(R.drawable.help_market_rules);
+                secondImage.setVisibility(View.GONE);
+                break;
             default:
                 break;
         }

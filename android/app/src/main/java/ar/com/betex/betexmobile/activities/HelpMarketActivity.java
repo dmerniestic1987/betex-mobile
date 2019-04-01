@@ -4,9 +4,9 @@ import android.os.Bundle;
 import com.stepstone.stepper.StepperLayout;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.adapters.HelpStepperAdapter;
+import ar.com.betex.betexmobile.adapters.HelpMarketStepperAdapter;
 
-public class HelpActivity extends WellcomeActivity{
+public class HelpMarketActivity extends WellcomeActivity{
     private StepperLayout stepperLayout;
 
     @Override
@@ -15,7 +15,7 @@ public class HelpActivity extends WellcomeActivity{
         setContentView(R.layout.activity_wellcome);
         stepperLayout = this.findViewById(R.id.stepperLayout);
         stepperLayout = (StepperLayout) findViewById(R.id.stepperLayout);
-        stepperLayout.setAdapter(new HelpStepperAdapter(getSupportFragmentManager(), this));
+        stepperLayout.setAdapter(new HelpMarketStepperAdapter(getSupportFragmentManager(), this));
         stepperLayout.setListener(this);
     }
 }

@@ -23,60 +23,66 @@
         style="@style/StepperViewText"
         android:visibility="gone"/>
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:background="@android:color/transparent">
+
 
         <LinearLayout
-            android:id="@+id/first"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:gravity="center">
 
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="@dimen/help_stepper_img_cell_width"
-                android:layout_height="@dimen/help_stepper_img_cell_height"
-                style="@style/StepperViewComponent"
-                app:srcCompat="@drawable/betex_mobile"
-                android:layout_gravity="center_horizontal"/>
+            <LinearLayout
+                android:id="@+id/first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
 
-            <TextView
-                android:id="@+id/txtImg"
-                android:text="Mercado de apuestas"
-                style="@style/StepperViewText.Caption"
-                android:layout_margin="2dp"
-                android:layout_gravity="center"
-                android:textAlignment="center"/>
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="@dimen/help_stepper_img_cell_width"
+                    android:layout_height="@dimen/help_stepper_img_cell_height"
+                    style="@style/StepperViewComponent"
+                    app:srcCompat="@drawable/help_betex_market"
+                    android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/txtImg"
+                    android:text="Mercado de apuestas"
+                    style="@style/StepperViewText.Caption"
+                    android:layout_margin="2dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/secondImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="@dimen/help_stepper_img_cell_width"
+                    android:layout_height="@dimen/help_stepper_img_cell_height"
+                    style="@style/StepperViewComponent"
+                    app:srcCompat="@drawable/help_betex_challenge"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/txtImg2"
+                    android:text="Retos directos"
+                    style="@style/StepperViewText.Caption"
+                    android:layout_margin="2dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/secondImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/img2"
-                android:layout_width="@dimen/help_stepper_img_cell_width"
-                android:layout_height="@dimen/help_stepper_img_cell_height"
-                style="@style/StepperViewComponent"
-                app:srcCompat="@drawable/betex_mobile2"
-                android:layout_gravity="center_horizontal" />
-
-            <TextView
-                android:id="@+id/txtImg2"
-                android:text="Retos directos"
-                style="@style/StepperViewText.Caption"
-                android:layout_margin="2dp"
-                android:layout_gravity="center"
-                android:textAlignment="center"/>
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
