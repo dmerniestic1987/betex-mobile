@@ -23,13 +23,13 @@ import ar.com.betex.betexmobile.beans.Bet;
 import ar.com.betex.betexmobile.beans.Currency;
 import ar.com.betex.betexmobile.beans.Market;
 import ar.com.betex.betexmobile.fragments.ChallengeTabFragment;
+import ar.com.betex.betexmobile.fragments.MyBetsTabFragment;
+import ar.com.betex.betexmobile.fragments.listener.OnP2PBetFragmentInteractionListener;
 import ar.com.betex.betexmobile.util.DevelopUtils;
 import ar.com.betex.betexmobile.fragments.ExitDialogFragment;
 import ar.com.betex.betexmobile.fragments.MarketEventListFragments;
 import ar.com.betex.betexmobile.fragments.MarketButtonBarFragment;
 import ar.com.betex.betexmobile.fragments.MarketFragment;
-import ar.com.betex.betexmobile.fragments.MyBetsButtonBar;
-import ar.com.betex.betexmobile.fragments.MyBetsFragment;
 import ar.com.betex.betexmobile.fragments.WalletFragment;
 import ar.com.betex.betexmobile.fragments.listener.OnMyBetSelectedListener;
 import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                                                              , OnPlaceBetFragmentListener
                                                              , OnWalletCurrencyListSelectedListener
                                                              , ExitDialogFragment.OnContinuePlayingListener
-                                                             , MyBetsButtonBar.OnMyBetTypeFilterClickedListener
-                                                             , OnMyBetSelectedListener {
+                                                             , OnMyBetSelectedListener
+, OnP2PBetFragmentInteractionListener {
     private Fragment currentFragment;
     private static final String CURRENT_FRAGMENT = "current_fragment_main_activity";
     private Context context;
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     protected void replaceFragment(Fragment fragment, String tag){
         this.currentFragment = fragment;
         FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
         transaction.replace(R.id.contentFrameLayout, fragment, tag);
         transaction.commit();
     }
@@ -122,6 +123,9 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.toolbar_help) {
+            Intent myIntent = new Intent(MainActivity.this, HelpMarketActivity.class);
+            startActivity(myIntent);
+
             return true;
         }
 
@@ -143,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                     replaceFragment(ChallengeTabFragment.newInstance(), ChallengeTabFragment.TAG);
                     return true;
                 case R.id.nav_bottom_myBets:
-                    replaceFragment(MyBetsFragment.newInstance(), MyBetsFragment.TAG);
+                    replaceFragment(MyBetsTabFragment.newInstance(context), MyBetsTabFragment.TAG);
                     return true;
             }
             return false;
@@ -161,15 +165,18 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                 replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
 
             } else if (id == R.id.nav_myBets) {
-                replaceFragment(MyBetsFragment.newInstance(), MyBetsFragment.TAG);
+                replaceFragment(MyBetsTabFragment.newInstance(context), MyBetsTabFragment.TAG);
 
             } else if (id == R.id.nav_challeges) {
+                replaceFragment(ChallengeTabFragment.newInstance(context), ChallengeTabFragment.TAG);
 
             } else if (id == R.id.nav_rules) {
-
-            } else if (id == R.id.nav_share) {
+                Intent myIntent = new Intent(MainActivity.this, RulesActivity.class);
+                startActivity(myIntent);
 
             } else if (id == R.id.nav_help) {
+                Intent myIntent = new Intent(MainActivity.this, HelpMarketActivity.class);
+                startActivity(myIntent);
 
             } else if (id == R.id.nav_settings) {
 
@@ -257,18 +264,22 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     }
 
     @Override
-    public void onMyBetTypeClicked(String eventType) {
-        MyBetsFragment marketFragment = (MyBetsFragment) getSupportFragmentManager().findFragmentByTag(MyBetsFragment.TAG);
-        marketFragment.setMyBetTitle(eventType);
-    }
-
-    @Override
     public void onSelectedBetFromList(Bet bet) {
 
     }
 
     @Override
     public void onCancelSelectedBet(Bet bet) {
+
+    }
+
+    @Override
+    public void onP2PBetAccepted(Bet bet) {
+
+    }
+
+    @Override
+    public void onP2PBetCreated(Bet bet) {
 
     }
 }

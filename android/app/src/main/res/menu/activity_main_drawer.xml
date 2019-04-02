@@ -31,11 +31,11 @@
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_icon_config"
             android:title="@string/title_nav_settings" />
-
+<!--
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_menu_share"
-            android:title="@string/title_nav_share" />
+            android:title="@string/title_nav_share" /> -->
 
         <item
             android:id="@+id/nav_help"

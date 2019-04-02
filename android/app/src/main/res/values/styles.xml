@@ -31,9 +31,9 @@
         <item name="android:clickable">true</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingStart">@dimen/material_button_padding_16_dp</item>
-        <item name="android:paddingTop">@dimen/material_button_padding_8_dp</item>
+        <item name="android:paddingTop">@dimen/card_padding_vertical</item>
         <item name="android:paddingEnd">@dimen/material_button_padding_16_dp</item>
-        <item name="android:paddingBottom">@dimen/material_button_padding_8_dp</item>
+        <item name="android:paddingBottom">@dimen/card_padding_vertical</item>
         <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
         <item name="android:textColor">@color/darkTextColor</item>
     </style>
@@ -60,7 +60,6 @@
         <item name="android:elevation">@dimen/button_elevation</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
-
 
 
     <style name="ButtonPlaceBet" parent="ButtonShowMore">
@@ -154,8 +153,16 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/primaryText</item>
-        <item name="android:textSize">11sp</item>
+        <item name="android:textSize">@dimen/material_text_body2</item>
         <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="ItemMyBetTitle" parent="ItemMyBetsText">
+        <item name="android:textSize">@dimen/material_text_subhead</item>
+    </style>
+
+    <style name="ItemMyBetSubHead" parent="ItemMyBetsText">
+        <item name="android:textSize">@dimen/material_text_body1</item>
     </style>
 
     <style name="ItemMyBetStakeText" parent="ItemMyBetsText">
@@ -198,9 +205,54 @@
     </style>
 
     <style name="FabLabel">
-        <item name="android:background">@drawable/background_label_fab</item>
+        <item name="android:background">@color/background_item_endColor</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/material_text_subhead</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="CarViewItem">
+        <item name="android:layout_marginBottom">@dimen/card_margin_vertical_big_activity</item>
+        <item name="android:layout_marginEnd">@dimen/card_margin_horizontal_big_activity</item>
+        <item name="android:layout_marginStart">@dimen/card_margin_horizontal_big_activity</item>
+        <item name="android:layout_marginTop">@dimen/card_margin_vertical_big_activity</item>
+        <item name="android:paddingBottom">@dimen/card_padding_vertical</item>
+        <item name="android:paddingTop">@dimen/card_padding_vertical</item>
+        <item name="android:paddingLeft">@dimen/card_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/card_padding_horizontal</item>
+    </style>
+
+    <style name="StepperViewContainer">
+        <item name="android:padding">@dimen/stepper_padding</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="StepperViewComponent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/stepper_margin_view</item>
+    </style>
+
+    <style name="StepperViewText" parent="StepperViewComponent">
         <item name="android:textColor">@color/primaryText</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">@dimen/material_text_body1</item>
+    </style>
+
+    <style name="StepperViewText.Title" parent="StepperViewText">
+        <item name="android:textSize">@dimen/material_text_title</item>
+    </style>
+
+    <style name="StepperViewText.Caption" parent="StepperViewText">
+        <item name="android:textSize">@dimen/material_text_caption</item>
+    </style>
+
+    <style name="ItemMyBetTitleContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:padding">@dimen/card_padding</item>
     </style>
 </resources>
 

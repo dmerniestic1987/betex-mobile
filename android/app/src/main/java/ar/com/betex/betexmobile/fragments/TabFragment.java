@@ -14,11 +14,8 @@ import java.util.List;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.ViewPagerFragmentAdapter;
 
-/**
- * Componente para armar un TAB de pantallas
- * @author diego
- */
-public class TabFragment extends Fragment {
+public class TabFragment extends BetexFragment {
+    protected static final String ARG_TITLES = "arg_titles_list_tab_fragment";
     protected List<String> titles;
     protected List<Fragment> fragments;
     protected TabLayout tabLayout;
@@ -35,11 +32,14 @@ public class TabFragment extends Fragment {
 
     /**
      * Utiliza un método factory para obtener una nueva instacia del fragment
+     * @param titles Parameter 1.
      * @return A new instance of fragment TabFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static TabFragment newInstance() {
+    public static TabFragment newInstance(List<String> titles) {
         TabFragment fragment = new TabFragment();
+        Bundle args = new Bundle();
+        args.putStringArrayList(ARG_TITLES, new ArrayList<>(titles));
+        fragment.setArguments(args);
         return fragment;
     }
 
@@ -47,7 +47,7 @@ public class TabFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            initTitles();
+            titles = getArguments().getStringArrayList(ARG_TITLES);
             initFragments();
         }
     }
@@ -57,8 +57,6 @@ public class TabFragment extends Fragment {
      */
     protected void initFragments() {
         this.fragments = new ArrayList<>();
-    }
-    protected void initTitles() { this.titles = new ArrayList<>( );
     }
 
     @Override
@@ -70,7 +68,7 @@ public class TabFragment extends Fragment {
         return view;
     }
 
-    private void initTabLayout(View view) {
+    protected void initTabLayout(View view) {
         tabLayout = (TabLayout) view.findViewById(R.id.tabs);
         viewPager = (ViewPager) view.findViewById(R.id.viewpager);
 

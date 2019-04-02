@@ -31,6 +31,8 @@
     <color name="background_item_border_line">@color/contentBackgroundDark</color>
 
     <color name="negro_semitransparente">@color/background_item_centerColor</color>
+    <color name="itemTextColor">#b7b7b7</color>
+    <color name="itemTitleTextColor">@color/primaryText</color>
 <!--
     <color name="contentBackgroundLight">#ffffff</color>
     <color name="contentBackground">#f1f1f1</color>

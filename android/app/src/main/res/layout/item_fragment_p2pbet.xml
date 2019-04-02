@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/card_view_item_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/CarViewItem"
+    app:cardBackgroundColor="@color/background_item_startColor"
+    card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+    card_view:cardElevation="@dimen/card_recycler_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/card_padding_vertical"
+        android:layout_marginBottom="@dimen/card_padding_vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/personal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/ItemMyBetTitleContainer">
+
+            <RelativeLayout
+                android:id="@+id/rela_round"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/contrincante_round"
+                android:transitionName="shareView" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/rela_round"
+                android:text="BetexUser"
+                style="@style/ItemMyBetTitle"/>
+
+            <TextView
+                android:id="@+id/eventTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userName"
+                android:layout_toEndOf="@id/rela_round"
+                style="@style/ItemMyBetTitle"
+                android:text="@string/soccer_event_example_my_bet" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearEventValues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/card_padding">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/eventTypeImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/colorSecondary"
+                    app:srcCompat="@drawable/ic_boxing" />
+
+                <TextView
+                    android:id="@+id/status"
+                    style="@style/ItemMyBetSubHead"
+                    android:layout_gravity="center"
+                    android:text="@string/title_event_type_boxing"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="@dimen/material_text_caption" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/marketTypeValue"
+                        style="@style/ItemMyBetSubHead"
+                        android:text="@string/market_type_example_my_bet" />
+
+                    <TextView
+                        style="@style/ItemMyBetSubHead"
+                        android:text=" - "
+                        android:textColor="@color/primaryText" />
+
+                    <TextView
+                        android:id="@+id/betType"
+                        style="@style/ItemMyBetSubHead"
+                        android:text="@string/back_bet_text"
+                        android:textColor="@color/primaryText" />
+
+                    <TextView
+                        android:id="@+id/betStatus"
+                        style="@style/ItemMyBetSubHead"
+                        android:layout_marginLeft="16dp"
+                        android:text="En Juego"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/eventDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/competitionName"
+                        style="@style/ItemMyBetsText"
+                        android:layout_marginRight="@dimen/margin_place_bet_8dp"
+                        android:text="Champions League"
+                        android:textSize="@dimen/material_text_caption" />
+
+                    <TextView
+                        android:id="@+id/eventDateValue"
+                        style="@style/ItemMyBetsText"
+                        android:layout_marginRight="@dimen/margin_place_bet_8dp"
+                        android:text="23/05"
+                        android:textSize="@dimen/material_text_caption" />
+
+                    <TextView
+                        android:id="@+id/eventHoutValue"
+                        style="@style/ItemMyBetsText"
+                        android:text="19:30"
+                        android:textSize="@dimen/material_text_caption" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/padding_top_bottom_place_bet">
+
+                <TextView
+                    style="@style/ItemMyBetSubHead"
+                    android:layout_marginRight="8dp"
+                    android:text="Riesgo:" />
+
+                <TextView
+                    style="@style/ItemMyBetSubHead"
+                    android:text="5"
+                    android:layout_marginRight="8dp"
+                    android:textColor="@color/primaryText" />
+
+                <TextView
+                    style="@style/ItemMyBetSubHead"
+                    android:text="ETH"
+                    android:textColor="@color/primaryText" />
+
+                <TextView
+                    style="@style/ItemMyBetSubHead"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="8dp"
+                    android:text="Posible ganancia:" />
+
+                <TextView
+                    style="@style/ItemMyBetSubHead"
+                    android:text="7.4"
+                    android:layout_marginRight="8dp"
+                    android:textColor="@color/primaryText" />
+
+                <TextView
+                    style="@style/ItemMyBetSubHead"
+                    android:text="ETH"
+                    android:textColor="@color/primaryText" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/acceptBet"
+            style="@style/BetexMaterialButton"
+            android:text="Aceptar apuesta"
+            app:icon="@drawable/ic_coin"
+            app:iconTint="@color/darkTextColor"
+            app:rippleColor="@color/colorPrimaryDark" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/cancelBet"
+            style="@style/BetexMaterialButton"
+            android:text="Cancelar apuesta"
+            app:icon="@drawable/ic_cancel_black_24dp"
+            app:iconTint="@color/darkTextColor"
+            android:visibility="gone"
+            app:rippleColor="@color/colorPrimaryDark" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

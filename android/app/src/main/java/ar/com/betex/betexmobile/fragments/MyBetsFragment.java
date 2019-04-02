@@ -2,12 +2,10 @@ package ar.com.betex.betexmobile.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.util.BetexUtils;
 
@@ -18,8 +16,7 @@ import ar.com.betex.betexmobile.util.BetexUtils;
  * Use the {@link MyBetsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MyBetsFragment extends Fragment {
-    private TextView myBetsTitle;
+public class MyBetsFragment extends BetexFragment {
     public static String TAG = "MyBetsFragment";
 
     public MyBetsFragment() {
@@ -42,36 +39,22 @@ public class MyBetsFragment extends Fragment {
         MyBetsFragment fragment = new MyBetsFragment();
         return fragment;
     }
-
+/*
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (savedInstanceState == null) {
-            FragmentTransaction transaction = this.getFragmentManager().beginTransaction();
-            MyBetsListFragment fragments = MyBetsListFragment.newInstance();
-            transaction.replace(R.id.myBetsFragmentList, fragments, MarketEventListFragments.TAG);
-            transaction.commit();
-        }
+        MyBetsListFragmentFragment fragments = new MyBetsListFragmentFragment();
+        this.replaceFragment(fragments, MarketEventListFragments.TAG, null, R.id.myBetsFragmentList );
     }
-
+*/
     @Override
     public void onStart() {
         super.onStart();
-        myBetsTitle = (TextView) getActivity().findViewById(R.id.myBetsTitle);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_my_bets, container, false);
-    }
-
-    /**
-     * Actualiza el título del tipo de evento.
-     * @param myBetType
-     */
-    public void setMyBetTitle(String myBetType){
-        myBetsTitle.setText(myBetType);
     }
 }

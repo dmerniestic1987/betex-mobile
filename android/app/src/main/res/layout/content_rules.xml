@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.RulesActivity"
+    tools:showIn="@layout/activity_rules"
+    style="@style/AppTheme.Content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/large_text"
+            android:textSize="@dimen/material_text_body1"
+            android:textColor="@color/primaryText"/>
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/closeRules"
+            style="@style/BetexMaterialButton"
+            android:layout_marginTop="@dimen/margin_show_more_buttton"
+            android:layout_marginBottom="@dimen/margin_show_more_buttton"
+            android:text="@string/understood_text"
+            app:icon="@drawable/ic_check"
+            app:iconTint="@color/darkTextColor"
+            app:rippleColor="@color/colorPrimaryDark" />
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

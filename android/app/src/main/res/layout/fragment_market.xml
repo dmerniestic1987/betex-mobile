@@ -26,7 +26,8 @@
             android:text="@string/default_event_type"
             android:textAlignment="center"
             android:textColor="@color/primaryText"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:visibility="gone"/>
 
         <FrameLayout
             android:id="@+id/marketListFragmentContainer"
@@ -37,7 +38,7 @@
 
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
-        android:id="@+id/menuFabMarkets"
+        android:id="@+id/menuFab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -48,7 +49,8 @@
         android:visibility="visible"
         app:fab_labelStyle="@style/FabLabel"
         fab:fab_addButtonColorPressed="?attr/colorPrimary"
-        fab:fab_addButtonColorNormal="?attr/colorPrimary"
+        fab:fab_addButtonColorNormal="?attr/colorAccent"
+        fab:fab_addButtonPlusIconColor="@color/black"
         fab:fab_addButtonSize="normal"
         fab:fab_labelsPosition="left">
 
@@ -62,7 +64,7 @@
             fab:fab_title="@string/title_help" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/actionCreateNewBet"
+            android:id="@+id/actionCreateNewMarketBet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_colorNormal="?attr/colorAccent"
