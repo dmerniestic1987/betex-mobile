@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                     replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
                     return true;
                 case R.id.nav_bottom_challeges:
-                    replaceFragment(ChallengeTabFragment.newInstance(context), ChallengeTabFragment.TAG);
+                    replaceFragment(ChallengeTabFragment.newInstance(), ChallengeTabFragment.TAG);
                     return true;
                 case R.id.nav_bottom_myBets:
                     replaceFragment(MyBetsTabFragment.newInstance(context), MyBetsTabFragment.TAG);

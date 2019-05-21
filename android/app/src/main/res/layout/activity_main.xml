@@ -39,7 +39,8 @@
                 app:itemIconTint="@color/primaryText"
                 app:menu="@menu/navigation"
                 android:elevation="@dimen/botton_navigation_bar"
-                app:labelVisibilityMode="labeled" />
+                app:labelVisibilityMode="labeled"
+                />
         </RelativeLayout>
 
 </android.support.v4.widget.DrawerLayout>
