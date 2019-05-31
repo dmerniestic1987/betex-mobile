@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.beans.Currency;
+import ar.com.betex.betexmobile.entities.Currency;
 import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
 
 import java.math.BigDecimal;

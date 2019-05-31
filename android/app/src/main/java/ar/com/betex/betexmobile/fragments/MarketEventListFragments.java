@@ -16,7 +16,7 @@ import java.util.List;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.ItemMarketEventWithDrawRecyclerViewAdapter;
-import ar.com.betex.betexmobile.beans.Market;
+import ar.com.betex.betexmobile.entities.Market;
 
 /**
  * A fragment representing a list of Items.

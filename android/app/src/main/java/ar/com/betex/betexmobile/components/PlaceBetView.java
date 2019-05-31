@@ -11,7 +11,7 @@ import android.widget.Toast;
 import java.math.BigInteger;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.beans.Market;
+import ar.com.betex.betexmobile.entities.Market;
 
 public class PlaceBetView extends FrameLayout {
     private Market market;

@@ -14,8 +14,8 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.beans.Market;
-import ar.com.betex.betexmobile.beans.Runner;
+import ar.com.betex.betexmobile.entities.Market;
+import ar.com.betex.betexmobile.entities.Runner;
 import ar.com.betex.betexmobile.fragments.MarketEventListFragments.OnEventMarketInteractionListener;
 
 public class ItemAllMarketEventRecyclerViewAdapter extends RecyclerView.Adapter<ItemAllMarketEventRecyclerViewAdapter.ItemMarketEventViewHolder> {

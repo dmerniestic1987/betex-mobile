@@ -19,9 +19,9 @@ import android.view.MenuItem;
 import java.math.BigInteger;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.beans.Bet;
-import ar.com.betex.betexmobile.beans.Currency;
-import ar.com.betex.betexmobile.beans.Market;
+import ar.com.betex.betexmobile.entities.Bet;
+import ar.com.betex.betexmobile.entities.Currency;
+import ar.com.betex.betexmobile.entities.Market;
 import ar.com.betex.betexmobile.fragments.ChallengeTabFragment;
 import ar.com.betex.betexmobile.fragments.MyBetsTabFragment;
 import ar.com.betex.betexmobile.fragments.listener.OnP2PBetFragmentInteractionListener;

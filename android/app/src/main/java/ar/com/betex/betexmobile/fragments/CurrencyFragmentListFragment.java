@@ -14,7 +14,7 @@ import java.util.List;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.CurrencyFragmentListRecyclerViewAdapter;
-import ar.com.betex.betexmobile.beans.Currency;
+import ar.com.betex.betexmobile.entities.Currency;
 import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
 
 /**
