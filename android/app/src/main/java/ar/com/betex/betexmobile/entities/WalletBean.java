@@ -1,27 +1,59 @@
 package ar.com.betex.betexmobile.entities;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class WalletBean implements Serializable {
-    String name = "";
-    String password = "";
-    String address = "";
-    String path = "";
+/**
+ * Bean que representa a una wallet.
+ * @author Diego Mernies
+ */
+public class WalletBean implements Parcelable {
+    private String betexName = "";
+    private String sha256BetexPassword = "";
+    private String web3jWalletFilePath = "";
+    private String address = "";
 
-    public String getName() {
-        return name;
+    public WalletBean(){
+        super();
     }
 
-    public void setName(String name) {
-        this.name = name;
+    protected WalletBean(Parcel in) {
+        betexName = in.readString();
+        sha256BetexPassword = in.readString();
+        web3jWalletFilePath = in.readString();
+        address = in.readString();
     }
 
-    public String getPassword() {
-        return password;
+    public static final Creator<WalletBean> CREATOR = new Creator<WalletBean>() {
+        @Override
+        public WalletBean createFromParcel(Parcel in) {
+            return new WalletBean(in);
+        }
+
+        @Override
+        public WalletBean[] newArray(int size) {
+            return new WalletBean[size];
+        }
+    };
+
+    public String getBetexName() {
+        return betexName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setBetexName(String betexName) {
+        this.betexName = betexName;
+    }
+
+    /**
+     * Se guarda el hash de la clave en vez de la clave plana.
+     * @return sha256BetexPassword
+     */
+    public String getSha256BetexPassword() {
+        return sha256BetexPassword;
+    }
+
+    public void setSha256BetexPassword(String sha256BetexPassword) {
+        this.sha256BetexPassword = sha256BetexPassword;
     }
 
     public String getAddress() {
@@ -32,11 +64,24 @@ public class WalletBean implements Serializable {
         this.address = address;
     }
 
-    public String getPath() {
-        return path;
+    public String getWeb3jWalletFilePath() {
+        return web3jWalletFilePath;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setWeb3jWalletFilePath(String web3jWalletFilePath) {
+        this.web3jWalletFilePath = web3jWalletFilePath;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(betexName);
+        dest.writeString(sha256BetexPassword);
+        dest.writeString(web3jWalletFilePath);
+        dest.writeString(address);
     }
 }

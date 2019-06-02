@@ -33,6 +33,7 @@ dependencies {
     implementation 'com.stepstone.stepper:material-stepper:4.3.1'
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
+    implementation 'commons-codec:commons-codec:1.12'
     implementation 'org.web3j:core:4.2.0-android'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
