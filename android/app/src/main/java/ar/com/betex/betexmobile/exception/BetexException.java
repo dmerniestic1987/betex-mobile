@@ -1,4 +1,4 @@
-package ar.com.betex.betexmobile.Exception;
+package ar.com.betex.betexmobile.exception;
 
 
 /**

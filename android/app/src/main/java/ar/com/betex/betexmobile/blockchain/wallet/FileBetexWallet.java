@@ -13,7 +13,7 @@ import org.web3j.crypto.WalletUtils;
 import java.io.File;
 import java.io.IOException;
 
-import ar.com.betex.betexmobile.Exception.BetexException;
+import ar.com.betex.betexmobile.exception.BetexException;
 import ar.com.betex.betexmobile.entities.WalletBean;
 
 /**
@@ -47,6 +47,16 @@ public class FileBetexWallet implements BetexWallet{
             instance = new FileBetexWallet(contexto);
 
         return instance;
+    }
+
+    public String getAddress(){
+        if (credentials != null){
+            return credentials.getAddress();
+        }
+
+        else{
+            return "0x000";
+        }
     }
 
     @Override

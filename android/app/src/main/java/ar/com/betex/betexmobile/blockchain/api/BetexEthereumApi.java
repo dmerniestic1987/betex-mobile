@@ -6,10 +6,6 @@ import android.util.Log;
 import org.web3j.crypto.Credentials;
 
 import org.web3j.protocol.Web3j;
-import org.web3j.protocol.core.methods.response.Web3ClientVersion;
-
-import java.util.concurrent.ExecutionException;
-
 import ar.com.betex.betexmobile.blockchain.utils.BetexWeb3jUtils;
 import ar.com.betex.betexmobile.blockchain.wallet.BetexWallet;
 import ar.com.betex.betexmobile.blockchain.wallet.FileBetexWallet;
@@ -40,6 +36,7 @@ public class BetexEthereumApi {
      * @param configuration - Parámetros de configuración
      */
     public void init(Context context, Configuration configuration){
+        this.configuration = configuration;
         this.web3j = BetexWeb3jUtils.buildEthereumConnection(this.configuration);
         this.wallet = FileBetexWallet.getInstance(context);
         this.credential = this.wallet.getCredentials();
@@ -47,7 +44,7 @@ public class BetexEthereumApi {
 
     /**
      * Obtiene la versión
-     * @return
+     * @return version
      */
     public String getClientVersion(){
         String version = "UNKNOWN";

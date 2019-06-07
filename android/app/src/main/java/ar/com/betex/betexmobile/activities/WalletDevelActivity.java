@@ -7,8 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-import ar.com.betex.betexmobile.Exception.BetexException;
+import ar.com.betex.betexmobile.blockchain.api.BetexCoreApi;
+import ar.com.betex.betexmobile.entities.Configuration;
+import ar.com.betex.betexmobile.exception.BetexException;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.blockchain.wallet.BetexWallet;
 import ar.com.betex.betexmobile.blockchain.wallet.FileBetexWallet;
@@ -20,6 +24,12 @@ import ar.com.betex.betexmobile.blockchain.wallet.FileBetexWallet;
 public class WalletDevelActivity extends AppCompatActivity {
     private static final String TAG = "WalletDevelActivity";
     private BetexWallet betexWallet;
+    private TextView versionView;
+    private Configuration configuration;
+    private BetexCoreApi betexCoreApi;
+    private Button holaMundo;
+    private Button placeBet;
+    private TextView restulTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +47,8 @@ public class WalletDevelActivity extends AppCompatActivity {
             }
         });
 
+        configuration = new Configuration();
         betexWallet = FileBetexWallet.getInstance(this);
-
         if (!betexWallet.isWalletCreated()){
             try {
                 betexWallet.createWallet("wallet1", "clave001");
@@ -55,5 +65,25 @@ public class WalletDevelActivity extends AppCompatActivity {
                 Log.e(TAG, e.getMessage(), e);
             }
         }
+        restulTextView = this.findViewById(R.id.restulTextView);
+        restulTextView.setText(betexWallet.getAddress());
+
+        holaMundo = this.findViewById(R.id.holaMundo);
+        betexCoreApi = new BetexCoreApi(this, configuration);
+        betexCoreApi.load();
+
+
+        versionView = this.findViewById(R.id.versionView);
+        versionView.setText(betexCoreApi.getClientVersion());
+
+        holaMundo.setOnClickListener(view -> {
+            String hello = betexCoreApi.helloWorld();
+            versionView.setText(hello);
+        });
+
+        placeBet = this.findViewById(R.id.placeBet);
+        placeBet.setOnClickListener(view-> {
+            betexCoreApi.openMarket();
+        });
     }
 }

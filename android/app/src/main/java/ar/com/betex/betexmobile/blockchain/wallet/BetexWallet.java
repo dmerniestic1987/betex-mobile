@@ -2,7 +2,7 @@ package ar.com.betex.betexmobile.blockchain.wallet;
 
 import org.web3j.crypto.Credentials;
 
-import ar.com.betex.betexmobile.Exception.BetexException;
+import ar.com.betex.betexmobile.exception.BetexException;
 
 /**
  * Permite gestionar la wallet de la aplicación que permitirá realizar
@@ -57,4 +57,10 @@ public interface BetexWallet {
      * @return credenciales
      */
     Credentials getCredentials();
+
+    /**
+     * Obtiene la dirección de la wallet
+     * @return
+     */
+    String getAddress();
 }
