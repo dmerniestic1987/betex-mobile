@@ -16,8 +16,7 @@ import java.util.List;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.activities.HelpMarketActivity;
-import ar.com.betex.betexmobile.activities.MainActivity;
-import ar.com.betex.betexmobile.beans.Market;
+import ar.com.betex.betexmobile.entities.Market;
 import ar.com.betex.betexmobile.util.BetexUtils;
 import ar.com.betex.betexmobile.util.DevelopUtils;
 

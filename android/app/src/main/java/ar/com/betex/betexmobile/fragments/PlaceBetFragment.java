@@ -1,7 +1,6 @@
 package ar.com.betex.betexmobile.fragments;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,7 +13,7 @@ import android.widget.FrameLayout;
 import java.math.BigInteger;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.beans.Market;
+import ar.com.betex.betexmobile.entities.Market;
 import ar.com.betex.betexmobile.components.PlaceBetView;
 import ar.com.betex.betexmobile.fragments.listener.OnPlaceBetFragmentListener;
 

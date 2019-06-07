@@ -16,12 +16,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
 import java.math.BigInteger;
+import java.security.Security;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.beans.Bet;
-import ar.com.betex.betexmobile.beans.Currency;
-import ar.com.betex.betexmobile.beans.Market;
+import ar.com.betex.betexmobile.entities.Bet;
+import ar.com.betex.betexmobile.entities.Currency;
+import ar.com.betex.betexmobile.entities.Market;
 import ar.com.betex.betexmobile.fragments.ChallengeTabFragment;
 import ar.com.betex.betexmobile.fragments.MyBetsTabFragment;
 import ar.com.betex.betexmobile.fragments.listener.OnP2PBetFragmentInteractionListener;
@@ -46,6 +49,10 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     private static final String CURRENT_FRAGMENT = "current_fragment_main_activity";
     private Context context;
 
+    static {
+        Security.removeProvider(BouncyCastleProvider.PROVIDER_NAME);
+        Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -181,7 +188,10 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
             } else if (id == R.id.nav_settings) {
 
             } else if (id == R.id.nav_wallet) {
-                replaceFragment(new WalletFragment(), WalletFragment.TAG);
+                Intent myIntent = new Intent(MainActivity.this, WalletDevelActivity.class);
+                startActivity(myIntent);
+                //replaceFragment(new WalletFragment(), WalletFragment.TAG);
+
             }
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);

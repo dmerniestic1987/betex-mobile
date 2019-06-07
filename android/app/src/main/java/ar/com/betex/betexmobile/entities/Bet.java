@@ -1,4 +1,4 @@
-package ar.com.betex.betexmobile.beans;
+package ar.com.betex.betexmobile.entities;
 
 import java.io.Serializable;
 

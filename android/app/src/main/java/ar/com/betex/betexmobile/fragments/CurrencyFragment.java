@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.beans.Currency;
+import ar.com.betex.betexmobile.entities.Currency;
 
 public class CurrencyFragment extends Fragment {
     private static final String ARG_CURRENCY = "ARG_CURRENCY";

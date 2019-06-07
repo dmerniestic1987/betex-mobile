@@ -1,6 +1,6 @@
 package ar.com.betex.betexmobile.fragments.listener;
 
-import ar.com.betex.betexmobile.beans.Currency;
+import ar.com.betex.betexmobile.entities.Currency;
 
 /**
  * Listener para detectar la lista de las critpomonedas

@@ -1,6 +1,6 @@
 package ar.com.betex.betexmobile.fragments.listener;
 
-import ar.com.betex.betexmobile.beans.Bet;
+import ar.com.betex.betexmobile.entities.Bet;
 
 /**
  *
