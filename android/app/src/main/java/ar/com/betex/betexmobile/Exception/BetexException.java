@@ -4,15 +4,15 @@ package ar.com.betex.betexmobile.Exception;
 /**
  * Excepciones de Betex Wallet
  */
-public class BetexWalletException extends Exception {
+public class BetexException extends Exception {
     private String operation;
     private String code;
 
-    public BetexWalletException(String message, Throwable cause){
+    public BetexException(String message, Throwable cause){
        super(message, cause);
     }
 
-    public BetexWalletException(String message){
+    public BetexException(String message){
         super(message);
     }
 

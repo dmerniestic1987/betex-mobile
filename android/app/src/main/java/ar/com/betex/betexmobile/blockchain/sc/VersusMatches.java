@@ -1,4 +1,4 @@
-package ar.com.betex.betexmobile.sc;
+package ar.com.betex.betexmobile.blockchain.sc;
 
 import io.reactivex.Flowable;
 import java.math.BigInteger;

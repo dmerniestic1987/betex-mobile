@@ -8,13 +8,14 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
-import ar.com.betex.betexmobile.Exception.BetexWalletException;
+import ar.com.betex.betexmobile.Exception.BetexException;
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.blockchain.BetexWallet;
-import ar.com.betex.betexmobile.blockchain.FileBetexWallet;
+import ar.com.betex.betexmobile.blockchain.wallet.BetexWallet;
+import ar.com.betex.betexmobile.blockchain.wallet.FileBetexWallet;
 
 /**
- * Actividad de desarrollo
+ * Actividad de desarrollo para consultar el estado de las Wallet
+ * @author Diego Mernies
  */
 public class WalletDevelActivity extends AppCompatActivity {
     private static final String TAG = "WalletDevelActivity";
@@ -42,7 +43,7 @@ public class WalletDevelActivity extends AppCompatActivity {
             try {
                 betexWallet.createWallet("wallet1", "clave001");
 
-            } catch (BetexWalletException e) {
+            } catch (BetexException e) {
                 Log.e(TAG, e.getMessage(), e);
             }
         }
@@ -50,7 +51,7 @@ public class WalletDevelActivity extends AppCompatActivity {
         else {
             try {
                 betexWallet.loadWallet("clave001");
-            } catch (BetexWalletException e) {
+            } catch (BetexException e) {
                 Log.e(TAG, e.getMessage(), e);
             }
         }

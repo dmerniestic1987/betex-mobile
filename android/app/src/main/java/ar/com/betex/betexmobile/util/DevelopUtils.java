@@ -12,6 +12,10 @@ import ar.com.betex.betexmobile.entities.Currency;
 import ar.com.betex.betexmobile.entities.Market;
 import ar.com.betex.betexmobile.entities.Runner;
 
+/**
+ * Esta clase provee métodos y datos para desarrollar el prototipo gráfico.
+ * @author Diego Mernies
+ */
 public class DevelopUtils {
 
     public static List<Market> hardcodeMmaMarketList(){

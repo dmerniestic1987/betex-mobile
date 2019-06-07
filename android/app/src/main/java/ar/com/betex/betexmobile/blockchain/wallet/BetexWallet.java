@@ -1,8 +1,8 @@
-package ar.com.betex.betexmobile.blockchain;
+package ar.com.betex.betexmobile.blockchain.wallet;
 
 import org.web3j.crypto.Credentials;
 
-import ar.com.betex.betexmobile.Exception.BetexWalletException;
+import ar.com.betex.betexmobile.Exception.BetexException;
 
 /**
  * Permite gestionar la wallet de la aplicación que permitirá realizar
@@ -22,35 +22,35 @@ public interface BetexWallet {
      * archivos sha256
      * @param betexPassword
      * @return true si se cargó la wallet, false de lo contrario
-     * @throws BetexWalletException
+     * @throws BetexException
      */
-    boolean loadWallet(String betexPassword) throws BetexWalletException;
+    boolean loadWallet(String betexPassword) throws BetexException;
 
     /**
      * Crea una nueva wallet
      * @param betexWalletName
      * @param betexPassword
-     * @throws BetexWalletException
+     * @throws BetexException
      */
-    void createWallet(String betexWalletName, String betexPassword) throws BetexWalletException;
+    void createWallet(String betexWalletName, String betexPassword) throws BetexException;
 
     /**
      * Importa una wallet existente para poder utilizarlo en el sistema
      * @param newBetexWalleName
      * @param betexPassword
      * @param walletPrivateKey
-     * @throws BetexWalletException
+     * @throws BetexException
      */
-    void importWallet(String newBetexWalleName, String betexPassword, String walletPrivateKey) throws BetexWalletException;
+    void importWallet(String newBetexWalleName, String betexPassword, String walletPrivateKey) throws BetexException;
 
     /**
      * Importa una wallet existente utilizando un mnemotecnicas de 12 palabras
      * @param newBetexWalleName Nombre de la wallet
      * @param betexPassword Clave plana para debloquear Betex
      * @param mnemotecnic de 12 palabras
-     * @throws BetexWalletException
+     * @throws BetexException
      */
-    void importWalletWithMnemotecnic(String newBetexWalleName, String betexPassword, String mnemotecnic) throws BetexWalletException;
+    void importWalletWithMnemotecnic(String newBetexWalleName, String betexPassword, String mnemotecnic) throws BetexException;
 
     /**
      * Obtiene las credenciales para operar con web3

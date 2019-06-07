@@ -1,4 +1,4 @@
-package ar.com.betex.betexmobile.blockchain;
+package ar.com.betex.betexmobile.blockchain.wallet;
 
 import android.content.Context;
 import android.util.Log;
@@ -13,7 +13,7 @@ import org.web3j.crypto.WalletUtils;
 import java.io.File;
 import java.io.IOException;
 
-import ar.com.betex.betexmobile.Exception.BetexWalletException;
+import ar.com.betex.betexmobile.Exception.BetexException;
 import ar.com.betex.betexmobile.entities.WalletBean;
 
 /**
@@ -48,45 +48,6 @@ public class FileBetexWallet implements BetexWallet{
 
         return instance;
     }
-/*
-       public void importWallet(String name,String password,String privateKey,String filepath){
-        String pk = "";
-        WalletBean walletBean = new WalletBean();
-        if (privateKey.equals("")){
-            pk = "65e080f727d9ddca08bff41f57283fc7d5e032bb5af8de963dade6a6caaa1ec4";
-        }else {
-            pk = privateKey;
-        }
-        ECKeyPair ecKeyPair = ECKeyPair.create(new BigInteger(pk,16));
-        String pri = Numeric.toHexStringWithPrefix(ecKeyPair.getPrivateKey());
-        credentials = Credentials.create(ecKeyPair);
-
-        String address = credentials.getAddress();
-        try {
-            String filename = WalletUtils.generateWalletFile(password,ecKeyPair,new File(filepath),false);
-            String file=filepath+"/"+filename;
-            File f = new File(filepath+"/walletBean.adt");
-            if (f.exists()){
-                listWallets = readWalletFile(filepath);
-            }
-
-            //namelists.add(name);
-            walletBean.setBetexName(name);
-            walletBean.setSha256BetexPassword(password);
-            walletBean.setAddress(address);
-            walletBean.setWeb3jWalletFilePath(file);
-            listWallets.add(walletBean);
-            saveWalletFile(filepath);
-        } catch (CipherException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-    */
-
 
     @Override
     public boolean isWalletCreated() {
@@ -100,11 +61,11 @@ public class FileBetexWallet implements BetexWallet{
     }
 
     @Override
-    public boolean loadWallet(String betexPassword) throws BetexWalletException {
+    public boolean loadWallet(String betexPassword) throws BetexException {
         Log.i(TAG, "Loading Wallet");
         //Verifica que clave != null
         if (betexPassword == null){
-            BetexWalletException bex = new BetexWalletException("Betex Password no pude ser null");
+            BetexException bex = new BetexException("Betex Password no pude ser null");
             bex.setCode("loading_betex_wallet_file");
             bex.setOperation("Reading Wallet with null betexPassword");
             throw bex;
@@ -119,7 +80,7 @@ public class FileBetexWallet implements BetexWallet{
         WalletBean tempWallet = this.readBetexWalletFile(betexWallet);
         String betexPasswordSha256 = new String(Hex.encodeHex(DigestUtils.sha256(betexPassword)));
         if(!tempWallet.getSha256BetexPassword().equals(betexPasswordSha256)){
-            BetexWalletException bex = new BetexWalletException("Betex Password incorrecto");
+            BetexException bex = new BetexException("Betex Password incorrecto");
             bex.setCode("loading_betex_wallet_file");
             bex.setOperation("Incorrect Betex credentials");
             throw bex;
@@ -132,7 +93,7 @@ public class FileBetexWallet implements BetexWallet{
     }
 
     @Override
-    public void createWallet(String betexWalletName, String betexPassword) throws BetexWalletException {
+    public void createWallet(String betexWalletName, String betexPassword) throws BetexException {
         Log.i(TAG, "Creating Wallet");
 
         //Primero creamos el archivo
@@ -145,7 +106,7 @@ public class FileBetexWallet implements BetexWallet{
             }
             web3jWalletFileName = WalletUtils.generateLightNewWalletFile(betexPassword,new File(keyStoreDirPath()));
         } catch (Exception e) {
-            BetexWalletException bex = new BetexWalletException("Error creating web3j wallet", e);
+            BetexException bex = new BetexException("Error creating web3j wallet", e);
             bex.setCode("creating_betex_wallet_file");
             bex.setOperation("Creating a new web3j wallet");
             throw bex;
@@ -165,12 +126,12 @@ public class FileBetexWallet implements BetexWallet{
     }
 
     @Override
-    public void importWallet(String newBetexWalleName, String betexPassword, String walletPrivateKey) throws BetexWalletException {
+    public void importWallet(String newBetexWalleName, String betexPassword, String walletPrivateKey) throws BetexException {
 
     }
 
     @Override
-    public void importWalletWithMnemotecnic(String newBetexWalleName, String betexPassword, String mnemotecnic) throws BetexWalletException {
+    public void importWalletWithMnemotecnic(String newBetexWalleName, String betexPassword, String mnemotecnic) throws BetexException {
 
     }
 
@@ -191,15 +152,15 @@ public class FileBetexWallet implements BetexWallet{
      * Lee el archivo Betex File
      * @param betexWallet
      * @return walletBean
-     * @throws BetexWalletException
+     * @throws BetexException
      */
-    private WalletBean readBetexWalletFile(File betexWallet) throws BetexWalletException{
+    private WalletBean readBetexWalletFile(File betexWallet) throws BetexException {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             WalletBean walletBean = objectMapper.readValue(betexWallet, WalletBean.class);
             return walletBean;
         } catch (IOException e) {
-            BetexWalletException bex = new BetexWalletException("Error reading Betex Wallet File", e);
+            BetexException bex = new BetexException("Error reading Betex Wallet File", e);
             bex.setCode("reading_betex_wallet_file");
             bex.setOperation("Reading JSON file in KeyStore");
             throw bex;
@@ -210,16 +171,16 @@ public class FileBetexWallet implements BetexWallet{
     /**
      * Graba un archivo que representa a la wallet de Betex
      * @param walletBean
-     * @throws BetexWalletException
+     * @throws BetexException
      */
-    private void writeBetexWalletFile(WalletBean walletBean) throws BetexWalletException {
+    private void writeBetexWalletFile(WalletBean walletBean) throws BetexException {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             File betexFile = new File(keyStoreDirPath() + "/" + BETEX_WALLET_FILE_NAME);
             objectMapper.writeValue(betexFile, walletBean);
 
         } catch (IOException e) {
-            BetexWalletException bex = new BetexWalletException("Error writing Betex Wallet File", e);
+            BetexException bex = new BetexException("Error writing Betex Wallet File", e);
             bex.setCode("writing_betex_wallet_file");
             bex.setOperation("Writing JSON file in KeyStore");
             throw bex;
@@ -230,13 +191,13 @@ public class FileBetexWallet implements BetexWallet{
      * Carga las credenciales de la wallet
      * @param betexPassword
      * @param web3jWalletFileName
-     * @throws BetexWalletException
+     * @throws BetexException
      */
-    private void readWeb3jWalletCredentials(String betexPassword, String web3jWalletFileName) throws BetexWalletException{
+    private void readWeb3jWalletCredentials(String betexPassword, String web3jWalletFileName) throws BetexException {
         try {
             credentials = WalletUtils.loadCredentials(betexPassword,keyStoreDirPath() + "/" + web3jWalletFileName);
         } catch (Exception e) {
-            BetexWalletException bex = new BetexWalletException("Error creating web3j wallet", e);
+            BetexException bex = new BetexException("Error creating web3j wallet", e);
             bex.setCode("creating_betex_wallet_file");
             bex.setOperation("Loading the new web3j wallet");
             throw bex;
