@@ -13,6 +13,10 @@ import java.util.concurrent.ExecutionException;
 
 import ar.com.betex.betexmobile.blockchain.sc.BetexCore;
 import ar.com.betex.betexmobile.entities.Configuration;
+import io.reactivex.Flowable;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Permite comunicarse con el contrato de Betex Core
@@ -34,24 +38,16 @@ public class BetexCoreApi extends BetexEthereumApi {
         betexCore = BetexCore.load(configuration.getBetexCoreContractAddress(), web3j, credential, contractGasProvider);
     }
 
-    public String helloWorld(){
-
-        try {
-            return betexCore.getMensajeHola().sendAsync().get();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return "HELLO WORLD";
+    public Flowable<String> helloWorld(){
+        return betexCore.getMensajeHola().flowable()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
     }
 
-    public void openMarket(){
-        try {
-            TransactionReceipt receipt = betexCore.openMarket(new BigInteger(String.valueOf(System.currentTimeMillis()))).sendAsync().get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+    public Flowable<TransactionReceipt> openMarket(){
+        BigInteger marketId = new BigInteger(String.valueOf(System.currentTimeMillis()));
+        return betexCore.openMarket(marketId).flowable()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
     }
 }

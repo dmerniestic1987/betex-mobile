@@ -1,5 +1,7 @@
 package ar.com.betex.betexmobile.activities;
 
+import android.content.Context;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +11,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.web3j.protocol.exceptions.TransactionException;
 
 import ar.com.betex.betexmobile.blockchain.api.BetexCoreApi;
 import ar.com.betex.betexmobile.entities.Configuration;
@@ -16,6 +21,7 @@ import ar.com.betex.betexmobile.exception.BetexException;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.blockchain.wallet.BetexWallet;
 import ar.com.betex.betexmobile.blockchain.wallet.FileBetexWallet;
+
 
 /**
  * Actividad de desarrollo para consultar el estado de las Wallet
@@ -30,6 +36,7 @@ public class WalletDevelActivity extends AppCompatActivity {
     private Button holaMundo;
     private Button placeBet;
     private TextView restulTextView;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,7 @@ public class WalletDevelActivity extends AppCompatActivity {
             }
         });
 
+        context = this;
         configuration = new Configuration();
         betexWallet = FileBetexWallet.getInstance(this);
         if (!betexWallet.isWalletCreated()){
@@ -77,13 +85,29 @@ public class WalletDevelActivity extends AppCompatActivity {
         versionView.setText(betexCoreApi.getClientVersion());
 
         holaMundo.setOnClickListener(view -> {
-            String hello = betexCoreApi.helloWorld();
-            versionView.setText(hello);
+            betexCoreApi.helloWorld().subscribe(
+                    msg -> { versionView.setText(msg); }
+            );
         });
 
         placeBet = this.findViewById(R.id.placeBet);
         placeBet.setOnClickListener(view-> {
-            betexCoreApi.openMarket();
+            betexCoreApi.openMarket()
+                .subscribe(transactionReceipt -> {
+                        String blockHash = transactionReceipt.getBlockHash();
+                        updateTransactionHash(transactionReceipt.getTransactionHash());
+                    },
+                    exception -> {
+                        TransactionException tex = (TransactionException) exception;
+                        Log.e(TAG, tex.getMessage(), exception);
+                        updateTransactionHash("ERROR");
+                    }
+                );
         });
+    }
+
+    private void updateTransactionHash(String transactionHash){
+        restulTextView.setText(transactionHash);
+        Toast.makeText(context, transactionHash, Toast.LENGTH_SHORT).show();
     }
 }
