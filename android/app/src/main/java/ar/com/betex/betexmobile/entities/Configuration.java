@@ -18,6 +18,10 @@ public class Configuration {
         return BETEX_CORE_CONTRACT_ADDRESS;
     }
 
+    public String getBetexTokenContractAddress(){
+        return BETEX_TOKEN_CONTRACT_ADDRESS;
+    }
+
     public String getVersusMatchesContractAddress(){
         return VERSUS_MATCHES_CONTRACT_ADDRESS;
     }

@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.blockchain.api.BetexCoreApi;
+import ar.com.betex.betexmobile.blockchain.api.BetexTokenApi;
+import ar.com.betex.betexmobile.entities.Configuration;
 import ar.com.betex.betexmobile.entities.Currency;
 import ar.com.betex.betexmobile.util.BetexUtils;
 import ar.com.betex.betexmobile.util.DevelopUtils;
