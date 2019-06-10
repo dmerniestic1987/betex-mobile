@@ -1,4 +1,4 @@
-package ar.com.betex.betexmobile.blockchain.sc;
+package ar.com.betex.blockchain.sc;
 
 import io.reactivex.Flowable;
 import java.math.BigInteger;
@@ -81,7 +81,6 @@ public class VersusMatches extends Contract {
 
     static {
         _addresses = new HashMap<String, String>();
-        _addresses.put("4", "0xe102dAB5404Dd8C17ff7f7853330C08f43D1F0Ba");
     }
 
     @Deprecated

@@ -3,18 +3,15 @@ package ar.com.betex.betexmobile.blockchain.api;
 import android.content.Context;
 
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
-import org.web3j.tx.Contract;
-import org.web3j.tx.ManagedTransaction;
 import org.web3j.tx.gas.ContractGasProvider;
 import org.web3j.tx.gas.DefaultGasProvider;
 
 import java.math.BigInteger;
-import java.util.concurrent.ExecutionException;
 
-import ar.com.betex.betexmobile.blockchain.sc.BetexCore;
+
 import ar.com.betex.betexmobile.entities.Configuration;
+import ar.com.betex.blockchain.sc.BetexCore;
 import io.reactivex.Flowable;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -24,10 +21,6 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class BetexCoreApi extends BetexEthereumApi {
     private static BetexCore betexCore;
-
-    public BetexCoreApi(Context context){
-        super(context);
-    }
 
     public BetexCoreApi(Context context, Configuration configuration){
         super(context, configuration);

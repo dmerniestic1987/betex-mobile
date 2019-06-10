@@ -21,11 +21,6 @@ public class BetexEthereumApi {
     protected Credentials credential;
     protected BetexWallet wallet;
 
-    public BetexEthereumApi(Context context){
-        super();
-        this.init(context, new Configuration());
-    }
-
     public BetexEthereumApi(Context context, Configuration configuration){
         super();
         this.init(context, configuration);
@@ -41,6 +36,7 @@ public class BetexEthereumApi {
         this.wallet = FileBetexWallet.getInstance(context);
         this.credential = this.wallet.getCredentials();
     }
+
 
     /**
      * Obtiene la versión
