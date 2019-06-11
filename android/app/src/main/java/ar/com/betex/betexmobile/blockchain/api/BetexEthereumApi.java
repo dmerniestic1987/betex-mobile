@@ -6,6 +6,9 @@ import android.util.Log;
 import org.web3j.crypto.Credentials;
 
 import org.web3j.protocol.Web3j;
+import org.web3j.tx.gas.ContractGasProvider;
+import org.web3j.tx.gas.DefaultGasProvider;
+
 import ar.com.betex.betexmobile.blockchain.utils.BetexWeb3jUtils;
 import ar.com.betex.betexmobile.blockchain.wallet.BetexWallet;
 import ar.com.betex.betexmobile.blockchain.wallet.FileBetexWallet;
@@ -20,11 +23,8 @@ public class BetexEthereumApi {
     protected Configuration configuration;
     protected Credentials credential;
     protected BetexWallet wallet;
-
-    public BetexEthereumApi(Context context){
-        super();
-        this.init(context, new Configuration());
-    }
+    protected ContractGasProvider contractGasProvider = new DefaultGasProvider();
+    protected Context context;
 
     public BetexEthereumApi(Context context, Configuration configuration){
         super();
@@ -40,7 +40,9 @@ public class BetexEthereumApi {
         this.web3j = BetexWeb3jUtils.buildEthereumConnection(this.configuration);
         this.wallet = FileBetexWallet.getInstance(context);
         this.credential = this.wallet.getCredentials();
+        this.context = context;
     }
+
 
     /**
      * Obtiene la versión

@@ -1,21 +1,29 @@
-package ar.com.betex.betexmobile.entities;
+package ar.com.betex.betexmobile.blockchain.entities;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
-public class Currency implements Serializable {
+public class CryptoAsset implements Serializable {
     private String symbol;
-    private BigDecimal balance;
+    private BigInteger balance;
     private String currencyName;
     private BigDecimal valueInUsd;
     private int imgId;
+    private boolean isToken;
 
-    public Currency(String symbol, BigDecimal balance, String currencyName, BigDecimal valueInUsd, int imgId) {
+    public CryptoAsset(){
+        super();
+        this.isToken = false;
+    }
+    public CryptoAsset(String symbol, BigInteger balance, String currencyName, BigDecimal valueInUsd, int imgId) {
         this.symbol = symbol;
         this.balance = balance;
         this.currencyName = currencyName;
         this.valueInUsd = valueInUsd;
         this.imgId = imgId;
+        this.isToken = false;
+
     }
 
     public String getSymbol() {
@@ -26,11 +34,11 @@ public class Currency implements Serializable {
         this.symbol = symbol;
     }
 
-    public BigDecimal getBalance() {
+    public BigInteger getBalance() {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance) {
+    public void setBalance(BigInteger balance) {
         this.balance = balance;
     }
 
@@ -52,5 +60,17 @@ public class Currency implements Serializable {
 
     public int getImgId() {
         return imgId;
+    }
+
+    public void setImgId(int imgId) {
+        this.imgId = imgId;
+    }
+
+    public boolean isToken() {
+        return isToken;
+    }
+
+    public void setToken(boolean token) {
+        isToken = token;
     }
 }

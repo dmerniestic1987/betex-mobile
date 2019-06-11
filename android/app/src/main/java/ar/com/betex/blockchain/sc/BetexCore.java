@@ -1,4 +1,4 @@
-package ar.com.betex.betexmobile.blockchain.sc;
+package ar.com.betex.blockchain.sc;
 
 import io.reactivex.Flowable;
 import java.math.BigInteger;
@@ -149,7 +149,6 @@ public class BetexCore extends Contract {
 
     static {
         _addresses = new HashMap<String, String>();
-        _addresses.put("4", "0x9090bAF75c678B6e4E6479E529bfFd2Ec2133d73");
     }
 
     @Deprecated

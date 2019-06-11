@@ -12,9 +12,11 @@ import org.web3j.crypto.WalletUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
+import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
 import ar.com.betex.betexmobile.exception.BetexException;
-import ar.com.betex.betexmobile.entities.WalletBean;
+import ar.com.betex.betexmobile.blockchain.entities.WalletBean;
 
 /**
  * Permite gestionar las operaciones para cargar y crear wallets para realizar
@@ -131,7 +133,7 @@ public class FileBetexWallet implements BetexWallet{
         walletBean.setSha256BetexPassword(betexPasswordSha256);
         walletBean.setAddress(credentials.getAddress());
         walletBean.setWeb3jWalletFilePath(web3jWalletFileName);
-
+        Log.i("WALLETBEAN", "****ADRESS: " + credentials.getAddress());
         writeBetexWalletFile(walletBean);
     }
 

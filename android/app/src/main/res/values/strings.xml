@@ -40,8 +40,10 @@
     <string name="odd_text">Cuota</string>
     <string name="odd_text_subtitle">Multiplicador</string>
     <string name="my_bet_text">Mi apuesta</string>
-    <string name="cryptocurrency_default">ETH</string>
-    <string name="cryptocurrency_name_default">Ether</string>
+    <string name="ether_cryptocurrency_symbol_default">ETH</string>
+    <string name="ether_cryptocurrency_name_default">Ether</string>
+    <string name="betex_cryptocurrency_symbol_default">BTX</string>
+    <string name="betex_cryptocurrency_name_default">Betex</string>
     <string name="place_bet_buton_text">Apostar</string>
     <string name="total_quantity_text">Total de goles</string>
     <string name="send_text">Enviar</string>

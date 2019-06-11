@@ -2,27 +2,24 @@ package ar.com.betex.betexmobile.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.entities.Currency;
+import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
 import ar.com.betex.betexmobile.util.BetexUtils;
 import ar.com.betex.betexmobile.util.DevelopUtils;
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * to handle interaction events.
- * Use the {@link WalletFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Pantalla para gestionar los recursos disponibles en la wallet
+ * @author Diego Alejandro Mernies
  */
 public class WalletFragment extends BetexFragment {
     public static String TAG = "WalletFragment";
 
     public WalletFragment() {
+        super();
     }
 
     @Override
@@ -32,11 +29,9 @@ public class WalletFragment extends BetexFragment {
     }
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
+     * Crea una nueva instancia del fragmento
      * @return A new instance of fragment WalletFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static WalletFragment newInstance() {
         WalletFragment fragment = new WalletFragment();
         Bundle args = new Bundle();
@@ -48,7 +43,7 @@ public class WalletFragment extends BetexFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
-            CurrencyFragmentListFragment fragment = CurrencyFragmentListFragment.newInstance(DevelopUtils.hardcodeCryptoCurrencies());
+            CurrencyFragmentListFragment fragment = CurrencyFragmentListFragment.newInstance();
             replaceFragment(fragment, CurrencyFragmentListFragment.TAG, null, R.id.walletContent);
         }
     }
@@ -59,7 +54,7 @@ public class WalletFragment extends BetexFragment {
         return inflater.inflate(R.layout.fragment_wallet, container, false);
     }
 
-    public void drawCurrencyFragment(Currency currency){
+    public void drawCurrencyFragment(CryptoAsset currency){
         CurrencyFragment fragment = CurrencyFragment.newInstance(currency);
         replaceFragment(fragment, CurrencyFragmentListFragment.TAG, null, R.id.walletContent);
     }

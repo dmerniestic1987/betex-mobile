@@ -2,6 +2,9 @@ package ar.com.betex.betexmobile.blockchain.wallet;
 
 import org.web3j.crypto.Credentials;
 
+import java.util.List;
+
+import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
 import ar.com.betex.betexmobile.exception.BetexException;
 
 /**
@@ -52,6 +55,7 @@ public interface BetexWallet {
      */
     void importWalletWithMnemotecnic(String newBetexWalleName, String betexPassword, String mnemotecnic) throws BetexException;
 
+
     /**
      * Obtiene las credenciales para operar con web3
      * @return credenciales
@@ -60,7 +64,7 @@ public interface BetexWallet {
 
     /**
      * Obtiene la dirección de la wallet
-     * @return
+     * @return address
      */
     String getAddress();
 }
