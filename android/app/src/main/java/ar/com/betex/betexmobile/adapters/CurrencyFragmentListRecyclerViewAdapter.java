@@ -8,25 +8,28 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.entities.Currency;
+import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
+import ar.com.betex.betexmobile.blockchain.utils.BetexWeb3jUtils;
 import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link Currency} and makes a call to the
- * specified {@link OnWalletCurrencyListSelectedListener}.
- * TODO: Replace the implementation with code for your data type.
+ * Adapter para los item s de la lista de wallets.
+ * @author Diego Mernies
  */
-public class CurrencyFragmentListRecyclerViewAdapter extends RecyclerView.Adapter<CurrencyFragmentListRecyclerViewAdapter.ViewHolder> {
+public class CurrencyFragmentListRecyclerViewAdapter
+            extends RecyclerView.Adapter<CurrencyFragmentListRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Currency> mValues;
+    private final List<CryptoAsset> mCurrencies;
     private final OnWalletCurrencyListSelectedListener mListener;
 
-    public CurrencyFragmentListRecyclerViewAdapter(List<Currency> items, OnWalletCurrencyListSelectedListener listener) {
-        mValues = items;
+    public CurrencyFragmentListRecyclerViewAdapter(OnWalletCurrencyListSelectedListener listener, List<CryptoAsset> currencies) {
+        mCurrencies = currencies;
         mListener = listener;
     }
 
@@ -42,33 +45,39 @@ public class CurrencyFragmentListRecyclerViewAdapter extends RecyclerView.Adapte
         NumberFormat formatCurrency = NumberFormat.getCurrencyInstance();
         NumberFormat formatNumber = NumberFormat.getNumberInstance();
 
-        holder.currency = mValues.get(position);
-        holder.currencyName.setText(mValues.get(position).getCurrencyName());
-        holder.currencyValue.setText(formatNumber.format(mValues.get(position).getBalance()));
-
-        holder.currencySymbol.setText(mValues.get(position).getSymbol());
-        holder.currencyImg.setImageResource(mValues.get(position).getImgId());
-
-        holder.currencyInUsd.setText(formatCurrency.format(mValues.get(position).getValueInUsd()));
+        holder.currency = mCurrencies.get(position);
+        holder.currencyName.setText(mCurrencies.get(position).getCurrencyName());
 
 
+        holder.currencySymbol.setText(mCurrencies.get(position).getSymbol());
+        holder.currencyImg.setImageResource(mCurrencies.get(position).getImgId());
 
-        BigDecimal balanceInUsde = mValues.get(position).getValueInUsd().multiply(mValues.get(position).getBalance()).setScale(2, BigDecimal.ROUND_HALF_DOWN);
+        holder.currencyInUsd.setText(formatCurrency.format(mCurrencies.get(position).getValueInUsd()));
+
+        BigInteger balance = mCurrencies.get(position).getBalance();
+        BigDecimal bdBalance = new BigDecimal(balance);
+
+        if(!mCurrencies.get(position).isToken()){
+            bdBalance = BetexWeb3jUtils.weiToEther(balance);
+        }
+
+        holder.currencyValue.setText(formatNumber.format(bdBalance));
+
+        BigDecimal balanceInUsde = mCurrencies.get(position).getValueInUsd()
+                                    .multiply(bdBalance)
+                                    .setScale(2, BigDecimal.ROUND_HALF_DOWN);
         holder.currencyBalanceInUsd.setText(formatCurrency.format(balanceInUsde));
 
-        holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != mListener) {
-                    mListener.onCurrencySelected(holder.currency);
-                }
+        holder.mView.setOnClickListener(view -> {
+            if (null != mListener) {
+                mListener.onCurrencySelected(holder.currency);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return mCurrencies.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -80,7 +89,7 @@ public class CurrencyFragmentListRecyclerViewAdapter extends RecyclerView.Adapte
         public final TextView currencyBalanceInUsd;
         public final TextView currencyInUsd;
 
-        public Currency currency;
+        public CryptoAsset currency;
 
         public ViewHolder(View view) {
             super(view);

@@ -2,16 +2,12 @@ package ar.com.betex.betexmobile.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.blockchain.api.BetexCoreApi;
-import ar.com.betex.betexmobile.blockchain.api.BetexTokenApi;
-import ar.com.betex.betexmobile.entities.Configuration;
-import ar.com.betex.betexmobile.entities.Currency;
+import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
 import ar.com.betex.betexmobile.util.BetexUtils;
 import ar.com.betex.betexmobile.util.DevelopUtils;
 
@@ -47,7 +43,7 @@ public class WalletFragment extends BetexFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
-            CurrencyFragmentListFragment fragment = CurrencyFragmentListFragment.newInstance(DevelopUtils.hardcodeCryptoCurrencies());
+            CurrencyFragmentListFragment fragment = CurrencyFragmentListFragment.newInstance();
             replaceFragment(fragment, CurrencyFragmentListFragment.TAG, null, R.id.walletContent);
         }
     }
@@ -58,7 +54,7 @@ public class WalletFragment extends BetexFragment {
         return inflater.inflate(R.layout.fragment_wallet, container, false);
     }
 
-    public void drawCurrencyFragment(Currency currency){
+    public void drawCurrencyFragment(CryptoAsset currency){
         CurrencyFragment fragment = CurrencyFragment.newInstance(currency);
         replaceFragment(fragment, CurrencyFragmentListFragment.TAG, null, R.id.walletContent);
     }

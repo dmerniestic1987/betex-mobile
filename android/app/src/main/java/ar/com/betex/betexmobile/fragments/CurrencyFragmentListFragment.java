@@ -14,34 +14,31 @@ import java.util.List;
 
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.CurrencyFragmentListRecyclerViewAdapter;
-import ar.com.betex.betexmobile.entities.Currency;
+import ar.com.betex.betexmobile.blockchain.api.CryptoCurrenciesApi;
+import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
+import ar.com.betex.betexmobile.entities.Configuration;
 import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
 
 /**
- * A fragment representing a list of Items.
- * <p/>
- * Activities containing this fragment MUST implement the {@link OnWalletCurrencyListSelectedListener}
- * interface.
+ * La lista de tokens y Eth para que el usuario pueda consultar
+ * @author  Diego Mernies
  */
 public class CurrencyFragmentListFragment extends Fragment {
-    private static final String ARG_CURRENCY_LIST = "ARG_CURRENCY_LIST";
-    private OnWalletCurrencyListSelectedListener mListener;
-    List<Currency> currencies;
-
     public static final String TAG = "CurrencyFragmentListFragment";
-
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
+    private OnWalletCurrencyListSelectedListener mListener;
+    private RecyclerView recyclerView;
+    private CryptoCurrenciesApi cryptoCurrenciesApi;
     public CurrencyFragmentListFragment() {
-        this.currencies = new ArrayList<>();
+        super();
     }
 
-    public static CurrencyFragmentListFragment newInstance(List<Currency> currencies) {
+    /**
+     * Obtiene una nuev instancia
+     * @return fragment
+     */
+    public static CurrencyFragmentListFragment newInstance() {
         CurrencyFragmentListFragment fragment = new CurrencyFragmentListFragment();
         Bundle args = new Bundle();
-        args.putSerializable(ARG_CURRENCY_LIST, new ArrayList<>(currencies));
         fragment.setArguments(args);
         return fragment;
     }
@@ -49,10 +46,6 @@ public class CurrencyFragmentListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (getArguments() != null) {
-            currencies = (List<Currency>) getArguments().getSerializable(ARG_CURRENCY_LIST);
-        }
     }
 
     @Override
@@ -61,13 +54,18 @@ public class CurrencyFragmentListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_currency_list, container, false);
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+            recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new CurrencyFragmentListRecyclerViewAdapter(this.currencies, mListener));
         }
         return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        CryptoCurrenciesApi api = new CryptoCurrenciesApi(this.getContext(), new Configuration());
+        recyclerView.setAdapter(new CurrencyFragmentListRecyclerViewAdapter(mListener, api.getMyCurrenciesBalance()));
+    }
 
     @Override
     public void onAttach(Context context) {

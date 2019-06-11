@@ -35,7 +35,7 @@
             style="@style/ItemEventMarket.MainData"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
-            android:text="@string/cryptocurrency_name_default"
+            android:text="@string/ether_cryptocurrency_name_default"
             app:layout_constraintStart_toEndOf="@+id/currencyImg"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,7 +67,7 @@
             style="@style/ItemEventMarket.MainData"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/cryptocurrency_default"
+            android:text="@string/ether_cryptocurrency_symbol_default"
             app:layout_constraintStart_toEndOf="@+id/currencyValue"
             app:layout_constraintTop_toTopOf="parent" />
 

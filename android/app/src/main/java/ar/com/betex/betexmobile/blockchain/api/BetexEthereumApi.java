@@ -24,6 +24,7 @@ public class BetexEthereumApi {
     protected Credentials credential;
     protected BetexWallet wallet;
     protected ContractGasProvider contractGasProvider = new DefaultGasProvider();
+    protected Context context;
 
     public BetexEthereumApi(Context context, Configuration configuration){
         super();
@@ -39,6 +40,7 @@ public class BetexEthereumApi {
         this.web3j = BetexWeb3jUtils.buildEthereumConnection(this.configuration);
         this.wallet = FileBetexWallet.getInstance(context);
         this.credential = this.wallet.getCredentials();
+        this.context = context;
     }
 
 

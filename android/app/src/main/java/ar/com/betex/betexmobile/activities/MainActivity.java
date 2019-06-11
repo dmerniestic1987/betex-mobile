@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import java.math.BigInteger;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.entities.Bet;
-import ar.com.betex.betexmobile.entities.Currency;
+import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
 import ar.com.betex.betexmobile.entities.Market;
 import ar.com.betex.betexmobile.fragments.ChallengeTabFragment;
 import ar.com.betex.betexmobile.fragments.MyBetsTabFragment;
@@ -252,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
     }
 
     @Override
-    public void onCurrencySelected(Currency currency) {
+    public void onCurrencySelected(CryptoAsset currency) {
         WalletFragment walletFragment = (WalletFragment) getSupportFragmentManager().findFragmentByTag(WalletFragment.TAG);
         walletFragment.drawCurrencyFragment(currency);
     }

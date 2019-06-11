@@ -5,18 +5,22 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.text.NumberFormat;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.entities.Currency;
+import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
+import ar.com.betex.betexmobile.blockchain.utils.BetexWeb3jUtils;
+import ar.com.betex.betexmobile.blockchain.wallet.FileBetexWallet;
 
 public class CurrencyFragment extends Fragment {
     private static final String ARG_CURRENCY = "ARG_CURRENCY";
-    private Currency currency;
+    private CryptoAsset currency;
     public static final String TAG = "CurrencyFragment";
     public CurrencyFragment() {
         // Required empty public constructor
@@ -30,7 +34,7 @@ public class CurrencyFragment extends Fragment {
      * @return A new instance of fragment CurrencyFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CurrencyFragment newInstance(Currency currency) {
+    public static CurrencyFragment newInstance(CryptoAsset currency) {
         CurrencyFragment fragment = new CurrencyFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_CURRENCY, currency);
@@ -42,7 +46,7 @@ public class CurrencyFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            currency = (Currency) getArguments().getSerializable(ARG_CURRENCY);
+            currency = (CryptoAsset) getArguments().getSerializable(ARG_CURRENCY);
         }
     }
 
@@ -53,11 +57,19 @@ public class CurrencyFragment extends Fragment {
         NumberFormat formatCurrency = NumberFormat.getCurrencyInstance();
         NumberFormat formatNumber = NumberFormat.getNumberInstance();
 
-        BigDecimal balanceInUsde = currency.getValueInUsd().multiply(currency.getBalance()).setScale(2, BigDecimal.ROUND_HALF_DOWN);
+        BigInteger balance = currency.getBalance();
+        BigDecimal bdBalance = new BigDecimal(balance);
+
+        if (!currency.isToken()){
+            bdBalance = BetexWeb3jUtils.weiToEther(balance);
+        }
+
+        BigDecimal balanceInUsde = currency.getValueInUsd().multiply(bdBalance)
+                                            .setScale(2, BigDecimal.ROUND_HALF_DOWN);
 
         View view = inflater.inflate(R.layout.fragment_currency, container, false);
         TextView title = view.findViewById(R.id.currencyBalance);
-        title.setText(formatNumber.format(currency.getBalance()));
+        title.setText(formatNumber.format(bdBalance));
 
         TextView currencySymbol = view.findViewById(R.id.currencySymbol);
         currencySymbol.setText(currency.getSymbol());
@@ -70,6 +82,9 @@ public class CurrencyFragment extends Fragment {
 
         ImageView currencyImage = view.findViewById(R.id.currencyImage);
         currencyImage.setImageResource(currency.getImgId());
+
+        EditText editTextAddress = view.findViewById(R.id.address);
+        editTextAddress.setText("My Wallet: " + FileBetexWallet.getInstance(this.getContext()).getAddress());
         return view;
     }
 

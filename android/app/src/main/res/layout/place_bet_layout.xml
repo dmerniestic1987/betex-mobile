@@ -156,7 +156,7 @@
 
                     <TextView
                         android:id="@+id/stakeSubtitle"
-                        android:text="@string/cryptocurrency_default"
+                        android:text="@string/ether_cryptocurrency_symbol_default"
                         style="@style/PlaceBetInfoText"
                         android:textColor="@color/secondaryText"/>
                 </LinearLayout>
@@ -284,7 +284,7 @@
 
                     <TextView
                         android:id="@+id/minimunBetSymbol"
-                        android:text="@string/cryptocurrency_default"
+                        android:text="@string/ether_cryptocurrency_symbol_default"
                         style="@style/PlaceBetInfoText"/>
                 </LinearLayout>
 
@@ -308,7 +308,7 @@
 
                     <TextView
                         android:id="@+id/betCostSymbol"
-                        android:text="@string/cryptocurrency_default"
+                        android:text="@string/ether_cryptocurrency_symbol_default"
                         style="@style/PlaceBetInfoText"/>
                 </LinearLayout>
 
@@ -330,7 +330,7 @@
 
                     <TextView
                         android:id="@+id/potentialWinningSymbol"
-                        android:text="@string/cryptocurrency_default"
+                        android:text="@string/ether_cryptocurrency_symbol_default"
                         style="@style/PlaceBetInfoText"/>
 
                 </LinearLayout>
