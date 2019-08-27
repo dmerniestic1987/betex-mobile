@@ -17,6 +17,7 @@ import java.math.BigInteger;
 import java.util.concurrent.ExecutionException;
 
 import ar.com.betex.betexmobile.entities.Configuration;
+import ar.com.betex.betexmobile.entities.ConfigurationRinkeby;
 
 /**
  * Utilidades para comunicarse con Ethereum

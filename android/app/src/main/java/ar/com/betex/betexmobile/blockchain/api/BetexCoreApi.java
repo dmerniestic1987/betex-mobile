@@ -10,7 +10,7 @@ import java.math.BigInteger;
 
 
 import ar.com.betex.betexmobile.entities.Configuration;
-import ar.com.betex.blockchain.sc.BetexCore;
+import ar.com.betex.blockchain.sc.BetexMobileGondwana;
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers;
  * @author Diego Mernies
  */
 public class BetexCoreApi extends BetexEthereumApi {
-    private static BetexCore betexCore;
+    private static BetexMobileGondwana betexMobileGondwana;
 
     public BetexCoreApi(Context context, Configuration configuration){
         super(context, configuration);
@@ -28,18 +28,17 @@ public class BetexCoreApi extends BetexEthereumApi {
 
     public void load(){
         ContractGasProvider contractGasProvider = new DefaultGasProvider();
-        betexCore = BetexCore.load(configuration.getBetexCoreContractAddress(), web3j, credential, contractGasProvider);
+        betexMobileGondwana = BetexMobileGondwana.load(configuration.getBetexMobileContractAddress(), web3j, credential, contractGasProvider);
     }
 
-    public Flowable<String> helloWorld(){
-        return betexCore.getMensajeHola().flowable()
+    public Flowable<BigInteger> getCommisionCancelBetBtx(){
+        return betexMobileGondwana.getComissionCancelBetBtx().flowable()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
     }
 
-    public Flowable<TransactionReceipt> openMarket(){
-        BigInteger marketId = new BigInteger(String.valueOf(System.currentTimeMillis()));
-        return betexCore.openMarket(marketId).flowable()
+    public Flowable<TransactionReceipt> cancelMarketBet(BigInteger marketId){
+        return betexMobileGondwana.cancelMarketBet(marketId).flowable()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
     }
