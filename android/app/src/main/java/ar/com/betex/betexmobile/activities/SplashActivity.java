@@ -5,18 +5,16 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.security.Security;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.blockchain.api.BetexCoreApi;
 import ar.com.betex.betexmobile.blockchain.wallet.BetexWallet;
 import ar.com.betex.betexmobile.blockchain.wallet.FileBetexWallet;
 import ar.com.betex.betexmobile.entities.Configuration;
+import ar.com.betex.betexmobile.entities.ConfigurationRinkeby;
 import ar.com.betex.betexmobile.exception.BetexException;
 
 public class SplashActivity extends AppCompatActivity {
@@ -35,7 +33,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         context = this;
-        configuration = new Configuration();
+        configuration = new ConfigurationRinkeby();
         betexWallet = FileBetexWallet.getInstance(this);
 
         if (!betexWallet.isWalletCreated()){

@@ -11,7 +11,7 @@ import java.util.List;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
 import ar.com.betex.betexmobile.blockchain.utils.BetexWeb3jUtils;
-import ar.com.betex.betexmobile.entities.Configuration;
+import ar.com.betex.betexmobile.entities.ConfigurationRinkeby;
 import ar.com.betex.betexmobile.exception.BetexException;
 import ar.com.betex.blockchain.sc.BetexToken;
 import io.reactivex.Flowable;
@@ -26,7 +26,7 @@ public class CryptoCurrenciesApi extends BetexEthereumApi {
     private static String TAG = "CryptoCurrenciesApi";
     private static BetexToken betexToken;
 
-    public CryptoCurrenciesApi(Context context, Configuration configuration){
+    public CryptoCurrenciesApi(Context context, ConfigurationRinkeby configuration){
         super(context, configuration);
         load();
     }
@@ -35,6 +35,7 @@ public class CryptoCurrenciesApi extends BetexEthereumApi {
      * Se carga el ABI para comunicarse con el contrato
      */
     public void load(){
+        Log.i("CARGANDO CONTRATO Token", configuration.getBetexTokenContractAddress());
         betexToken = BetexToken.load( configuration.getBetexTokenContractAddress()
                                     , web3j
                                     , credential
@@ -62,7 +63,7 @@ public class CryptoCurrenciesApi extends BetexEthereumApi {
         CryptoAsset crypto = new CryptoAsset();
         crypto.setCurrencyName(context.getResources().getString(R.string.ether_cryptocurrency_name_default));
         crypto.setSymbol(context.getResources().getString(R.string.ether_cryptocurrency_symbol_default));
-
+        Log.i("WALLET ADDRESS", wallet.getAddress());
         try {
             BigInteger balanceInWei = BetexWeb3jUtils.getBalanceWei(web3j, wallet.getAddress());
             crypto.setBalance(balanceInWei);

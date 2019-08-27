@@ -12,9 +12,7 @@ import org.web3j.crypto.WalletUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
-import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
 import ar.com.betex.betexmobile.exception.BetexException;
 import ar.com.betex.betexmobile.blockchain.entities.WalletBean;
 

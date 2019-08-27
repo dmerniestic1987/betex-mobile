@@ -9,14 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.adapters.CurrencyFragmentListRecyclerViewAdapter;
 import ar.com.betex.betexmobile.blockchain.api.CryptoCurrenciesApi;
-import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
-import ar.com.betex.betexmobile.entities.Configuration;
+import ar.com.betex.betexmobile.entities.ConfigurationRinkeby;
 import ar.com.betex.betexmobile.fragments.listener.OnWalletCurrencyListSelectedListener;
 
 /**
@@ -63,7 +59,7 @@ public class CurrencyFragmentListFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        CryptoCurrenciesApi api = new CryptoCurrenciesApi(this.getContext(), new Configuration());
+        CryptoCurrenciesApi api = new CryptoCurrenciesApi(this.getContext(), new ConfigurationRinkeby());
         recyclerView.setAdapter(new CurrencyFragmentListRecyclerViewAdapter(mListener, api.getMyCurrenciesBalance()));
     }
 

@@ -1,7 +1,6 @@
 package ar.com.betex.betexmobile.activities;
 
 import android.content.Context;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,8 +14,11 @@ import android.widget.Toast;
 
 import org.web3j.protocol.exceptions.TransactionException;
 
+import java.math.BigInteger;
+
 import ar.com.betex.betexmobile.blockchain.api.BetexCoreApi;
 import ar.com.betex.betexmobile.entities.Configuration;
+import ar.com.betex.betexmobile.entities.ConfigurationRinkeby;
 import ar.com.betex.betexmobile.exception.BetexException;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.blockchain.wallet.BetexWallet;
@@ -55,7 +57,7 @@ public class WalletDevelActivity extends AppCompatActivity {
         });
 
         context = this;
-        configuration = new Configuration();
+        configuration = new ConfigurationRinkeby();
         betexWallet = FileBetexWallet.getInstance(this);
         if (!betexWallet.isWalletCreated()){
             try {
@@ -85,14 +87,14 @@ public class WalletDevelActivity extends AppCompatActivity {
         versionView.setText(betexCoreApi.getClientVersion());
 
         holaMundo.setOnClickListener(view -> {
-            betexCoreApi.helloWorld().subscribe(
-                    msg -> { versionView.setText(msg); }
+            betexCoreApi.getCommisionCancelBetBtx().subscribe(
+                    comissionCancelBetBtx -> { versionView.setText(comissionCancelBetBtx.toString()); }
             );
         });
 
         placeBet = this.findViewById(R.id.placeBet);
         placeBet.setOnClickListener(view-> {
-            betexCoreApi.openMarket()
+            betexCoreApi.cancelMarketBet(new BigInteger("11"))
                 .subscribe(transactionReceipt -> {
                         String blockHash = transactionReceipt.getBlockHash();
                         updateTransactionHash(transactionReceipt.getTransactionHash());
