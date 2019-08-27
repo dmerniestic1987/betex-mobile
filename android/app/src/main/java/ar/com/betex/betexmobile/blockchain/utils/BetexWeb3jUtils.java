@@ -23,7 +23,7 @@ import ar.com.betex.betexmobile.entities.ConfigurationRinkeby;
  * Utilidades para comunicarse con Ethereum
  */
 public class BetexWeb3jUtils {
-
+    public static final BigInteger TOKEN_PRECISION = BigInteger.TEN.pow(18);
     /**
      * Crea una instancia de web3 con utilizando una configuración determinada
      * @param configuration
@@ -32,6 +32,11 @@ public class BetexWeb3jUtils {
     public static Web3j buildEthereumConnection(Configuration configuration) {
         Web3j web3 = Web3j.build(new HttpService(configuration.getEthereumEndPoint()));
         return web3;
+    }
+
+
+    public static BigInteger toTokenPrecision(BigInteger amount) {
+        return amount.divide(TOKEN_PRECISION);
     }
 
     /**
