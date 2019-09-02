@@ -21,7 +21,7 @@ import ar.com.betex.betexmobile.entities.Configuration;
 public class BetexEthereumApi {
     protected Web3j web3j;
     protected Configuration configuration;
-    protected Credentials credential;
+    protected Credentials credentials;
     protected BetexWallet wallet;
     protected ContractGasProvider contractGasProvider = new DefaultGasProvider();
     protected Context context;
@@ -39,7 +39,7 @@ public class BetexEthereumApi {
         this.configuration = configuration;
         this.web3j = BetexWeb3jUtils.buildEthereumConnection(this.configuration);
         this.wallet = FileBetexWallet.getInstance(context);
-        this.credential = this.wallet.getCredentials();
+        this.credentials = this.wallet.getCredentials();
         this.context = context;
     }
 

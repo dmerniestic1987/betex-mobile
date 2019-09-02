@@ -13,7 +13,6 @@ import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
 import ar.com.betex.betexmobile.blockchain.utils.BetexWeb3jUtils;
 import ar.com.betex.betexmobile.entities.ConfigurationRinkeby;
 import ar.com.betex.betexmobile.exception.BetexException;
-import ar.com.betex.betexmobile.util.BetexUtils;
 import ar.com.betex.blockchain.sc.BetexToken;
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -39,7 +38,7 @@ public class CryptoCurrenciesApi extends BetexEthereumApi {
         Log.i("CARGANDO CONTRATO Token", configuration.getBetexTokenContractAddress());
         betexToken = BetexToken.load( configuration.getBetexTokenContractAddress()
                                     , web3j
-                                    , credential
+                                    , credentials
                                     , contractGasProvider );
     }
 
@@ -84,7 +83,7 @@ public class CryptoCurrenciesApi extends BetexEthereumApi {
         betex.setSymbol("BTX");
         try {
             BigInteger balanceInBetex = betexToken.balanceOf(wallet.getAddress()).sendAsync().get();
-            betex.setBalance(BetexWeb3jUtils.toTokenPrecision(balanceInBetex));
+            betex.setBalance(BetexWeb3jUtils.fromTokenPrecision(balanceInBetex));
         }
         catch (Exception e) {
             Log.e(TAG, "No se pudo obtener balance en BTX", e);

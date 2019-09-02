@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import java.math.BigInteger;
 
 import ar.com.betex.betexmobile.R;
+import ar.com.betex.betexmobile.blockchain.api.BetexMobileGondwanaApi;
 import ar.com.betex.betexmobile.entities.Market;
 import ar.com.betex.betexmobile.components.PlaceBetView;
 import ar.com.betex.betexmobile.fragments.listener.OnPlaceBetFragmentListener;

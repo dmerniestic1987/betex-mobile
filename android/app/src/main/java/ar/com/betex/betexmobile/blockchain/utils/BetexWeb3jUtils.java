@@ -35,10 +35,24 @@ public class BetexWeb3jUtils {
     }
 
 
-    public static BigInteger toTokenPrecision(BigInteger amount) {
+    public static BigInteger fromTokenPrecision(BigInteger amount) {
         return amount.divide(TOKEN_PRECISION);
     }
 
+    /**
+     * Transforma un gran número decimal a la precisión en tokens. Si después de transformar
+     * aún tieen digitos enteros, solo devuelve la parte entera y los decimales los descarta
+     * @param input
+     * @return bigInteger
+     */
+    public static BigInteger toTokenPrecision(BigDecimal input) {
+        if (input == null){
+            return BigInteger.ZERO;
+        }
+
+        BigDecimal result = input.multiply(new BigDecimal(TOKEN_PRECISION));
+        return result.toBigInteger();
+    }
     /**
      * Obtiene la versión del cliente
      * @param web3j

@@ -16,7 +16,7 @@ import org.web3j.protocol.exceptions.TransactionException;
 
 import java.math.BigInteger;
 
-import ar.com.betex.betexmobile.blockchain.api.BetexCoreApi;
+import ar.com.betex.betexmobile.blockchain.api.BetexMobileGondwanaApi;
 import ar.com.betex.betexmobile.entities.Configuration;
 import ar.com.betex.betexmobile.entities.ConfigurationRinkeby;
 import ar.com.betex.betexmobile.exception.BetexException;
@@ -34,7 +34,7 @@ public class WalletDevelActivity extends AppCompatActivity {
     private BetexWallet betexWallet;
     private TextView versionView;
     private Configuration configuration;
-    private BetexCoreApi betexCoreApi;
+    private BetexMobileGondwanaApi betexCoreApi;
     private Button holaMundo;
     private Button placeBet;
     private TextView restulTextView;
@@ -79,7 +79,7 @@ public class WalletDevelActivity extends AppCompatActivity {
         restulTextView.setText(betexWallet.getAddress());
 
         holaMundo = this.findViewById(R.id.holaMundo);
-        betexCoreApi = new BetexCoreApi(this, configuration);
+        betexCoreApi = new BetexMobileGondwanaApi(this, configuration);
         betexCoreApi.load();
 
 
