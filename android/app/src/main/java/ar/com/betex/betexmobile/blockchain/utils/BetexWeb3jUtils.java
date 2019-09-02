@@ -138,6 +138,9 @@ public class BetexWeb3jUtils {
         return Convert.fromWei(wei.toString(), Convert.Unit.ETHER);
     }
 
+    public static BigDecimal toWei(BigDecimal ether) {
+        return Convert.toWei(ether.toString(), Convert.Unit.ETHER);
+    }
     /**
      * Returns the TransactionRecipt for the specified tx hash as an optional.
      */

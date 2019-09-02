@@ -85,18 +85,19 @@ public class BetexMobileGondwanaApi extends BetexEthereumApi {
             , BigDecimal odd
             , BigDecimal stake
             , Boolean isBack){
-
-        BigInteger bdWeiValue =  BetexWeb3jUtils.toTokenPrecision(odd).multiply(BetexWeb3jUtils.toTokenPrecision(stake));
+        BigDecimal etherValue = odd.multiply(stake);
         if (!isBack){
-            bdWeiValue = BetexWeb3jUtils.toTokenPrecision(odd.min(BigDecimal.ONE)).multiply(BetexWeb3jUtils.toTokenPrecision(stake));
+            etherValue = (odd.subtract(BigDecimal.ONE)).multiply(stake);
         }
+        BigInteger weiValue =  BetexWeb3jUtils.toWei(etherValue).toBigInteger();
+
         byte[] bytes = Numeric.hexStringToByteArray(marketRunnerHash);
 
         return betexMobileGondwana.placeMarketBetWei( bytes
                 , BetexWeb3jUtils.toTokenPrecision(odd)
                 , BetexWeb3jUtils.toTokenPrecision(stake)
                 , isBack
-                , bdWeiValue).flowable()
+                , weiValue).flowable()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
     }
