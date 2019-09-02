@@ -4,8 +4,11 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import org.web3j.protocol.exceptions.TransactionException;
@@ -17,7 +20,6 @@ import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.blockchain.api.BetexMobileGondwanaApi;
 import ar.com.betex.betexmobile.entities.ConfigurationRinkeby;
 import ar.com.betex.betexmobile.entities.Market;
-import ar.com.betex.betexmobile.exception.BetexException;
 
 public class PlaceBetView extends FrameLayout {
     private static final String TAG = "PlaceBetView";
@@ -31,6 +33,8 @@ public class PlaceBetView extends FrameLayout {
     private TextView title;
     private TextView betCostValue;
     private EditText stakeValue;
+    private CheckBox btxCheckBox;
+    private CheckBox etherCheckBox;
 
     private BetexMobileGondwanaApi betexMobileGondwanaApi;
 
@@ -90,8 +94,27 @@ public class PlaceBetView extends FrameLayout {
         oddValue = this.findViewById(R.id.oddValue);
         oddValue.setText(odd);
 
-
-
+        btxCheckBox = this.findViewById(R.id.btxCheckBox);
+        btxCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (btxCheckBox.isChecked()){
+                    etherCheckBox.setChecked(false);
+                }
+            }
+        });
+        etherCheckBox = this.findViewById(R.id.etherCheckBox);
+        etherCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (etherCheckBox.isChecked()){
+                    btxCheckBox.setChecked(false);
+                }
+            }
+        });
+        if (etherCheckBox.isChecked()){
+            etherCheckBox.setChecked(false);
+        }
     }
 
     /**
@@ -119,21 +142,38 @@ public class PlaceBetView extends FrameLayout {
             return;
         }
 
-        betexMobileGondwanaApi.placeMarketBetBtx("0x5dd336c3be7b217f5b6d2daa9dd55963271c1b851bf9d6325bfbc17b109debd5"
-        , bigDecimalOddValue
-        , bigDecimalStakeValue
-        , isBackBet ).subscribe(transactionReceipt -> {
-                    String blockHash = transactionReceipt.getBlockHash();
-                    BigInteger blockNumber = transactionReceipt.getBlockNumber();
-                    Toast.makeText(getContext(), blockHash, Toast.LENGTH_LONG).show();
-                },
-                exception -> {
-                    TransactionException tex = (TransactionException) exception;
-                    Log.e(TAG, tex.getMessage(), exception);
-                    Toast.makeText(getContext(), "Error al invocar el contrato", Toast.LENGTH_LONG).show();
-                }
-        );
-
+        if (btxCheckBox.isChecked()) {
+            betexMobileGondwanaApi.placeMarketBetBtx("0x5dd336c3be7b217f5b6d2daa9dd55963271c1b851bf9d6325bfbc17b109debd5"
+                    , bigDecimalOddValue
+                    , bigDecimalStakeValue
+                    , isBackBet ).subscribe(transactionReceipt -> {
+                        String blockHash = transactionReceipt.getBlockHash();
+                        BigInteger blockNumber = transactionReceipt.getBlockNumber();
+                        Toast.makeText(getContext(), "BTX: " + blockHash, Toast.LENGTH_LONG).show();
+                    },
+                    exception -> {
+                        TransactionException tex = (TransactionException) exception;
+                        Log.e(TAG, tex.getMessage(), exception);
+                        Toast.makeText(getContext(), "Error al invocar el contrato", Toast.LENGTH_LONG).show();
+                    }
+            );
+        }
+        else{
+            betexMobileGondwanaApi.placeMarketBetWei("0x5dd336c3be7b217f5b6d2daa9dd55963271c1b851bf9d6325bfbc17b109debd5"
+                    , bigDecimalOddValue
+                    , bigDecimalStakeValue
+                    , isBackBet ).subscribe(transactionReceipt -> {
+                        String blockHash = transactionReceipt.getBlockHash();
+                        BigInteger blockNumber = transactionReceipt.getBlockNumber();
+                        Toast.makeText(getContext(), "WEI: " + blockHash, Toast.LENGTH_LONG).show();
+                    },
+                    exception -> {
+                        TransactionException tex = (TransactionException) exception;
+                        Log.e(TAG, tex.getMessage(), exception);
+                        Toast.makeText(getContext(), "Error al invocar el contrato", Toast.LENGTH_LONG).show();
+                    }
+            );
+        }
     }
 
     public Market getMarket() {

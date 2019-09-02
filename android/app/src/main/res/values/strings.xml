@@ -38,6 +38,8 @@
     <string name="minimun_bet_text">Apuesta mínima</string>
     <string name="title_place_bet_example">Boca Juniors Ganador</string>
     <string name="odd_text">Cuota</string>
+    <string name="currency_text">Moneda</string>
+    <string name="currency_subtext">Elija para apostar</string>
     <string name="odd_text_subtitle">Multiplicador</string>
     <string name="my_bet_text">Mi apuesta</string>
     <string name="ether_cryptocurrency_symbol_default">ETH</string>

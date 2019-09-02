@@ -81,9 +81,22 @@ public class BetexMobileGondwanaApi extends BetexEthereumApi {
                 .subscribeOn(Schedulers.io());
     }
 
-    //placeMarketBetWei(byte[] _marketRunnerHash, BigInteger _odd, BigInteger _stake, Boolean _isBack, BigInteger weiValue)
-    public Flowable<TransactionReceipt> placeMarketBetWei(BigInteger marketId){
-        return betexMobileGondwana.cancelMarketBet(marketId).flowable()
+    public Flowable<TransactionReceipt> placeMarketBetWei(String marketRunnerHash
+            , BigDecimal odd
+            , BigDecimal stake
+            , Boolean isBack){
+
+        BigInteger bdWeiValue =  BetexWeb3jUtils.toTokenPrecision(odd).multiply(BetexWeb3jUtils.toTokenPrecision(stake));
+        if (!isBack){
+            bdWeiValue = BetexWeb3jUtils.toTokenPrecision(odd.min(BigDecimal.ONE)).multiply(BetexWeb3jUtils.toTokenPrecision(stake));
+        }
+        byte[] bytes = Numeric.hexStringToByteArray(marketRunnerHash);
+
+        return betexMobileGondwana.placeMarketBetWei( bytes
+                , BetexWeb3jUtils.toTokenPrecision(odd)
+                , BetexWeb3jUtils.toTokenPrecision(stake)
+                , isBack
+                , bdWeiValue).flowable()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
     }
