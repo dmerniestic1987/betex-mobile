@@ -109,6 +109,9 @@
     <string name="help_text_my_bets">Mis apuestas</string>
     <string name="help_place_bets">Aceptar apuesta</string>
 
+    <string name="p2p_place_bet_accept_p2p_bet">Aceptar apuesta</string>
+    <string name="p2p_place_bet_cancel_p2p_bet">Cancel apuesta</string>
+
     <string name="help_title_rules">Reglas de apuestas</string>
     <string name="help_text_rules">Las apuestas que hagas en Betex se rigen por las reglas de la plataforma y de los deportes. Para más información por favor lee la sección "Reglas".</string>
     <string name="title_activity_rules">Reglas</string>
