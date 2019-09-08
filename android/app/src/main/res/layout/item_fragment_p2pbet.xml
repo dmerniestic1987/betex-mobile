@@ -204,7 +204,7 @@
         <android.support.design.button.MaterialButton
             android:id="@+id/acceptBet"
             style="@style/BetexMaterialButton"
-            android:text="Aceptar apuesta"
+            android:text="@string/p2p_place_bet_accept_p2p_bet"
             app:icon="@drawable/ic_coin"
             app:iconTint="@color/darkTextColor"
             app:rippleColor="@color/colorPrimaryDark" />
@@ -212,7 +212,7 @@
         <android.support.design.button.MaterialButton
             android:id="@+id/cancelBet"
             style="@style/BetexMaterialButton"
-            android:text="Cancelar apuesta"
+            android:text="@string/p2p_place_bet_cancel_p2p_bet"
             app:icon="@drawable/ic_cancel_black_24dp"
             app:iconTint="@color/darkTextColor"
             android:visibility="gone"

@@ -6,6 +6,7 @@
     <string name="nav_balance_title">Disponible:</string>
     <string name="nav_balance_value">10.5 ETH</string>
     <string name="nav_userName_value">Diego Betex</string>
+    <string name="nav_playingIsDangerous_value">Jugar compulsivamente es perjudicial para la salud</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_events">Mercado</string>
@@ -38,6 +39,8 @@
     <string name="minimun_bet_text">Apuesta mínima</string>
     <string name="title_place_bet_example">Boca Juniors Ganador</string>
     <string name="odd_text">Cuota</string>
+    <string name="currency_text">Moneda</string>
+    <string name="currency_subtext">Elija para apostar</string>
     <string name="odd_text_subtitle">Multiplicador</string>
     <string name="my_bet_text">Mi apuesta</string>
     <string name="ether_cryptocurrency_symbol_default">ETH</string>
@@ -47,7 +50,6 @@
     <string name="place_bet_buton_text">Apostar</string>
     <string name="total_quantity_text">Total de goles</string>
     <string name="send_text">Enviar</string>
-    <string name="receive_text">Recibir</string>
 
     <string name="exit_dialog_fragment_title">Betex Mobile</string>
     <string name="exit_dialog_fragment_content">¿Desea salir de Betex Mobile?</string>
@@ -106,6 +108,9 @@
     <string name="help_text2_place_bet">Monto y cuotas de apuestas.</string>
     <string name="help_text_my_bets">Mis apuestas</string>
     <string name="help_place_bets">Aceptar apuesta</string>
+
+    <string name="p2p_place_bet_accept_p2p_bet">Aceptar apuesta</string>
+    <string name="p2p_place_bet_cancel_p2p_bet">Cancel apuesta</string>
 
     <string name="help_title_rules">Reglas de apuestas</string>
     <string name="help_text_rules">Las apuestas que hagas en Betex se rigen por las reglas de la plataforma y de los deportes. Para más información por favor lee la sección "Reglas".</string>

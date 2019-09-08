@@ -10,7 +10,7 @@
     <dimen name="button_elevation">10dp</dimen>
 
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
-    <dimen name="nav_header_height">180dp</dimen>
+    <dimen name="nav_header_height">190dp</dimen>
 
     <dimen name="button_bar_padding">6dp</dimen>
     <dimen name="button_bar_margin">6dp</dimen>
@@ -29,6 +29,9 @@
 
     <dimen name="currency_detail_image_width">90dp</dimen>
     <dimen name="currency_detail_image_height">90dp</dimen>
+
+    <dimen name="qr_image_width">180dp</dimen>
+    <dimen name="qr_image_height">180dp</dimen>
 
     <dimen name="navigation_bar_image_width">100dp</dimen>
     <dimen name="navigation_bar_image_height">100dp</dimen>

@@ -1,13 +1,18 @@
 package ar.com.betex.betexmobile.fragments;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.zxing.BarcodeFormat;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -22,18 +27,11 @@ public class CurrencyFragment extends Fragment {
     private static final String ARG_CURRENCY = "ARG_CURRENCY";
     private CryptoAsset currency;
     public static final String TAG = "CurrencyFragment";
+
     public CurrencyFragment() {
-        // Required empty public constructor
+        super();
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param currency Parameter 1.
-     * @return A new instance of fragment CurrencyFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static CurrencyFragment newInstance(CryptoAsset currency) {
         CurrencyFragment fragment = new CurrencyFragment();
         Bundle args = new Bundle();
@@ -53,7 +51,7 @@ public class CurrencyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         NumberFormat formatCurrency = NumberFormat.getCurrencyInstance();
         NumberFormat formatNumber = NumberFormat.getNumberInstance();
 
@@ -84,7 +82,20 @@ public class CurrencyFragment extends Fragment {
         currencyImage.setImageResource(currency.getImgId());
 
         EditText editTextAddress = view.findViewById(R.id.address);
-        editTextAddress.setText("My Wallet: " + FileBetexWallet.getInstance(this.getContext()).getAddress());
+        String currentAddress = FileBetexWallet.getInstance(this.getContext()).getAddress();
+        editTextAddress.setText("My Wallet: " + currentAddress);
+
+        ImageView imageViewQrCode = (ImageView) view.findViewById(R.id.qrCode);
+        try {
+            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+            Bitmap bitmap = barcodeEncoder.encodeBitmap(currentAddress, BarcodeFormat.QR_CODE, 400, 400);
+
+            imageViewQrCode.setImageBitmap(bitmap);
+        } catch(Exception e) {
+            Log.e(TAG, "Error al generar QR", e);
+            imageViewQrCode.setVisibility(View.GONE);
+        }
+
         return view;
     }
 
