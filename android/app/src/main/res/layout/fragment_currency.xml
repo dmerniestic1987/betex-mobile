@@ -107,6 +107,7 @@
                 android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:padding="@dimen/margin_place_bet_10dp"
+                android:orientation="vertical"
                 android:background="@android:color/transparent"
                 app:layout_constraintTop_toBottomOf="@+id/balanceInUsd"
                 tools:layout_editor_absoluteX="0dp">
@@ -120,15 +121,20 @@
                     android:drawableTop="@drawable/ic_wallet_send"
                     android:text="@string/send_text" />
 
-                <Button
-                    android:id="@+id/receiveButton"
-                    style="@style/ButtonShowMore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/qrCode"
+                    android:layout_width="@dimen/qr_image_width"
+                    android:layout_height="@dimen/qr_image_height"
                     android:layout_gravity="center"
-                    android:drawableTop="@drawable/ic_wallet_receive"
-                    android:text="@string/receive_text" />
-
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/ether_cryptocurrency_name_default"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/eth"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </LinearLayout>
 
             <EditText
