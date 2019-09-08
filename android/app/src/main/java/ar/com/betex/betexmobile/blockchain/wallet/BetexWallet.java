@@ -2,9 +2,6 @@ package ar.com.betex.betexmobile.blockchain.wallet;
 
 import org.web3j.crypto.Credentials;
 
-import java.util.List;
-
-import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
 import ar.com.betex.betexmobile.exception.BetexException;
 
 /**

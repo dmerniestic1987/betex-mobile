@@ -115,6 +115,7 @@
     <string name="help_title_rules">Reglas de apuestas</string>
     <string name="help_text_rules">Las apuestas que hagas en Betex se rigen por las reglas de la plataforma y de los deportes. Para más información por favor lee la sección "Reglas".</string>
     <string name="title_activity_rules">Reglas</string>
+    <string name="item_fragment_p2pbet_amount">Monto</string>
     <string name="large_text">
         "Betex Mobile.\n\n"
 

@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
+import ar.com.betex.betexmobile.entities.CryptoAsset;
 import ar.com.betex.betexmobile.util.BetexUtils;
-import ar.com.betex.betexmobile.util.DevelopUtils;
 
 /**
  * Pantalla para gestionar los recursos disponibles en la wallet

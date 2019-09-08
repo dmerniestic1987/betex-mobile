@@ -1,4 +1,4 @@
-package ar.com.betex.betexmobile.blockchain.entities;
+package ar.com.betex.betexmobile.entities;
 
 import android.os.Parcel;
 import android.os.Parcelable;

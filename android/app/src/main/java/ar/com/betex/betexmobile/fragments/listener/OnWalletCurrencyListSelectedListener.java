@@ -1,6 +1,6 @@
 package ar.com.betex.betexmobile.fragments.listener;
 
-import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
+import ar.com.betex.betexmobile.entities.CryptoAsset;
 
 /**
  * Listener para detectar la lista de las critpomonedas

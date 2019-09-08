@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 import ar.com.betex.betexmobile.exception.BetexException;
-import ar.com.betex.betexmobile.blockchain.entities.WalletBean;
+import ar.com.betex.betexmobile.entities.WalletBean;
 
 /**
  * Permite gestionar las operaciones para cargar y crear wallets para realizar

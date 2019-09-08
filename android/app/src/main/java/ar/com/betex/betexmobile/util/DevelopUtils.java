@@ -1,14 +1,11 @@
 package ar.com.betex.betexmobile.util;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Calendar;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
 import ar.com.betex.betexmobile.entities.Market;
 import ar.com.betex.betexmobile.entities.Runner;
 

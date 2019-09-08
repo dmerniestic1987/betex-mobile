@@ -19,7 +19,7 @@ import java.math.BigInteger;
 import java.text.NumberFormat;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
+import ar.com.betex.betexmobile.entities.CryptoAsset;
 import ar.com.betex.betexmobile.blockchain.utils.BetexWeb3jUtils;
 import ar.com.betex.betexmobile.blockchain.wallet.FileBetexWallet;
 

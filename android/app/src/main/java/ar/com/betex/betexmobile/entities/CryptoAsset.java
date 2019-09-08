@@ -1,9 +1,12 @@
-package ar.com.betex.betexmobile.blockchain.entities;
+package ar.com.betex.betexmobile.entities;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+/**
+ * Representa un criptoactivo. Por el momento solo están disponbiles ETH y BTX
+ */
 public class CryptoAsset implements Serializable {
     private String symbol;
     private BigInteger balance;
@@ -16,14 +19,19 @@ public class CryptoAsset implements Serializable {
         super();
         this.isToken = false;
     }
-    public CryptoAsset(String symbol, BigInteger balance, String currencyName, BigDecimal valueInUsd, int imgId) {
-        this.symbol = symbol;
-        this.balance = balance;
-        this.currencyName = currencyName;
-        this.valueInUsd = valueInUsd;
-        this.imgId = imgId;
-        this.isToken = false;
 
+    public static CryptoAsset getEtherInstance(){
+        CryptoAsset asset = new CryptoAsset();
+        asset.setSymbol("ETH");
+        asset.setCurrencyName("Ether");
+        return asset;
+    }
+
+    public static CryptoAsset getBtxInstance(){
+        CryptoAsset asset = new CryptoAsset();
+        asset.setSymbol("BTX");
+        asset.setCurrencyName("Betex");
+        return asset;
     }
 
     public String getSymbol() {

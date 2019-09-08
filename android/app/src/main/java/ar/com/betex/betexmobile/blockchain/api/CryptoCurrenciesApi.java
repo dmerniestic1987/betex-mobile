@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.com.betex.betexmobile.R;
-import ar.com.betex.betexmobile.blockchain.entities.CryptoAsset;
+import ar.com.betex.betexmobile.entities.CryptoAsset;
 import ar.com.betex.betexmobile.blockchain.utils.BetexWeb3jUtils;
 import ar.com.betex.betexmobile.entities.ConfigurationRinkeby;
 import ar.com.betex.betexmobile.exception.BetexException;

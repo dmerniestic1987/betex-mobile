@@ -74,7 +74,7 @@
                     app:srcCompat="@drawable/ic_boxing" />
 
                 <TextView
-                    android:id="@+id/status"
+                    android:id="@+id/marketStatus"
                     style="@style/ItemMyBetSubHead"
                     android:layout_gravity="center"
                     android:text="@string/title_event_type_boxing"
@@ -143,7 +143,7 @@
                         android:textSize="@dimen/material_text_caption" />
 
                     <TextView
-                        android:id="@+id/eventHoutValue"
+                        android:id="@+id/eventTimeValue"
                         style="@style/ItemMyBetsText"
                         android:text="19:30"
                         android:textSize="@dimen/material_text_caption" />
@@ -169,34 +169,19 @@
                 <TextView
                     style="@style/ItemMyBetSubHead"
                     android:layout_marginRight="8dp"
-                    android:text="Riesgo:" />
+                    android:text="@string/item_fragment_p2pbet_amount" />
 
                 <TextView
                     style="@style/ItemMyBetSubHead"
+                    android:id="@+id/amountValue"
                     android:text="5"
                     android:layout_marginRight="8dp"
                     android:textColor="@color/primaryText" />
 
                 <TextView
                     style="@style/ItemMyBetSubHead"
-                    android:text="ETH"
-                    android:textColor="@color/primaryText" />
-
-                <TextView
-                    style="@style/ItemMyBetSubHead"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="8dp"
-                    android:text="Posible ganancia:" />
-
-                <TextView
-                    style="@style/ItemMyBetSubHead"
-                    android:text="7.4"
-                    android:layout_marginRight="8dp"
-                    android:textColor="@color/primaryText" />
-
-                <TextView
-                    style="@style/ItemMyBetSubHead"
-                    android:text="ETH"
+                    android:id="@+id/cryptoAssetSymbol"
+                    android:text="@string/betex_cryptocurrency_symbol_default"
                     android:textColor="@color/primaryText" />
             </LinearLayout>
         </LinearLayout>

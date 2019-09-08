@@ -51,7 +51,7 @@ public class P2PBetFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new MyPPBetRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new P2pBetItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         return view;
     }

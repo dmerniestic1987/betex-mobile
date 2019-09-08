@@ -4,6 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import ar.com.betex.betexmobile.R;
 
@@ -13,16 +15,15 @@ import ar.com.betex.betexmobile.fragments.listener.OnP2PBetFragmentInteractionLi
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnP2PBetFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
+ * Es un adapter para mostrar la un elemento de la lista de apuestas p2p.
+ * @author Diego Mernies
  */
-public class MyPPBetRecyclerViewAdapter extends RecyclerView.Adapter<MyPPBetRecyclerViewAdapter.ViewHolder> {
+public class P2pBetItemRecyclerViewAdapter extends RecyclerView.Adapter<P2pBetItemRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
     private final OnP2PBetFragmentInteractionListener mListener;
 
-    public MyPPBetRecyclerViewAdapter(List<DummyItem> items, OnP2PBetFragmentInteractionListener listener) {
+    public P2pBetItemRecyclerViewAdapter(List<DummyItem> items, OnP2PBetFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -58,6 +59,20 @@ public class MyPPBetRecyclerViewAdapter extends RecyclerView.Adapter<MyPPBetRecy
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public DummyItem mItem;
+
+        public TextView userName;
+        public TextView eventTitle;
+        public TextView marketStatus;
+        public TextView marketTypeValue;
+        public TextView betType;
+        public TextView betStatus;
+        public TextView competitionName;
+        public TextView eventDateValue;
+        public TextView eventTimeValue;
+        public TextView amountValue;
+        public TextView cryptoAssetSymbol;
+        public ImageView eventTypeImage;
+
 
         public ViewHolder(View view) {
             super(view);

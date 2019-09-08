@@ -14,9 +14,11 @@ public class Market implements Serializable {
     private String competitionName;
     private String eventType;
     private BigInteger eventId;
+    private BigInteger marketStatus;
     private String countryCode;
     private Date startDateGMT;
     private List<Runner> runners;
+
 
     public Market(){
         super();
@@ -99,5 +101,13 @@ public class Market implements Serializable {
 
     public void setMarketName(String marketName) {
         this.marketName = marketName;
+    }
+
+    public BigInteger getMarketStatus() {
+        return marketStatus;
+    }
+
+    public void setMarketStatus(BigInteger status) {
+        this.marketStatus = status;
     }
 }
