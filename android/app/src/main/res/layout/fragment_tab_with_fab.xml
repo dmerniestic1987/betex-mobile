@@ -60,6 +60,6 @@
             fab:fab_colorNormal="?attr/colorAccent"
             fab:fab_icon="@drawable/ic_add_black_24dp"
             fab:fab_size="normal"
-            fab:fab_title="@string/Create_new_challenge"/>
+            fab:fab_title="@string/create_new_p2p_bet"/>
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>

@@ -61,7 +61,7 @@ public class P2pBetItemRecyclerViewAdapter extends RecyclerView.Adapter<P2pBetIt
         holder.eventTimeValue.setText("19:30");
         holder.amountValue.setText(holder.mP2pBetItem.getAmount().toString());
         holder.cryptoAssetSymbol.setText(BetexUtils.getString(holder.mP2pBetItem.getCryptoAsset().getSymbol(), "ETH"));
-
+        holder.eventType.setText(BetexUtils.getString(holder.mP2pBetItem.getMarket().getEventType(), "error"));
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +94,7 @@ public class P2pBetItemRecyclerViewAdapter extends RecyclerView.Adapter<P2pBetIt
         public TextView eventTimeValue;
         public TextView amountValue;
         public TextView cryptoAssetSymbol;
+        public TextView eventType;
         public ImageView eventTypeImage;
 
 
@@ -105,13 +106,14 @@ public class P2pBetItemRecyclerViewAdapter extends RecyclerView.Adapter<P2pBetIt
             marketStatus = view.findViewById(R.id.marketStatus);
             marketTypeValue = view.findViewById(R.id.marketTypeValue);
             betType = view.findViewById(R.id.betType);
-            betStatus = view.findViewById(R.id.betStatus);
+            betStatus = view.findViewById(R.id.marketStatus);
             competitionName = view.findViewById(R.id.competitionName);
             eventDateValue = view.findViewById(R.id.eventDateValue);
             eventTimeValue = view.findViewById(R.id.eventTimeValue);
             amountValue = view.findViewById(R.id.amountValue);
             cryptoAssetSymbol = view.findViewById(R.id.cryptoAssetSymbol);
             eventTypeImage = view.findViewById(R.id.eventTypeImage);
+            eventType = view.findViewById(R.id.eventType);
         }
     }
 }

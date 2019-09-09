@@ -74,7 +74,7 @@
                     app:srcCompat="@drawable/ic_boxing" />
 
                 <TextView
-                    android:id="@+id/marketStatus"
+                    android:id="@+id/eventType"
                     style="@style/ItemMyBetSubHead"
                     android:layout_gravity="center"
                     android:text="@string/title_event_type_boxing"
@@ -113,7 +113,7 @@
                         android:textColor="@color/primaryText" />
 
                     <TextView
-                        android:id="@+id/betStatus"
+                        android:id="@+id/marketStatus"
                         style="@style/ItemMyBetSubHead"
                         android:layout_marginLeft="16dp"
                         android:text="En Juego"
