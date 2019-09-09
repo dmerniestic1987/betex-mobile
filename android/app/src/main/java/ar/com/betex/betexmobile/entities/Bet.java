@@ -12,7 +12,21 @@ public class Bet implements Serializable {
     private String marketRunnerHash;
     private Market market;
     private CryptoAsset cryptoAsset;
+    private boolean isBackBet;
+    private String betStatus;
 
+    public Bet() {
+        super();
+        isBackBet = true;
+    }
+
+    public boolean isBackBet() {
+        return isBackBet;
+    }
+
+    public void setBackBet(boolean backBet) {
+        isBackBet = backBet;
+    }
 
     public BigInteger getBetId() {
         return betId;
@@ -44,6 +58,14 @@ public class Bet implements Serializable {
 
     public void setCryptoAsset(CryptoAsset cryptoAsset) {
         this.cryptoAsset = cryptoAsset;
+    }
+
+    public String getBetStatus() {
+        return betStatus;
+    }
+
+    public void setBetStatus(String betStatus) {
+        this.betStatus = betStatus;
     }
 
     @Override

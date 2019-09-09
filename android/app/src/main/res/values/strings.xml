@@ -116,6 +116,11 @@
     <string name="help_text_rules">Las apuestas que hagas en Betex se rigen por las reglas de la plataforma y de los deportes. Para más información por favor lee la sección "Reglas".</string>
     <string name="title_activity_rules">Reglas</string>
     <string name="item_fragment_p2pbet_amount">Monto</string>
+    <string name="market_status_open">Abierto</string>
+    <string name="market_status_ready">Listo</string>
+    <string name="market_status_closed">Cerrado</string>
+    <string name="market_status_suspended">Suspendido</string>
+    <string name="market_status_resolved">Resuelto</string>
     <string name="large_text">
         "Betex Mobile.\n\n"
 

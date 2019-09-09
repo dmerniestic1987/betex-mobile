@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.fragments.dummy.DummyContent;
 import ar.com.betex.betexmobile.fragments.listener.OnP2PBetFragmentInteractionListener;
+import ar.com.betex.betexmobile.util.DevelopUtils;
 
 /**
  * A fragment representing a list of Items.
@@ -45,13 +46,13 @@ public class P2PBetFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_ppbet_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_p2pbet_recycle_view, container, false);
 
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new P2pBetItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new P2pBetItemRecyclerViewAdapter(DevelopUtils.hardcodeP2pBetList(), mListener));
         }
         return view;
     }

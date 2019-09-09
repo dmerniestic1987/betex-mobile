@@ -20,7 +20,7 @@ import ar.com.betex.betexmobile.R;
 import ar.com.betex.betexmobile.entities.Bet;
 import ar.com.betex.betexmobile.entities.CryptoAsset;
 import ar.com.betex.betexmobile.entities.Market;
-import ar.com.betex.betexmobile.fragments.ChallengeTabFragment;
+import ar.com.betex.betexmobile.fragments.P2PMainTabFragment;
 import ar.com.betex.betexmobile.fragments.MyBetsTabFragment;
 import ar.com.betex.betexmobile.fragments.listener.OnP2PBetFragmentInteractionListener;
 import ar.com.betex.betexmobile.util.DevelopUtils;
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                     replaceFragment(MarketFragment.newInstance(), MarketFragment.TAG);
                     return true;
                 case R.id.nav_bottom_challeges:
-                    replaceFragment(ChallengeTabFragment.newInstance(context), ChallengeTabFragment.TAG);
+                    replaceFragment(P2PMainTabFragment.newInstance(context), P2PMainTabFragment.TAG);
                     return true;
                 case R.id.nav_bottom_myBets:
                     replaceFragment(MyBetsTabFragment.newInstance(context), MyBetsTabFragment.TAG);
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements MarketButtonBarFr
                 replaceFragment(MyBetsTabFragment.newInstance(context), MyBetsTabFragment.TAG);
 
             } else if (id == R.id.nav_challeges) {
-                replaceFragment(ChallengeTabFragment.newInstance(context), ChallengeTabFragment.TAG);
+                replaceFragment(P2PMainTabFragment.newInstance(context), P2PMainTabFragment.TAG);
 
             } else if (id == R.id.nav_rules) {
                 Intent myIntent = new Intent(MainActivity.this, RulesActivity.class);

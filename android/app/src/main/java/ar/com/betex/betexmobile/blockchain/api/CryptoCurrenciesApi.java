@@ -83,7 +83,7 @@ public class CryptoCurrenciesApi extends BetexEthereumApi {
         betex.setSymbol("BTX");
         try {
             BigInteger balanceInBetex = betexToken.balanceOf(wallet.getAddress()).sendAsync().get();
-            betex.setBalance(BetexWeb3jUtils.fromTokenPrecision(balanceInBetex));
+            betex.setBalance(BetexWeb3jUtils.fromTokenPrecision(balanceInBetex).toBigInteger());
         }
         catch (Exception e) {
             Log.e(TAG, "No se pudo obtener balance en BTX", e);

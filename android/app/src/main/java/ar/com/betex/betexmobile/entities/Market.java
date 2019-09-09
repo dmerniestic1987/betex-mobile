@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Representa a un mercado
+ * @author  Diego Mernies
+ */
 public class Market implements Serializable {
     private BigInteger marketId;
     private String marketType;
@@ -14,7 +18,8 @@ public class Market implements Serializable {
     private String competitionName;
     private String eventType;
     private BigInteger eventId;
-    private BigInteger marketStatus;
+    private String eventName;
+    private String marketStatus;
     private String countryCode;
     private Date startDateGMT;
     private List<Runner> runners;
@@ -103,11 +108,19 @@ public class Market implements Serializable {
         this.marketName = marketName;
     }
 
-    public BigInteger getMarketStatus() {
+    public String getMarketStatus() {
         return marketStatus;
     }
 
-    public void setMarketStatus(BigInteger status) {
+    public void setMarketStatus(String status) {
         this.marketStatus = status;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 }

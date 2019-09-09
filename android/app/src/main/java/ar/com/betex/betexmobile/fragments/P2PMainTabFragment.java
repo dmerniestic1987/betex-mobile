@@ -10,10 +10,10 @@ import ar.com.betex.betexmobile.R;
 /**
  * Retos
  */
-public class ChallengeTabFragment  extends TabWithFabFragment {
-    public static final String TAG = "ChallengeTabFragment";
+public class P2PMainTabFragment extends TabWithFabFragment {
+    public static final String TAG = "P2PMainTabFragment";
 
-    public ChallengeTabFragment(){
+    public P2PMainTabFragment(){
         super();
     }
 
@@ -30,8 +30,8 @@ public class ChallengeTabFragment  extends TabWithFabFragment {
      * @return A new instance of fragment TabFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ChallengeTabFragment newInstance(Context context) {
-        ChallengeTabFragment fragment = new ChallengeTabFragment();
+    public static P2PMainTabFragment newInstance(Context context) {
+        P2PMainTabFragment fragment = new P2PMainTabFragment();
         Bundle args = new Bundle();
         ArrayList<String> tabTitles = new ArrayList<>();
 
